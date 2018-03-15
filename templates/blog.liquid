@@ -1,0 +1,115 @@
+<!-- /templates/blog.liquid -->
+{% comment %}
+
+  Loop through a defined number of articles with the 'paginate' tag.
+  Don't forget to close the tag after your loop.
+
+{% endcomment %}
+{% if settings.blog_layout == 'columns' %}
+  {% assign pagination_count = 6 %}
+{% else %}
+  {% assign pagination_count = 5 %}
+{% endif %}
+
+{% paginate blog.articles by pagination_count %}
+
+<section class="collection blog">
+  <div class="wrapper">
+
+    <header class="content-util">
+    {% include 'breadcrumb' %}
+    {% include 'social-icons' %}
+    </header>
+
+    <div class="grid">
+      <div class="collection-container blog-container">
+        {% if settings.blog_title_enable %}
+          <header class="collection-header">
+            <div class="container">
+              {% if current_tags %}
+                <h1>{{ blog.title | link_to: blog.url }} &mdash; {{ current_tags.first }}</h1>
+              {% else %}
+                <h1>{{ blog.title }}</h1>
+              {% endif %}
+            </div>
+          </header>
+        {% endif %}
+
+        <div class="mobile-aside-container">
+          <a href="#" class="button simple">{{ 'layout.navigation.blog_menu' | t}}</a>
+          <aside>
+            {% include 'blog-sidebar' %}
+          </aside>
+        </div>
+
+        <div class="blog-list">
+          {% for article in blog.articles %}
+          <article {% unless settings.blog_layout == 'column' %}class="{% if settings.blog_layout == 'columns' %}grid-item{% elsif settings.blog_layout == 'featured-columns' and forloop.index > 1 %}grid-item{% endif %}"{% endunless %}>
+            {% if article.image and settings.blog_image_first_enable %}
+              <div class="article-image">
+                <a href="{{ article.url }}"><img src="{{ article.image.src | img_url: '1024x1024' }}" alt="{{ article.title }}"></a>
+              </div>
+            {% endif %}
+            <header>
+              <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+              {% capture author %}<strong>{{ article.author }}</strong>{% endcapture %}
+              {% capture date %}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>{% endcapture %}
+              <p class="byline">{% if settings.blog_author_enable %}{{ 'blogs.article.author_html' | t: author: author }}{% endif %}{% if settings.blog_author_enable and settings.blog_date_enable %} &middot; {% endif %}{% if settings.blog_date_enable %}{{ date }}{% endif %}</p>
+            </header>
+            {% if article.image and settings.blog_image_first_enable == false %}
+              <div class="article-image">
+                <a href="{{ article.url }}"><img src="{{ article.image.src | img_url: '1024x1024' }}" alt="{{ article.title }}"></a>
+              </div>
+            {% endif %}
+            <section>
+              {% comment %}
+                Add a surrounding div with class 'rte' to anything that will come from the rich text editor.
+                Since this is just a listing page, you can either use the excerpt or truncate the full article.
+              {% endcomment %}
+              <div class="rte">
+                {% if article.excerpt.size > 0 %}
+                  {{ article.excerpt }}
+                  <p class="read-more"><a href="{{ article.url }}" class="button outline">{{ 'blogs.article.read_more' | t }}</a></p>
+                {% else %}
+                  <p>{{ article.content }}</p>
+                {% endif %}
+              </div>
+
+              {% comment %}
+                Show off meta information like number of comments and tags.
+              {% endcomment %}
+              {% unless settings.blog_list_tags_enable == false and settings.blog_list_comment_count_enable == false %}
+                  <div class="post-meta">
+                    {% if blog.comments_enabled? %}
+                      {% if settings.blog_list_comment_count_enable %}
+                        <a href="{{ article.url }}#Comments" class="comments">{{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}</a>
+                      {% endif %}
+                    {% endif %}
+                    {% if settings.blog_list_tags_enable %}
+                      {% include 'tags-article' %}
+                    {% endif %}
+                  </div>
+              {% endunless %}
+            </section>
+          </article>
+          {% endfor %}
+
+        </div>
+        {% if paginate.pages > 1 %}
+        <footer class="collection-footer">
+          {% include 'pagination' %}
+        </footer>
+        {% endif %}
+      </div>
+
+      <div class="aside-container">
+        <aside>
+          {% include 'blog-sidebar' %}
+        </aside>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endpaginate %}

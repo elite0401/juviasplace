@@ -1,0 +1,40 @@
+<!-- snippets/onboarding-simple-products.liquid -->
+<header>
+  <h4>{{ 'homepage.onboarding.collection_title' | t }}</h4>
+  <a href="/admin/products" class="button outline">{{ 'homepage.onboarding.add_product' | t }}</a>
+</header>
+
+<div class="product-container helper-section">
+  <div class="helper-note">
+    <span class="helper-icon"></span>
+    <h3>{{ 'homepage.onboarding.modal_title' | t }}</h3>
+    <p>{{ 'homepage.onboarding.no_products_html' | t }}</p>
+    <p><a href="/admin/products/new" class="admin-btn-primary">{{ 'collections.onboarding.add_product' | t }}</a></p>
+  </div>
+  {% assign index = 1 %}
+  {% for i in (1..collection_limit) %}
+    {% case i %}
+      {% when 7 %}
+        {% assign index = 1 %}
+      {% when 8 %}
+        {% assign index = 2 %}
+      {% when 9 %}
+        {% assign index = 3 %}
+    {% endcase %}
+    <div class="box product">
+      <figure>
+        <a href="/admin/products/new">
+          {% capture imageUrl %}//cdn.shopify.com/s/images/themes/product-{{ index }}.png{% endcapture %}
+          {{ imageUrl | img_tag }}
+        </a>
+        <figcaption>
+          <a href="/admin/products" class="product-title">{{ 'homepage.onboarding.product_title' | t }}</a>
+          <span class="price">
+            <span class="money">$19.00</span>
+          </span>
+        </figcaption>
+      </figure>
+    </div>
+    {% assign index = index | plus: 1 %}
+  {% endfor %}
+</div>

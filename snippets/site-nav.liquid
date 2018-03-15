@@ -1,0 +1,58 @@
+<!-- /snippets/site-nav.liquid -->
+{% comment %}
+  List out your main-menu linklist (default)
+
+  More info on linklists:
+    - http://docs.shopify.com/themes/liquid-variables/linklists
+{% endcomment %}
+<!-- begin site-nav -->
+<ul class="site-nav">
+  {% for link in linklists.main-menu.links %}
+  {% comment %}
+    Create a dropdown menu by naming a linklist the same as a link in the parent nav
+
+    More info on dropdowns:
+      - http://docs.shopify.com/manual/your-website/navigation/create-drop-down-menu
+  {% endcomment %}
+  {% assign child_list_handle = link.title | handleize %}
+  {% if linklists[child_list_handle].links != blank %}
+
+    <li class="has-dropdown {% if link.active %} active{% endif %}" aria-haspopup="true">
+      <a href="{{ link.url }}">{{ link.title }}</a>
+      <ul class="dropdown" aria-hidden="true" role="menu">
+        {% for childlink in linklists[child_list_handle].links %}
+
+          {% comment %}
+            Check to see if the dropdown contains a 2nd level, sub-dropdown
+          {% endcomment %}
+          {% assign has_sub_dropdown = false %}
+          {% assign sub_child_list_handle = childlink.title | handleize %}
+          {% if linklists[sub_child_list_handle].links != blank %}
+            {% assign has_sub_dropdown = true %}
+          {% endif %}
+
+          <li class="{% if childlink.active %}active{% endif %} {% if has_sub_dropdown %}has-sub-dropdown{% endif %}" role="menuitem">
+            <a href="{{ childlink.url }}" tabindex="-1">{{ childlink.title | escape }}</a>
+            {% comment %}
+              Sub-dropdown links
+            {% endcomment %}
+            {% if has_sub_dropdown %}
+              <ul class="sub-dropdown">
+                {% for subchildlink in linklists[sub_child_list_handle].links %}
+                  <li class="sub-dropdown-item {% if subchildlink.active %}active{% endif %}">
+                    <a href="{{ subchildlink.url }}">{{ subchildlink.title | escape }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% else %}
+    <li {% if link.active %}class="active"{% endif %}>
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    </li>
+  {% endif %}
+  {% endfor %}
+</ul>

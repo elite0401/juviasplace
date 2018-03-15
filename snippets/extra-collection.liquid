@@ -1,0 +1,37 @@
+<!-- /snippets/extra-collection.liquid -->
+{% assign collection_limit = 4 | plus:0 %}
+{% if settings.extra_featured_products == blank or collections[settings.extra_featured_products].empty? or collections[settings.extra_featured_products].products_count == 0 %}
+  {% assign helperSimpleProducts = true %}
+{% endif %}
+<div class="simple-collection layout-{{ collection_limit }}">
+  <div class="wrapper">
+
+    {% if helperSimpleProducts %}
+
+      {% comment %}
+        For onboarding new users to your theme, we add some default products and onboarding tutorials to help populate their store
+      {% endcomment %}
+      {% unless emptyState %}
+        {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
+        {% assign emptyState = true %}
+      {% endunless %}
+
+      {% include 'onboarding-simple-products' %}
+
+    {% else %}
+
+      <header>
+        <h4>{{ collections[settings.extra_featured_products].title }}</h4>
+        <a href="{{ collections[settings.extra_featured_products].url }}" class="button outline">{{ 'collections.general.all_of_collection' | t: collection: collections[settings.extra_featured_products].title }}</a>
+      </header>
+      <div class="product-container">
+        {% for product in collections[settings.extra_featured_products].products limit:collection_limit %}
+{% include 'bold-product' with product, hide_action: 'skip' %}
+          {% include 'product-grid-item' %}
+        {% endfor %}
+      </div>
+
+    {% endif %}
+
+  </div>
+</div>

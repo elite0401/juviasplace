@@ -1,0 +1,27 @@
+{% if settings.festival_video_enable %}
+<div class="festival-collection collection">
+  {% if template == 'index' %}
+  <div class="section-title">
+    <h1>{{ 'homepage.festival.title' | t }}</h1>
+  </div>
+  {% endif %}
+  <div class="wrapper">
+    <div class="grid">
+      <div class="box">
+        <div class="videoWrapper">
+          <video width="640" height="360" class="video-js" id="festival_video" controls preload="auto" data-setup="{}">
+            <source src="{{ '30_Sec_HD_WEB.mp4' | asset_url }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    videojs('festival_video');
+  });
+</script>
+{% endif %}

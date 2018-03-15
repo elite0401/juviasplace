@@ -1,0 +1,125 @@
+<!-- /templates/search.liquid -->
+{% comment %}
+
+  To return only products or pages in results:
+    - http://docs.shopify.com/manual/configuration/store-customization/return-only-product-in-storefront-search-results
+    - Or manually add type=product or type=page to the search URL as a parameter
+
+{% endcomment %}
+
+{% comment %}
+  Set grid_results to true and set search results as a grid instead of a list.
+  - Setting the results to grid will exclude pages and blog posts from the results
+{% endcomment %}
+{% assign grid_results = false %}
+{% assign results_count = 12 %}
+{% if grid_results %}
+  {% assign results_count = 50 %}
+{% endif %}
+
+{% comment %}
+  Check to enforce respond.js
+{% endcomment %}
+{% assign respond_js_secret_key = shop.domain | md5 %}
+{% unless search.terms == respond_js_secret_key %}
+
+{% comment %}
+  Avoid accessing search.results before the opening paginate tag.
+  If you do, the pagination of results will be broken.
+{% endcomment %}
+{% paginate search.results by results_count %}
+
+<section class="collection search-results">
+  <div class="wrapper">
+
+    <header class="content-util">
+    {% include 'breadcrumb' %}
+    {% include 'social-icons' %}
+    </header>
+
+    <div class="collection-container">
+      <div class="search-wrapper">
+        {% include 'search-bar' %}
+      </div>
+
+      <header class="collection-header">
+        <div class="container">
+          {% if search.performed %}
+            {% if search.results_count == 0 %}
+              <h1>{{ 'general.search.no_results_html' | t: terms: search.terms }}</h1>
+            {% else %}
+              <h1>{{ 'general.search.results_for_html' | t: terms: search.terms }}</h1>
+            {% endif %}
+          {% else %}
+            <h1>{{ 'general.search.title' | t }}</h1>
+          {% endif %}
+        </div>
+      </header>
+
+
+      {% if search.performed %}
+        <div class="products {% if grid_results %}products-grid search-grid{% else %}products-list search-list{% endif %}">
+          {% comment %}
+            Loop through our products in the current collection.
+            See the snippet 'product-grid-item' for the layout.
+          {% endcomment %}
+          {% for product in search.results %}
+          {% include 'bold-product' with product, hide_action: 'skip' %}
+
+            {% if product.price %}
+              {% unless grid_results %}
+                {% include 'product-list-item' %}
+              {% else %}
+                {% include 'product-grid-item' %}
+              {% endunless %}
+
+            {% elsif grid_results == false %}
+              {% comment %}
+                Search results for blog posts
+                Since the loop references 'product' for the product-list-item the articles also use 'product'
+              {% endcomment %}
+              <div class="box product article">
+                <figure>
+                  {% if product.image %}
+                    <div class="article-image product-thumbnail">
+                      <a href="{{ product.url }}"><img src="{{ product.image.src | img_url: 'large' }}" alt="{{ product.title }}"></a>
+                    </div>
+                  {% endif %}
+                  <figcaption>
+                    <header>
+                      <a href="{{ product.url }}" class="product-title">{{ product.title }}</a>
+                    </header>
+                    <div class="description rte">
+                      <p>{{ product.content | strip_html | truncatewords: 50 }} <a href="{{ product.url }}" class="button simple">{{ 'blogs.article.read_more' | t }}</a></p>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+            {% endif %}
+
+          {% endfor %}
+        </div>
+
+        {% if paginate.pages > 1 %}
+          <footer class="collection-footer">
+            {% include 'pagination' %}
+          </footer>
+        {% endif %}
+      {% endif %}
+
+      {% if search.results_count == 0 and settings.extra_featured_products and settings.extra_featured_products != '' and collections[settings.extra_featured_products].handle == settings.extra_featured_products and collections[settings.extra_featured_products].products_count > 0 %}
+        {% include 'extra-collection' %}
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+
+
+
+{% endpaginate %}
+
+{% else %}
+  {% include 'respond' %}
+  {% layout none %}
+{% endunless %}

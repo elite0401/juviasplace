@@ -1,0 +1,682 @@
+{% if cart.item_count > 0 and customer.tags.size > 0 %}
+
+<script>
+  function sameDomainAjax (paramHash, successCallback) {
+    jQuery.ajax({
+      contentType: "application/json; charset=utf-8",
+      data: JSON.stringify(paramHash),
+      url: "/apps/wholesale_hero",
+      cache: false,
+      dataType: 'json',
+      type: 'POST',
+      success: function (data, success) {
+        successCallback(data);
+      }
+    });
+  }
+ 
+  function whCheckCart(whCart, customer){
+    jQuery("#discount").val("");
+    var paramHash= {api_version: 3, shopify_domain: "{{shop.permanent_domain}}", cart: whCart, customer: customer};
+    sameDomainAjax(paramHash, function (data) {
+      if (data.minimums_note != "") {
+        jQuery(".wh-minimums-note").html(data.minimums_note)
+        jQuery("#note").val("")
+        jQuery("textarea[name='note']").val("")
+        return
+      }
+      var orderNote = data.order_note;
+      if (orderNote != "") {
+       jQuery("#note").val(orderNote)
+       jQuery("textarea[name='note']").val(orderNote)
+      }
+      if (data.discount_amount == 0) {
+        if ((typeof jQuery("#note").val() == "string") && (jQuery("#note").val().indexOf("% Off")) > -1) {
+          jQuery("#note").val("")
+        }
+        return
+      }
+
+      jQuery(".wh-original-cart-total").css("text-decoration", "line-through");
+      jQuery(".wh-cart-total").html(data.formatted_wh_total)
+
+      jQuery("#discount").val(data.discount_code)
+      if (data.extra_note){jQuery(".wh-extra-note").html(data.extra_note)}
+      
+      $("#wh-modal-container #net-30-summary").html(data.net_30_html);
+      window.net_30_data = data;
+    });
+  }
+
+    window.wh_cart = {{cart | json}}
+    window.wh_cart.items = []
+    {% for item in cart.items %}
+      {% include 'wh_calculate_discount_no_js' with item.product %}
+      {% include 'wh_variant' with item.variant %}
+
+      {% if set_price or wh_discount_value < 1 %}
+    	window.wh_cart.items.push({
+          original_item: {{item | json}},
+          variant_id: {{item.variant_id}},
+          product_id: {{item.product.id}},
+          quantity: {{item.quantity}},
+          wh_v_compare_price: {{wh_v_compare_at_price}},
+          wh_v_price: {{wh_v_price}},
+          price: {{item.variant.price}},
+          compare_at_price: {% if item.variant.compare_at_price == blank %} null {% else %} {{item.variant.compare_at_price}} {% endif %},
+          wh_discount: {{item.product.metafields.wh_discount | json}}
+        })
+      {% else %}
+        window.wh_cart.items.push({
+          quantity: {{item.quantity}},
+          price: {{item.variant.price}},
+          compare_at_price: {% if item.variant.compare_at_price == blank %} null {% else %} {{item.variant.compare_at_price}} {% endif %},
+          wh_discount: {{item.product.metafields.wh_discount | json}}
+        }) 
+     {% endif %}
+        
+    {% endfor %}
+    
+    whCheckCart(window.wh_cart,{
+      email: "{{customer.email | escape}}", 
+      id: {{customer.id}},  
+      tags: {{ customer.tags|json }} 
+    });
+    
+    jQuery('[max]').change(function() {
+      var max = parseInt(jQuery(this).attr('max'), 10) || 10000;
+      var value = parseInt(jQuery(this).val(), 10) || 0;
+      if (value > max) { jQuery(this).val(max); }
+    });
+
+  </script>
+{% endif %}
+
+<script>
+  
+  function ensureCorrectQuantites(whCart, domElement){
+    for (var i = 0; i < whCart.items.length; i++){
+      var item = whCart.items[i];
+      var el = domElement.replace("{variant_id}", item.variant_id);
+      if(item.quantity != jQuery(el).val()){
+        alert("Please update cart before checkout");
+        return false
+      }
+    }
+    return true
+  }
+  
+  function ensureInStock(){
+    var arr = []
+    jQuery("input[max]").each(function(){
+      var el = jQuery(this);
+      var max = parseInt(el.attr('max'), 10) || 10000;
+      var value = parseInt(el.val(), 10) || 0;
+      if (value > max){
+        arr.push(el);
+        el.val(max);
+      }      
+    });
+    
+    if(arr.length > 0){
+      alert("Some inventory has changed since being added to the cart. Please update cart to continue");
+      return false
+    }
+  }
+</script>
+
+
+{% if customer.tags contains 'whnet' %}
+{{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+
+<style type="text/css">
+.wh-wrap div, .wh-wrap span, .wh-wrap object, .wh-wrap iframe,
+.wh-wrap h1, .wh-wrap h2, .wh-wrap h3, .wh-wrap h4, .wh-wrap h5, .wh-wrap h6, 
+.wh-wrap p, .wh-wrap blockquote, .wh-wrap pre,
+.wh-wrap a, .wh-wrap img, .wh-wrap strong,
+.wh-wrap b, .wh-wrap u, .wh-wrap i,
+.wh-wrap dl, .wh-wrap dt, .wh-wrap dd, .wh-wrap ol, .wh-wrap ul, .wh-wrap li,
+.wh-wrap fieldset, .wh-wrap form, .wh-wrap label, .wh-wrap legend,
+.wh-wrap table, .wh-wrap caption, .wh-wrap tbody, .wh-wrap tfoot, .wh-wrap thead, .wh-wrap tr, .wh-wrap th, .wh-wrap td,{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-transform: none;
+}
+/* HTML5 display-role reset for older browsers */
+.wh-wrap article, .wh-wrap aside, .wh-wrap details, .wh-wrap figcaption, .wh-wrap figure, 
+.wh-wrap footer, .wh-wrap header, .wh-wrap hgroup, .wh-wrap menu, .wh-wrap nav, .wh-wrap section {
+	display: block;
+}
+.wh-wrap body {
+	line-height: 1;
+}
+.wh-wrap ol, .wh-wrap ul {
+	list-style: none;
+}
+.wh-wrap table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.blocker {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  z-index: 99999999;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.75);
+  text-align: center;
+}
+.blocker:before{
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.05em;
+}
+.blocker.behind {
+  background-color: transparent;
+}
+.wh-hero-modal {
+  display: inline-block;
+  min-width: 400px;
+  vertical-align: middle;
+  position: relative;
+  z-index: 99999999;
+  max-width: 600px;
+  background: #fff;
+  padding: 30px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px #000;
+  -moz-box-shadow: 0 0 10px #000;
+  -o-box-shadow: 0 0 10px #000;
+  -ms-box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px #000;
+  text-align: center;
+  text-transform: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+  -moz-transition: background-color 0.15s linear;
+  -webkit-transition: background-color 0.15s linear;
+  -o-transition: background-color 0.15s linear;
+  transition: background-color 0.15s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+
+
+
+.wh-hero-modal hr {
+  height: 0;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+
+.wh-hero-modal button,
+.wh-hero-modal input,
+.wh-hero-modal optgroup,
+.wh-hero-modal select,
+.wh-hero-modal textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+.wh-hero-modal button {
+  overflow: visible;
+}
+.wh-hero-modal button,
+.wh-hero-modal select {
+  text-transform: none;
+  width:100%;
+}
+.wh-hero-modal button {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+.wh-hero-modal button::-moz-focus-inner,
+.wh-hero-modal input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.wh-hero-modal input {
+  line-height: normal;
+  width:100%;
+}
+.wh-hero-modal input[type='number']::-webkit-inner-spin-button,
+.wh-hero-modal input[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+.wh-hero-modal body.fadein {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.wh-hero-modal #wh-modal-container {
+  background: white;
+  padding: 12px 18px 40px 18px;
+}
+
+@media only screen and (min-width:500px) {
+  .wh-hero-modal #wh-modal-container {
+    border-radius: 5px;
+    padding: 30px 40px;
+  }
+}
+
+@media only screen and (min-width:992px) {
+  .wh-hero-modal #wh-modal-container {
+    margin-top: 140px;
+  }
+}
+
+.wh-hero-modal .fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+.wh-hero-modal .fade.in {
+  opacity: 1;
+}
+
+.wh-hero-modal h2 {
+ font-size: 24px;
+ font-family: inherit;
+ font-weight: 500;
+ line-height: 1.1;
+ color: inherit;
+}
+
+.wh-hero-modal h3 {
+  font-family: inherit;
+  font-weight: normal;
+  line-height: 1.1;
+  color: inherit;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.wh-hero-modal p.body-text {
+  font-size: 20;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .wh-hero-modal select:focus,
+  .wh-hero-modal textarea:focus,
+  .wh-hero-modal input:focus {
+    font-size: 16px;
+    background: #eee;
+  }
+}
+
+.wh-hero-modal .btn {
+  display: inline-block;
+  padding: 8px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  letter-spacing: 1px;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.wh-hero-modal .btn-success {
+  width: 100%;
+  color: #ffffff;
+  background-color: #4ed14e;
+}
+
+.wh-hero-modal .btn-lg {
+  line-height: 24px;
+  font-size: 15px;
+  padding:14px;
+  line-height: 1.3333333;
+}
+
+.wh-hero-modal .close {
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+  float: right;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.wh-hero-modal form{
+  margin-top:10px;
+}
+
+.wh-hero-modal .modal-content .close {
+  font-size: 30px;
+}
+.wh-hero-modal .modal-backdrop.in {
+  filter: alpha(opacity=65);
+  opacity: .65;
+}
+
+.wh-hero-modal .completed_message {
+  display: none;
+}
+.wh-hero-modal .complete .completed_message {
+  display: block;
+}
+
+.wh-hero-modal .single-variant{
+  display:none;
+}
+
+.wh-hero-modal form#wh-form{
+}
+
+.wh-hero-modal div.footer{
+  margin-top:20px;
+}
+
+.wh-hero-modal div.footer p{
+  color: #b3b3b3;
+  font-size:12px;
+}
+
+.wh-hero-modal .alert {
+  padding: 10px;
+  margin: 20px 0px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.wh-hero-modal .alert-success {
+  color: red;
+  background-color: red;
+  border-color: #d6e9c6;
+}
+
+.wh-hero-modal .alert-danger {
+  color: red;
+  background-color: red;
+  border-color: #ebccd1;
+}
+
+
+@media (min-width: 0px) {
+  .wh-hero-modal {
+    min-width:0px;
+  }
+
+  .wh-hero-modal a.share-button.twitter{
+    width: 212px;
+    margin-top: 20px;
+    margin-left:0px;
+  }
+
+  .wh-hero-modal a.share-button.fb{
+    width: 212px;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .wh-hero-modal {
+    min-width:600px;
+  }
+}
+
+.wh-hero-modal input{
+  margin-bottom: 10px;
+}
+  
+.wh-hero-modal select{
+ margin-bottom:10px;
+}
+
+.wh-hero-modal .hero-wrap{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.wh-hero-modal img{
+  vertical-align: middle;
+  max-width: 100%;
+  max-height:75px;
+}
+
+.wh-hero-modal img.single{
+  margin-right: 20px;
+  margin-left: 0px;
+  display: inline-block;
+  padding-right: 20px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+  
+.wh-hero-modal table#net-order{
+  margin-top:20px;	 
+}
+
+.wh-hero-modal table#net-order td{
+  padding-top:10px;
+  padding-bottom:10px;
+  border-top:1px solid #eee;
+}
+.wh-hero-modal table#net-order .net-order-total{
+  margin-top:20px;
+  font-weight:bold;
+}
+
+.wh-hero-modal table#net-order td.net-order-prices{
+	text-align:right;
+}
+
+  .wh-hero-modal a.close-modal {
+    position: absolute;
+    top: -12.5px;
+    right: -12.5px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-indent: -9999px;
+    background: url('data:image/png;base64,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') no-repeat 0 0;
+  }
+</style>
+
+
+<script>
+  //modal js  
+  var whQuery=$,modals=[],getCurrent=function(){return modals.length?modals[modals.length-1]:null},selectCurrent=function(){var a,b=!1;for(a=modals.length-1;a>=0;a--)modals[a].$blocker&&(modals[a].$blocker.toggleClass("current",!b).toggleClass("behind",b),b=!0)};whQuery.modal=function(a,b){var c,d;if(this.$body=whQuery("body"),this.options=whQuery.extend({},whQuery.modal.defaults,b),this.options.doFade=!isNaN(parseInt(this.options.fadeDuration,10)),this.$blocker=null,this.options.closeExisting)for(;whQuery.modal.isActive();)whQuery.modal.close();if(modals.push(this),a.is("a"))if(d=a.attr("href"),/^#/.test(d)){if(this.$elm=whQuery(d),1!==this.$elm.length)return null;this.$body.append(this.$elm),this.open()}else this.$elm=whQuery("<div>"),this.$body.append(this.$elm),c=function(a,b){b.elm.remove()},this.showSpinner(),a.trigger(whQuery.modal.AJAX_SEND),whQuery.get(d).done(function(b){if(whQuery.modal.isActive()){a.trigger(whQuery.modal.AJAX_SUCCESS);var d=getCurrent();d.$elm.empty().append(b).on(whQuery.modal.CLOSE,c),d.hideSpinner(),d.open(),a.trigger(whQuery.modal.AJAX_COMPLETE)}}).fail(function(){a.trigger(whQuery.modal.AJAX_FAIL);var b=getCurrent();b.hideSpinner(),modals.pop(),a.trigger(whQuery.modal.AJAX_COMPLETE)});else this.$elm=a,this.$body.append(this.$elm),this.open()},whQuery.modal.prototype={constructor:whQuery.modal,open:function(){var a=this;this.block(),this.options.doFade?setTimeout(function(){a.show()},this.options.fadeDuration*this.options.fadeDelay):this.show(),whQuery(document).off("keydown.modal").on("keydown.modal",function(a){var b=getCurrent();27==a.which&&b.options.escapeClose&&b.close()}),this.options.clickClose&&this.$blocker.click(function(a){a.target==this&&whQuery.modal.close()})},close:function(){modals.pop(),this.unblock(),this.hide(),whQuery.modal.isActive()||whQuery(document).off("keydown.modal")},block:function(){this.$elm.trigger(whQuery.modal.BEFORE_BLOCK,[this._ctx()]),this.$body.css("overflow","hidden"),this.$blocker=whQuery('<div class="jquery-modal blocker current"></div>').appendTo(this.$body),selectCurrent(),this.options.doFade&&this.$blocker.css("opacity",0).animate({opacity:1},this.options.fadeDuration),this.$elm.trigger(whQuery.modal.BLOCK,[this._ctx()])},unblock:function(a){!a&&this.options.doFade?this.$blocker.fadeOut(this.options.fadeDuration,this.unblock.bind(this,!0)):(this.$blocker.children().appendTo(this.$body),this.$blocker.remove(),this.$blocker=null,selectCurrent(),whQuery.modal.isActive()||this.$body.css("overflow",""))},show:function(){this.$elm.trigger(whQuery.modal.BEFORE_OPEN,[this._ctx()]),this.options.showClose&&(this.closeButton=whQuery('<a href="#close-modal" rel="modal:close" class="close-modal '+this.options.closeClass+'">'+this.options.closeText+"</a>"),this.$elm.append(this.closeButton)),this.$elm.addClass(this.options.modalClass).appendTo(this.$blocker),this.options.doFade?this.$elm.css("opacity",0).show().animate({opacity:1},this.options.fadeDuration):this.$elm.show(),this.$elm.trigger(whQuery.modal.OPEN,[this._ctx()])},hide:function(){this.$elm.trigger(whQuery.modal.BEFORE_CLOSE,[this._ctx()]),this.closeButton&&this.closeButton.remove();var a=this;this.options.doFade?this.$elm.fadeOut(this.options.fadeDuration,function(){a.$elm.trigger(whQuery.modal.AFTER_CLOSE,[a._ctx()])}):this.$elm.hide(0,function(){a.$elm.trigger(whQuery.modal.AFTER_CLOSE,[a._ctx()])}),this.$elm.trigger(whQuery.modal.CLOSE,[this._ctx()])},showSpinner:function(){this.options.showSpinner&&(this.spinner=this.spinner||whQuery('<div class="'+this.options.modalClass+'-spinner"></div>').append(this.options.spinnerHtml),this.$body.append(this.spinner),this.spinner.show())},hideSpinner:function(){this.spinner&&this.spinner.remove()},_ctx:function(){return{elm:this.$elm,$blocker:this.$blocker,options:this.options}}},whQuery.modal.close=function(a){if(whQuery.modal.isActive()){a&&a.preventDefault();var b=getCurrent();return b.close(),b.$elm}},whQuery.modal.isActive=function(){return modals.length>0},whQuery.modal.defaults={closeExisting:!0,escapeClose:!0,clickClose:!0,closeText:"Close",closeClass:"",modalClass:"booster-checkout-hero-modal",spinnerHtml:null,showSpinner:!0,showClose:!0,fadeDuration:null,fadeDelay:1},whQuery.modal.BEFORE_BLOCK="modal:before-block",whQuery.modal.BLOCK="modal:block",whQuery.modal.BEFORE_OPEN="modal:before-open",whQuery.modal.OPEN="modal:open",whQuery.modal.BEFORE_CLOSE="modal:before-close",whQuery.modal.CLOSE="modal:close",whQuery.modal.AFTER_CLOSE="modal:after-close",whQuery.modal.AJAX_SEND="modal:ajax:send",whQuery.modal.AJAX_SUCCESS="modal:ajax:success",whQuery.modal.AJAX_FAIL="modal:ajax:fail",whQuery.modal.AJAX_COMPLETE="modal:ajax:complete",whQuery.fn.modal=function(a){return 1===this.length&&new whQuery.modal(this,a),this},whQuery(document).on("click.modal",'a[rel="modal:close"]',whQuery.modal.close),whQuery(document).on("click.modal",'a[rel="modal:open"]',function(a){a.preventDefault(),whQuery(this).modal()});
+      
+    
+  function whClearCart(){
+    $.ajax({
+      type: "POST",
+      url: "/cart/clear.js",
+      dataType: "JSON",
+      success: function(data){
+      },
+      error: function(data) {
+      }
+    });
+  }
+  
+  function submitNet30(whCart, customer, discount_hash, address, extra_discount_amount){    
+    var paramHash= {net_30: 1, shopify_domain: "{{shop.permanent_domain}}", cart: whCart, customer: customer, discount_hash: discount_hash, address: address, extra_discount_amount: extra_discount_amount};
+	
+    //change button to loading or spinner
+    jQuery.ajax({
+      contentType: "application/json; charset=utf-8",
+      url: "/apps/wholesale_hero",
+      cache: false,
+      dataType: 'json',
+      data: JSON.stringify(paramHash),
+      type: 'POST',
+      success: function (data, success) {        
+        $("#wh-modal-container").html(data.thank_you_message);
+        whClearCart();
+        //return false;
+        setInterval(function(){
+          window.location = "/";
+        }, 1000);
+      }
+    });
+    
+    return false;
+  }
+  
+  $(function(){
+    
+    $(document).on('click', '#wh-30-open', function(){
+      $('#wh-modal-container').modal();
+      return false;
+    });
+      
+    $(document).on('click', '.close-modal', function(){
+      $.modal.close()
+    });
+
+    $(document).on('submit', 'form#net-order-form', function(){
+      var address = {};
+      address.first_name = $("input[name='/address[first_name]']").val();
+      address.last_name = $("input[name='address[last_name]']").val();
+      address.company = $("input[name='address[company]']").val();
+      address.address1 = $("input[name='address[address1]']").val();
+      address.address2 = $("input[name='address[address2]']").val();
+      address.city  = $("input[name='address[city]']").val();
+      address.province  = $("select[name='address[province]']").val();
+      address.country  = $("select[name='address[country]']").val();
+      address.zip  = $("input[name='address[zip]']").val();
+      address.phone  = $("input[name='address[phone]']").val();   
+      
+      submitNet30(window.wh_cart, {
+        email: "{{customer.email | escape}}", 
+        id: {{customer.id}},  
+        tags: {{ customer.tags|json }}
+      }, {
+        discount_code: window.net_30_data.discount_code,
+        discount_value: window.net_30_data.discount_value
+      }, address,window.net_30_data.extra_discount_amount);
+      return false;
+    });
+    
+  });
+  
+</script>
+
+  <div id='wh-modal-container' style='display:none;' class='wh-wrap wh-hero-modal'>
+    
+    <h3 style="font-weight:bold;font-size:22px;">Net30 Checkout</h3>
+    <p style="text-align:left;" id="net-30-summary">Net30 terms</p>
+    
+    <table id="net-order" cellspacing="0" cellpadding="0">          
+      <tbody>
+      {% for item in cart.items %}
+        {% include 'wh_calculate_discount' with item.product %} 
+        {% include 'wh_variant' with item.variant %}
+        {% assign wh_line_price = item.quantity | times: wh_v_price  %} 
+      <tr>
+          <td><img class="images" src="{{ item | img_url: 'small' }}"></td>
+          <td class="line-item-title">
+              {{ item.product.title }} &nbsp;x{{ item.quantity }}<br />
+              {% unless item.variant.title contains 'Default' %}<small>{{ item.variant.title }}</small>{% endunless %}
+          </td>
+          <td class="net-order-prices">
+            {% if wh_line_price < item.line_price %}
+              <s>{{ item.line_price | money }}</s>
+            {% endif %}
+            {{ wh_line_price | money }}
+
+          </td>
+      </tr>
+      {% endfor %}
+      </tbody>
+      <tfoot>               
+       <tr>
+         <td></td>
+         <td class="net-order-total">
+           Total
+         </td>
+         <td class="net-order-prices">
+           <span class="wh-original-cart-total">
+             {{ cart.total_price | money }}
+           </span>
+           <span class="wh-cart-total" style="font-weight:bold;"></span>
+           <div class="additional-notes">
+             <span class="wh-minimums-note"></span>
+           </div>
+         </td>
+       </tr>
+      </tfoot>
+    </table>
+    
+    <hr/>
+    
+  	<h3>Shipping address</h3>
+    <form id="net-order-form" class="submit-address">
+      <input type="text" name="address[first_name]" value="{{ customer.default_address.first_name }}" placeholder="First Name" required>
+      <input type="text" name="address[last_name]" value="{{ customer.default_address.last_name }}" placeholder="Surname" required>
+      <input type="text" name="address[company]" value="{{ customer.default_address.company }}" placeholder="Company" >
+      <input type="text" name="address[address1]" value="{{ customer.default_address.address1 }}" placeholder="Address Line 1" required>
+      <input type="text" name="address[address2]" value="{{ customer.default_address.address2 }}" placeholder="Address Line 2" >
+      <input type="text" name="address[city]" value="{{ customer.default_address.city }}" placeholder="City" required>
+
+      <select id="AddressCountry" name="address[country]" data-default="{{ customer.default_address.country }}">{{ country_option_tags }}</select>
+      <div id="AddressProvinceContainer" style="display:none">
+          <select id="AddressProvince" name="address[province]" data-default="{{ form.province }}"></select>
+      </div>
+
+      <input type="text" name="address[zip]" value="{{ customer.default_address.zip }}" placeholder="Zip/Postcode" autocapitalize="characters" required>
+      <input type="text" name="address[phone]" value="{{ customer.default_address.phone }}" placeholder="Phone" >
+      <button type="submit">Place Order</button>
+
+    </form>
+    
+    
+    <hr/>
+    
+  </div>
+
+<script>
+  new Shopify.CountryProvinceSelector('AddressCountry', 'AddressProvince',{ hideElement: 'AddressProvinceContainer' });
+</script>
+
+{% endif %}

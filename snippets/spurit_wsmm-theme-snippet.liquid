@@ -1,0 +1,35 @@
+<script>
+    var SWPMMParams = {
+        "folderCss":   "https://s3.amazonaws.com/shopify-extensions/wholesale-pricing-membership-manager/css/",
+        "folderStore": "https://s3.amazonaws.com/shopify-extensions/wholesale-pricing-membership-manager/store/",
+        "id" : "634697aac6a1fad948db84b7ffc672be",
+        "app_id": "3",
+        "product" : {{ product | json }},
+        "moneyFormat" : "{{ shop.money_format }}",
+        "productView": "sub-json",
+        "items" : [
+            {%- for item in cart.items -%}
+            {
+                'id': {{item.id}},
+                'quantity': {{item.quantity}},
+                'product': { id:{{item.product_id}}, handle:'{{item.product.handle}}', title:{{item.product.title | json}},variant:{% for variant in item.product.variants %}{% if item.variant_id == variant.id %}{id:{{variant.id}},title:{{variant.title | json}},available:{{variant.available}},price:{{variant.price}},compare_at_price:{% if variant.compare_at_price %}{{variant.compare_at_price}}{% else %}{{variant.price}}{% endif %},inventory_quantity:{{variant.inventory_quantity}}}{% endif %}{% endfor %}},
+                'product_collections': {{item.product.collections | json}}
+            }{%- unless forloop.last -%},{%- endunless -%}
+            {%- endfor -%}
+        ],
+        {% if cart %}
+        "cartSubtotal": {{ cart.original_total_price }},
+        {% endif %}
+        "customer": {'id': {{ customer.id | json }}, 'name': {{ customer.name | json }}, 'tags': {{ customer.tags | json }}}
+        {%- if product -%},
+        "product_collections": {{product.collections | json}} || [],
+            "product": {
+            "price": {{ product.price }},
+            "compare_at": {{ product.compare_at_price_min }},
+            "variants": {{ product.variants | json }}
+        }
+        {%- endif -%}
+
+    };
+</script>
+<script defer="defer" src="https://s3.amazonaws.com/shopify-extensions/wholesale-pricing-membership-manager/js/common.js"></script>

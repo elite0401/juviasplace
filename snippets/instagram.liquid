@@ -1,0 +1,41 @@
+<!-- /snippets/instagram.liquid -->
+<div class="instagram-collection" data-iat="{{ settings.homepage_instagram_access_token }}" style="display:none">
+  <div class="section-title">
+    <h1>{{ 'homepage.instagram.title' | t }}</h1>
+  </div>
+  <div class="wrapper">
+    <div class="instagram-container normal">
+      <div class="box photo" tabindex="0">
+        <figure>
+          <a href="#" target="_blank" tabindex="-1"></a>
+          <figcaption>
+            <p></p>
+            <ul class="social-stats">
+              <li>
+                <a href="#" target="_blank" class="likes" tabindex="-1">
+                  <span class="icon-fallback-text">
+                    <span class="icon icon-like" aria-hidden="true"></span>
+                    <span class="fallback-text">{{ 'homepage.instagram.likes' | t }}</span>
+                    <span class="label"></span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" class="comments" tabindex="-1">
+                  <span class="icon-fallback-text">
+                    <span class="icon icon-comment" aria-hidden="true"></span>
+                    <span class="fallback-text">{{ 'homepage.instagram.comments' | t }}</span>
+                    <span class="label">0</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div class="section-footer">
+    <a href="https://www.instagram.com/juviasplace/" class="button outline" target="_new_blank"><span>{{ 'homepage.instagram.follow_us' | t }}</span></a>
+  </div>
+</div>

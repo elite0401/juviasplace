@@ -1,0 +1,3335 @@
+[
+  {
+    "name": "theme_info",
+    "logo": "https:\/\/cdn.shopify.com\/s\/files\/1\/0883\/0062\/files\/Style-Hatch_logo-black.png?11350048591130731096",
+    "settings": [
+      {
+        "type": "header",
+        "content": "District Theme by Style Hatch"
+      },
+      {
+        "type": "paragraph",
+        "content": "v1.6.4"
+      },
+      {
+        "type": "paragraph",
+        "content": "Do you have questions or need help with the theme? Take a look at our [Shopify theme documentation](http:\/\/help.stylehatch.com\/) or send us an message at [help@stylehatch.com](mailto:help@stylehatch.com). We are here to help you weekdays from 9am to 5pm Pacific Coast Time."
+      },
+      {
+        "type": "paragraph",
+        "content": "See a [changelog of District's updates and improvements](http:\/\/help.stylehatch.com\/article\/243-district-theme-changelog)."
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Set the primary text, accent, and background colors throughout the site. If you need some inspiration, try browsing the theme presets."
+      },
+      {
+        "type": "paragraph",
+        "content": "Some optional theme features like the home page - slide show and newsletter overlay include color options in those section."
+      },
+      {
+        "type": "header",
+        "content": "Primary"
+      },
+      {
+        "type": "color",
+        "id": "primary_text_color",
+        "label": "Text",
+        "default": "#4f4f4f"
+      },
+      {
+        "type": "color",
+        "id": "primary_title_color",
+        "label": "Title",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "primary_background_color",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "content_box_background_color",
+        "label": "Content box background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "primary_accent_color",
+        "label": "Accent",
+        "default": "#27b6cb"
+      },
+      {
+        "type": "checkbox",
+        "id": "primary_dropshadow",
+        "label": "Show drop-shadows on boxes",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_show_borders",
+        "label": "Show borders between sections",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Top bar"
+      },
+      {
+        "type": "color",
+        "id": "site_border_color",
+        "label": "Background",
+        "default": "#27b6cb"
+      },
+      {
+        "type": "color",
+        "id": "site_gradient_color_start",
+        "label": "Background Gradient Start",
+        "default": "#FBD433"
+      },
+      {
+        "type": "color",
+        "id": "site_gradient_color_end",
+        "label": "Background Gradient End",
+        "default": "#EB288B"
+      },
+      {
+        "type": "color",
+        "id": "site_border_text_color",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Site header"
+      },
+      {
+        "type": "color",
+        "id": "site_header_title_text_color",
+        "label": "Title",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "site_header_nav_text_color",
+        "label": "Navigation",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "site_header_background_color",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "site_header_accent_color",
+        "label": "Accent",
+        "default": "#27b6cb"
+      },
+      {
+        "type": "header",
+        "content": "Popup"
+      },
+      {
+        "type": "color",
+        "id": "offer_banner_background_color",
+        "label": "Background",
+        "default": "#1e1e1e"
+      },
+      {
+        "type": "color",
+        "id": "offer_banner_text_color",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "offer_banner_accent_color",
+        "label": "Accent",
+        "default": "#27b6cb"
+      },
+      {
+        "type": "header",
+        "content": "Promotional bar"
+      },
+      {
+        "type": "color",
+        "id": "promo_bar_background_color",
+        "label": "Background",
+        "default": "#209a9a"
+      },
+      {
+        "type": "color",
+        "id": "promo_bar_text_color",
+        "label": "Text",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "promo_bar_accent_color",
+        "label": "Accent",
+        "default": "#e4ffff"
+      },
+      {
+        "type": "header",
+        "content": "Footer"
+      },
+      {
+        "type": "color",
+        "id": "footer_background_color",
+        "label": "Background",
+        "default": "#27b6cb"
+      },
+      {
+        "type": "color",
+        "id": "footer_title_text_color",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "footer_title_accent_color",
+        "label": "Accents",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "footer_title_link_color",
+        "label": "Links",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Password page"
+      },
+      {
+        "type": "color",
+        "id": "password_text_color",
+        "label": "Text",
+        "default": "#4f4f4f"
+      },
+      {
+        "type": "color",
+        "id": "password_title_color",
+        "label": "Title",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "password_background_color",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "password_accent_color",
+        "label": "Accent",
+        "default": "#27b6cb"
+      },
+      {
+        "type": "checkbox",
+        "id": "password_custom_background_enable",
+        "label": "Show background image",
+        "default": false
+      },
+      {
+        "type": "image",
+        "id": "password-page-background.jpg",
+        "label": "Background image",
+        "max-width": 1500,
+        "info": "1500 x 1100px .jpg recommended"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Body"
+      },
+      {
+        "type": "select",
+        "id": "typography_body_family",
+        "label": "Font",
+        "options": [
+          {
+            "value": "'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif",
+            "label": "Avant Garde",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Gill Sans', 'Gill Sans MT', Calibri, sans-serif",
+            "label": "Gill Sans",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+            "label": "Helvetica Neue",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+            "label": "Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif",
+            "label": "Candara",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Geneva, Tahoma, Verdana, sans-serif",
+            "label": "Geneva",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Google_Droid+Sans:400,700_sans",
+            "label": "Droid Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Karla:400,400italic,700,700italic_sans",
+            "label": "Karla",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Lato:400,400italic,700,700italic_sans",
+            "label": "Lato",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Martel+Sans:400,700_sans",
+            "label": "Martel Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Montserrat:400,700_sans",
+            "label": "Montserrat",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Noto+Sans:400,400italic,700,700italic_sans",
+            "label": "Noto Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans:400,400italic,700,700italic_sans",
+            "label": "Open Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans+Condensed:300,300italic",
+            "label": "Open Sans Consensed Thin",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans+Condensed:700",
+            "label": "Open Sans Consensed Bold",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Sans:400,400italic,700,700italic_sans",
+            "label": "PT Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Quantico:400,400italic,700,700italic_sans",
+            "label": "Quantico",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Raleway:400,700_sans",
+            "label": "Raleway",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Roboto:400,400italic,700,700italic_sans",
+            "label": "Roboto",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Source+Sans+Pro:400,400italic,700,700italic_sans",
+            "label": "Source Sans Pro",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Titillium+Web:400,400italic,700,700italic_sans",
+            "label": "Titillium Web",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Ubuntu:400,400italic,700,700italic_sans",
+            "label": "Ubuntu",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif",
+            "label": "Big Calson",
+            "group": "Serif"
+          },
+          {
+            "value": "'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif",
+            "label": "Calisto MT",
+            "group": "Serif"
+          },
+          {
+            "value": "Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif",
+            "label": "Baskerville",
+            "group": "Serif"
+          },
+          {
+            "value": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "Google_Arvo:400,400italic,700,700italic_serif",
+            "label": "Arvo",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Bitter:400,400italic,700_serif",
+            "label": "Bitter",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Crimson+Text:400,400italic,700,700italic_serif",
+            "label": "Crimson Text",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Droid+Serif:400,400italic,700,700italic_serif",
+            "label": "Droid Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Lora:400,400italic,700,700italic_serif",
+            "label": "Lora",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Martel:400,700_serif",
+            "label": "Martel",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Noto+Serif:400,400italic,700,700italic_serif",
+            "label": "Noto Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Noticia+Text:400,400italic,700,700italic_serif",
+            "label": "Noticia Text",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Merriweather:400,400italic,700,700italic_serif",
+            "label": "Merriweather",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Old+Standard+TT:400,400italic,700_serif",
+            "label": "Old Standard",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Serif:400,400italic,700,700italic_serif",
+            "label": "PT Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Serif+Caption:400,400italic_serif",
+            "label": "PT Serif Caption",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Source+Serif+Pro:400,600,700_serif",
+            "label": "Source Serif Pro",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Vollkorn:400,400italic,700,700italic_serif",
+            "label": "Vollkorn",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans:400,700",
+            "label": "Open Sans",
+            "group": "Sans | Google Web Fonts"
+          },
+          {
+            "value": "Google_Poppins:300,400,500,600,700",
+            "label": "Poppins",
+            "group": "Poppins | Google Web Fonts"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Regular"
+      },
+      {
+        "type": "select",
+        "id": "typography_regular_family",
+        "label": "Font",
+        "options": [
+          {
+            "value": "'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif",
+            "label": "Avant Garde",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Gill Sans', 'Gill Sans MT', Calibri, sans-serif",
+            "label": "Gill Sans",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+            "label": "Helvetica Neue",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+            "label": "Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif",
+            "label": "Candara",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Geneva, Tahoma, Verdana, sans-serif",
+            "label": "Geneva",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Google_Droid+Sans:400,700_sans",
+            "label": "Droid Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Karla:400,400italic,700,700italic_sans",
+            "label": "Karla",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Lato:400,400italic,700,700italic_sans",
+            "label": "Lato",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Martel+Sans:400,700_sans",
+            "label": "Martel Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Montserrat:400,700_sans",
+            "label": "Montserrat",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Noto+Sans:400,400italic,700,700italic_sans",
+            "label": "Noto Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans:400,400italic,700,700italic_sans",
+            "label": "Open Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans+Condensed:300,300italic",
+            "label": "Open Sans Consensed Thin",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans+Condensed:700",
+            "label": "Open Sans Consensed Bold",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Sans:400,400italic,700,700italic_sans",
+            "label": "PT Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Quantico:400,400italic,700,700italic_sans",
+            "label": "Quantico",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Raleway:400,700_sans",
+            "label": "Raleway",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Roboto:400,400italic,700,700italic_sans",
+            "label": "Roboto",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Source+Sans+Pro:400,400italic,700,700italic_sans",
+            "label": "Source Sans Pro",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Titillium+Web:400,400italic,700,700italic_sans",
+            "label": "Titillium Web",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Ubuntu:400,400italic,700,700italic_sans",
+            "label": "Ubuntu",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif",
+            "label": "Big Calson",
+            "group": "Serif"
+          },
+          {
+            "value": "'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif",
+            "label": "Calisto MT",
+            "group": "Serif"
+          },
+          {
+            "value": "Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif",
+            "label": "Baskerville",
+            "group": "Serif"
+          },
+          {
+            "value": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "Google_Arvo:400,400italic,700,700italic_serif",
+            "label": "Arvo",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Bitter:400,400italic,700_serif",
+            "label": "Bitter",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Crimson+Text:400,400italic,700,700italic_serif",
+            "label": "Crimson Text",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Droid+Serif:400,400italic,700,700italic_serif",
+            "label": "Droid Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Lora:400,400italic,700,700italic_serif",
+            "label": "Lora",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Martel:400,700_serif",
+            "label": "Martel",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Noto+Serif:400,400italic,700,700italic_serif",
+            "label": "Noto Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Noticia+Text:400,400italic,700,700italic_serif",
+            "label": "Noticia Text",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Merriweather:400,400italic,700,700italic_serif",
+            "label": "Merriweather",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Old+Standard+TT:400,400italic,700_serif",
+            "label": "Old Standard",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Serif:400,400italic,700,700italic_serif",
+            "label": "PT Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Serif+Caption:400,400italic_serif",
+            "label": "PT Serif Caption",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Source+Serif+Pro:400,600,700_serif",
+            "label": "Source Serif Pro",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Vollkorn:400,400italic,700,700italic_serif",
+            "label": "Vollkorn",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans:400,700",
+            "label": "Open Sans",
+            "group": "Sans | Google Web Fonts"
+          },
+          {
+            "value": "Google_Poppins:300,400,500,600,700",
+            "label": "Poppins",
+            "group": "Poppins | Google Web Fonts"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Headings"
+      },
+      {
+        "type": "select",
+        "id": "typography_headings_family",
+        "label": "Font",
+        "options": [
+          {
+            "value": "'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif",
+            "label": "Avant Garde",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Gill Sans', 'Gill Sans MT', Calibri, sans-serif",
+            "label": "Gill Sans",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+            "label": "Helvetica Neue",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+            "label": "Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif",
+            "label": "Candara",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Geneva, Tahoma, Verdana, sans-serif",
+            "label": "Geneva",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Google_Droid+Sans:400,700_sans",
+            "label": "Droid Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Karla:400,400italic,700,700italic_sans",
+            "label": "Karla",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Lato:400,400italic,700,700italic_sans",
+            "label": "Lato",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Martel+Sans:400,700_sans",
+            "label": "Martel Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Montserrat:400,700_sans",
+            "label": "Montserrat",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Noto+Sans:400,400italic,700,700italic_sans",
+            "label": "Noto Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans:400,400italic,700,700italic_sans",
+            "label": "Open Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans+Condensed:300,300italic",
+            "label": "Open Sans Consensed Thin",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans+Condensed:700",
+            "label": "Open Sans Consensed Bold",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Sans:400,400italic,700,700italic_sans",
+            "label": "PT Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Quantico:400,400italic,700,700italic_sans",
+            "label": "Quantico",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Raleway:400,700_sans",
+            "label": "Raleway",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Roboto:400,400italic,700,700italic_sans",
+            "label": "Roboto",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Source+Sans+Pro:400,400italic,700,700italic_sans",
+            "label": "Source Sans Pro",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Titillium+Web:400,400italic,700,700italic_sans",
+            "label": "Titillium Web",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Ubuntu:400,400italic,700,700italic_sans",
+            "label": "Ubuntu",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif",
+            "label": "Big Calson",
+            "group": "Serif"
+          },
+          {
+            "value": "'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif",
+            "label": "Calisto MT",
+            "group": "Serif"
+          },
+          {
+            "value": "Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif",
+            "label": "Baskerville",
+            "group": "Serif"
+          },
+          {
+            "value": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "Google_Arvo:400,400italic,700,700italic_serif",
+            "label": "Arvo",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Bitter:400,400italic,700_serif",
+            "label": "Bitter",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Crimson+Text:400,400italic,700,700italic_serif",
+            "label": "Crimson Text",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Droid+Serif:400,400italic,700,700italic_serif",
+            "label": "Droid Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Lora:400,400italic,700,700italic_serif",
+            "label": "Lora",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Martel:400,700_serif",
+            "label": "Martel",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Noto+Serif:400,400italic,700,700italic_serif",
+            "label": "Noto Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Noticia+Text:400,400italic,700,700italic_serif",
+            "label": "Noticia Text",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Merriweather:400,400italic,700,700italic_serif",
+            "label": "Merriweather",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Old+Standard+TT:400,400italic,700_serif",
+            "label": "Old Standard",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Serif:400,400italic,700,700italic_serif",
+            "label": "PT Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Serif+Caption:400,400italic_serif",
+            "label": "PT Serif Caption",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Source+Serif+Pro:400,600,700_serif",
+            "label": "Source Serif Pro",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Vollkorn:400,400italic,700,700italic_serif",
+            "label": "Vollkorn",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Poppins:300,400,500,600,700",
+            "label": "Poppins",
+            "group": "Poppins | Google Web Fonts"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "typography_headings_capitalize",
+        "label": "Capitalize",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "typography_headings_bold",
+        "label": "Bold page titles",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "select",
+        "id": "typography_navigation_family",
+        "label": "Font",
+        "options": [
+          {
+            "value": "'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif",
+            "label": "Avant Garde",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Gill Sans', 'Gill Sans MT', Calibri, sans-serif",
+            "label": "Gill Sans",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+            "label": "Helvetica Neue",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+            "label": "Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif",
+            "label": "Candara",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Geneva, Tahoma, Verdana, sans-serif",
+            "label": "Geneva",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Google_Droid+Sans:400,700_sans",
+            "label": "Droid Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Karla:400,400italic,700,700italic_sans",
+            "label": "Karla",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Lato:400,400italic,700,700italic_sans",
+            "label": "Lato",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Martel+Sans:400,700_sans",
+            "label": "Martel Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Montserrat:400,700_sans",
+            "label": "Montserrat",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Noto+Sans:400,400italic,700,700italic_sans",
+            "label": "Noto Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans:400,400italic,700,700italic_sans",
+            "label": "Open Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans+Condensed:300,300italic",
+            "label": "Open Sans Consensed Thin",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans+Condensed:700",
+            "label": "Open Sans Consensed Bold",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Sans:400,400italic,700,700italic_sans",
+            "label": "PT Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Quantico:400,400italic,700,700italic_sans",
+            "label": "Quantico",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Raleway:400,700_sans",
+            "label": "Raleway",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Roboto:400,400italic,700,700italic_sans",
+            "label": "Roboto",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Source+Sans+Pro:400,400italic,700,700italic_sans",
+            "label": "Source Sans Pro",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Titillium+Web:400,400italic,700,700italic_sans",
+            "label": "Titillium Web",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Ubuntu:400,400italic,700,700italic_sans",
+            "label": "Ubuntu",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif",
+            "label": "Big Calson",
+            "group": "Serif"
+          },
+          {
+            "value": "'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif",
+            "label": "Calisto MT",
+            "group": "Serif"
+          },
+          {
+            "value": "Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif",
+            "label": "Baskerville",
+            "group": "Serif"
+          },
+          {
+            "value": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "Google_Arvo:400,400italic,700,700italic_serif",
+            "label": "Arvo",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Bitter:400,400italic,700_serif",
+            "label": "Bitter",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Crimson+Text:400,400italic,700,700italic_serif",
+            "label": "Crimson Text",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Droid+Serif:400,400italic,700,700italic_serif",
+            "label": "Droid Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Lora:400,400italic,700,700italic_serif",
+            "label": "Lora",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Martel:400,700_serif",
+            "label": "Martel",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Noto+Serif:400,400italic,700,700italic_serif",
+            "label": "Noto Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Noticia+Text:400,400italic,700,700italic_serif",
+            "label": "Noticia Text",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Merriweather:400,400italic,700,700italic_serif",
+            "label": "Merriweather",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Old+Standard+TT:400,400italic,700_serif",
+            "label": "Old Standard",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Serif:400,400italic,700,700italic_serif",
+            "label": "PT Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Serif+Caption:400,400italic_serif",
+            "label": "PT Serif Caption",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Source+Serif+Pro:400,600,700_serif",
+            "label": "Source Serif Pro",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Vollkorn:400,400italic,700,700italic_serif",
+            "label": "Vollkorn",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Poppins:300,400,500,600,700",
+            "label": "Poppins",
+            "group": "Poppins | Google Web Fonts"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Promotional bar",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Set up a promotional bar at the top of your store to announce sales, shipping deals or general information. Customize the bar colors in the Colors menu."
+      },
+      {
+        "type": "checkbox",
+        "id": "promo_bar_enable",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "promo_bar_scroll_lock_enable",
+        "label": "Show while scrolling",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "promo_bar_homepage_limit_enable",
+        "label": "Only show on home page",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "promo_bar_hide_delay",
+        "label": "Hide after delay",
+        "options": [
+          {
+            "value": "no-delay",
+            "label": "Keep visible"
+          },
+          {
+            "value": "5000",
+            "label": "5 seconds"
+          },
+          {
+            "value": "10000",
+            "label": "10 seconds"
+          },
+          {
+            "value": "15000",
+            "label": "15 seconds"
+          },
+          {
+            "value": "20000",
+            "label": "20 seconds"
+          },
+          {
+            "value": "25000",
+            "label": "25 seconds"
+          },
+          {
+            "value": "30000",
+            "label": "30 second"
+          }
+        ],
+        "default": "no-delay"
+      },
+      {
+        "type": "textarea",
+        "id": "promo_bar_text",
+        "label": "Text",
+        "default": "Free shipping on all orders over $100 <a href=\"#\">Learn More<\/a>",
+        "info": "Use basic HTML to format text"
+      },
+      {
+        "type": "radio",
+        "id": "promo_bar_text_alignment",
+        "label": "Text alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "radio",
+        "id": "promo_bar_size",
+        "label": "Vertical size",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "default"
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Set up a popup overlay window to capture email addresses, welcome people to your store or announce sales. Enable the newsletter signup option in the Newsletter menu. Customize the bar colors in the Colors menu."
+      },
+      {
+        "type": "checkbox",
+        "id": "popup_enable",
+        "label": "Enable",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "popup_homepage_limit_enable",
+        "label": "Only show on home page",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "popup_visitor_limit_enable",
+        "label": "Only enable for visitors",
+        "default": true,
+        "info": "Logged in customers will not see the popup."
+      },
+      {
+        "type": "select",
+        "id": "popup_show_delay",
+        "label": "Show after delay",
+        "options": [
+          {
+            "value": "0",
+            "label": "0 Seconds"
+          },
+          {
+            "value": "1000",
+            "label": "1 Second"
+          },
+          {
+            "value": "2000",
+            "label": "2 Seconds"
+          },
+          {
+            "value": "3000",
+            "label": "3 Seconds"
+          },
+          {
+            "value": "4000",
+            "label": "4 Seconds"
+          },
+          {
+            "value": "5000",
+            "label": "5 Seconds"
+          }
+        ],
+        "default": "3000"
+      },
+      {
+        "type": "select",
+        "id": "popup_show_again_delay",
+        "label": "Enable again after delay",
+        "options": [
+          {
+            "value": "1",
+            "label": "1 day"
+          },
+          {
+            "value": "7",
+            "label": "1 week"
+          },
+          {
+            "value": "14",
+            "label": "2 weeks"
+          },
+          {
+            "value": "21",
+            "label": "3 Weeks"
+          },
+          {
+            "value": "28",
+            "label": "4 Weeks"
+          },
+          {
+            "value": "0",
+            "label": "Instantly (debug mode)"
+          }
+        ],
+        "default": "7",
+        "info": "After a visitor sees the popup window show it again after this delay."
+      },
+      {
+        "type": "page",
+        "id": "popup_page",
+        "label": "Choose page for content"
+      },
+      {
+        "type": "checkbox",
+        "id": "popup_center_text_enable",
+        "label": "Center text",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "popup_header_image_enable",
+        "label": "Show header image",
+        "default": false
+      },
+      {
+        "type": "image",
+        "id": "popup-header.jpg",
+        "label": "Header image",
+        "max-width": 800,
+        "info": "400 x 200px .jpg recommended"
+      }
+    ]
+  },
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "checkbox",
+        "id": "logo_use_image",
+        "label": "Use a custom logo"
+      },
+      {
+        "type": "image",
+        "id": "logo.png",
+        "label": "Image",
+        "max-width": 720,
+        "info": "720px wide .png recommended"
+      },
+      {
+        "type": "select",
+        "id": "logo_max_width",
+        "label": "Maximum width",
+        "options": [
+          {
+            "value": "360px",
+            "label": "360px"
+          },
+          {
+            "value": "280px",
+            "label": "280px"
+          },
+          {
+            "value": "200px",
+            "label": "200px"
+          },
+          {
+            "value": "120px",
+            "label": "120px"
+          }
+        ],
+        "default": "280px",
+        "info": "For retina displays the logo image should be twice the maximum width"
+      },
+      {
+        "type": "header",
+        "content": "Top bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "top_bar_scroll_lock_enable",
+        "label": "Show while scrolling",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Layout and options"
+      },
+      {
+        "type": "radio",
+        "id": "header_layout",
+        "label": "Header layout",
+        "options": [
+          {
+            "value": "horizontal",
+            "label": "Horizontal"
+          },
+          {
+            "value": "vertical",
+            "label": "Vertical"
+          }
+        ],
+        "default": "vertical"
+      },
+      {
+        "type": "radio",
+        "id": "site_border_style",
+        "label": "Border style",
+        "options": [
+          {
+            "value": "all",
+            "label": "Full site border"
+          },
+          {
+            "value": "top",
+            "label": "Only top border"
+          }
+        ],
+        "default": "all"
+      },
+      {
+        "type": "checkbox",
+        "id": "site_border_full_width",
+        "label": "Expand top bar navigation full width",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "nav_mobile_menu_expand_enable",
+        "label": "Enable mobile navigation expanding dropdown menus",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Favicon"
+      },
+      {
+        "type": "checkbox",
+        "id": "favicon_enable",
+        "label": "Use a custom icon"
+      },
+      {
+        "type": "image",
+        "id": "favicon.png",
+        "label": "Image",
+        "max-width": 32,
+        "max-height": 32,
+        "info": "32 x 32px .png required"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Edit the footer column titles and text descriptions in the language settings (theme options > edit languages)."
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_payment_icons_enable",
+        "label": "Show payment icons",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Menus"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_primary_links_column_enable",
+        "label": "Show primary column",
+        "default": true
+      },
+      {
+        "type": "link_list",
+        "id": "footer_primary_links",
+        "label": "Choose primary"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_second_area_enable",
+        "label": "Show Footer Logo",
+        "default": true
+      },
+      {
+        "type": "image",
+        "id": "footer-logo.png",
+        "label": "Choose Image",
+        "max-width": 190,
+        "max-height": 190,
+        "info": "190 x 190px .png preferred"
+      },
+      {
+        "type": "header",
+        "content": "Contact info"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_contact_info_enable",
+        "label": "Show",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "footer_contact_info_email",
+        "label": "Email address",
+        "default": "support@example.com"
+      },
+      {
+        "type": "text",
+        "id": "footer_contact_info_phone",
+        "label": "Phone number",
+        "default": "1.877.555.9300"
+      },
+      {
+        "type": "text",
+        "id": "footer_privacy",
+        "label": "Privacy",
+        "default": "Privacy Policy"
+      },
+      {
+        "type": "text",
+        "id": "footer_privacy_link",
+        "label": "Privacy Link"
+      },
+      {
+        "type": "text",
+        "id": "footer_terms",
+        "label": "Terms and Conditions",
+        "default": "Terms and Conditions"
+      },
+      {
+        "type": "text",
+        "id": "footer_terms_link",
+        "label": "Terms Link"
+      }
+    ]
+  },
+  {
+    "name": "Home page - slideshow",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "See documenation on [Setting up the home page slideshow](http:\/\/help.stylehatch.com\/article\/248-setting-up-the-homepage-hero-slider)"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_hero_slider_enable",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "homepage_hero_slider_delay",
+        "label": "Rotation interval",
+        "options": [
+          {
+            "value": "false",
+            "label": "Disable autoplay"
+          },
+          {
+            "value": "1000",
+            "label": "1 Second"
+          },
+          {
+            "value": "2000",
+            "label": "2 Seconds"
+          },
+          {
+            "value": "3000",
+            "label": "3 Seconds"
+          },
+          {
+            "value": "4000",
+            "label": "4 Seconds"
+          },
+          {
+            "value": "5000",
+            "label": "5 Seconds"
+          },
+          {
+            "value": "6000",
+            "label": "6 Seconds"
+          },
+          {
+            "value": "7000",
+            "label": "7 Seconds"
+          },
+          {
+            "value": "8000",
+            "label": "8 Seconds"
+          },
+          {
+            "value": "9000",
+            "label": "9 Seconds"
+          },
+          {
+            "value": "10000",
+            "label": "10 Seconds"
+          }
+        ],
+        "default": "3000"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_hero_full_width",
+        "label": "Expand images to browser width",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_hero_slider_arrows_enable",
+        "label": "Show previous and next arrows",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Slide 1"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_hero_image_1_enable",
+        "label": "Show",
+        "default": true
+      },
+      {
+        "type": "image",
+        "id": "homepage_hero_image_1.jpg",
+        "label": "Image",
+        "max-width": 1500,
+        "info": "1500 x 600px .jpg recommended"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_1_url",
+        "label": "Link URL",
+        "info": "Include https:\/\/ in the URL or use relative URLs like \/collections\/all"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_1_alt",
+        "label": "Image alt text"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_1_title",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "homepage_hero_image_1_text",
+        "label": "Subheading",
+        "info": "Use basic HTML to format text"
+      },
+      {
+        "type": "select",
+        "id": "homepage_hero_image_1_text_placement",
+        "label": "Text placement",
+        "options": [
+          {
+            "value": "align-start justify-start",
+            "label": "Top left"
+          },
+          {
+            "value": "align-start justify-center",
+            "label": "Top center"
+          },
+          {
+            "value": "align-start justify-end",
+            "label": "Top right"
+          },
+          {
+            "value": "align-center justify-start",
+            "label": "Middle left"
+          },
+          {
+            "value": "align-center justify-center",
+            "label": "Middle center"
+          },
+          {
+            "value": "align-center justify-end",
+            "label": "Middle right"
+          },
+          {
+            "value": "align-end justify-start",
+            "label": "Bottom left"
+          },
+          {
+            "value": "align-end justify-center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "align-end justify-end",
+            "label": "Bottom right"
+          }
+        ],
+        "default": "align-center justify-center"
+      },
+      {
+        "type": "color",
+        "id": "homepage_hero_image_1_text_color",
+        "label": "Text color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "homepage_hero_image_1_accent_color",
+        "label": "Accent color",
+        "default": "#27b6cb",
+        "info": "For buttons and rollovers"
+      },
+      {
+        "type": "header",
+        "content": "Slide 2"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_hero_image_2_enable",
+        "label": "Show",
+        "default": false
+      },
+      {
+        "type": "image",
+        "id": "homepage_hero_image_2.jpg",
+        "label": "Image",
+        "max-width": 1500,
+        "info": "1500 x 600px .jpg recommended"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_2_url",
+        "label": "Link URL",
+        "info": "Include https:\/\/ in the URL or use relative URLs like \/collections\/all"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_2_alt",
+        "label": "Image alt text"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_2_title",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "homepage_hero_image_2_text",
+        "label": "Subheading",
+        "info": "Use basic HTML to format text"
+      },
+      {
+        "type": "select",
+        "id": "homepage_hero_image_2_text_placement",
+        "label": "Text placement",
+        "options": [
+          {
+            "value": "align-start justify-start",
+            "label": "Top left"
+          },
+          {
+            "value": "align-start justify-center",
+            "label": "Top center"
+          },
+          {
+            "value": "align-start justify-end",
+            "label": "Top right"
+          },
+          {
+            "value": "align-center justify-start",
+            "label": "Middle left"
+          },
+          {
+            "value": "align-center justify-center",
+            "label": "Middle center"
+          },
+          {
+            "value": "align-center justify-end",
+            "label": "Middle right"
+          },
+          {
+            "value": "align-end justify-start",
+            "label": "Bottom left"
+          },
+          {
+            "value": "align-end justify-center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "align-end justify-end",
+            "label": "Bottom right"
+          }
+        ],
+        "default": "align-center justify-center"
+      },
+      {
+        "type": "color",
+        "id": "homepage_hero_image_2_text_color",
+        "label": "Text color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "homepage_hero_image_2_accent_color",
+        "label": "Accent color",
+        "default": "#27b6cb",
+        "info": "For buttons and rollovers"
+      },
+      {
+        "type": "header",
+        "content": "Slide 3"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_hero_image_3_enable",
+        "label": "Show",
+        "default": false
+      },
+      {
+        "type": "image",
+        "id": "homepage_hero_image_3.jpg",
+        "label": "Image",
+        "max-width": 1500,
+        "info": "1500 x 600px .jpg recommended"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_3_url",
+        "label": "Link URL",
+        "info": "Include https:\/\/ in the URL or use relative URLs like \/collections\/all"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_3_alt",
+        "label": "Image alt text"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_3_title",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "homepage_hero_image_3_text",
+        "label": "Subheading",
+        "info": "Use basic HTML to format text"
+      },
+      {
+        "type": "select",
+        "id": "homepage_hero_image_3_text_placement",
+        "label": "Text placement",
+        "options": [
+          {
+            "value": "align-start justify-start",
+            "label": "Top left"
+          },
+          {
+            "value": "align-start justify-center",
+            "label": "Top center"
+          },
+          {
+            "value": "align-start justify-end",
+            "label": "Top right"
+          },
+          {
+            "value": "align-center justify-start",
+            "label": "Middle left"
+          },
+          {
+            "value": "align-center justify-center",
+            "label": "Middle center"
+          },
+          {
+            "value": "align-center justify-end",
+            "label": "Middle right"
+          },
+          {
+            "value": "align-end justify-start",
+            "label": "Bottom left"
+          },
+          {
+            "value": "align-end justify-center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "align-end justify-end",
+            "label": "Bottom right"
+          }
+        ],
+        "default": "align-center justify-center"
+      },
+      {
+        "type": "color",
+        "id": "homepage_hero_image_3_text_color",
+        "label": "Text color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "homepage_hero_image_3_accent_color",
+        "label": "Accent color",
+        "default": "#27b6cb",
+        "info": "For buttons and rollovers"
+      },
+      {
+        "type": "header",
+        "content": "Slide 4"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_hero_image_4_enable",
+        "label": "Show",
+        "default": false
+      },
+      {
+        "type": "image",
+        "id": "homepage_hero_image_4.jpg",
+        "label": "Image",
+        "max-width": 1500,
+        "info": "1500 x 600px .jpg recommended"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_4_url",
+        "label": "Link URL",
+        "info": "Include https:\/\/ in the URL or use relative URLs like \/collections\/all"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_4_alt",
+        "label": "Image alt text"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_4_title",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "homepage_hero_image_4_text",
+        "label": "Subheading",
+        "info": "Use basic HTML to format text"
+      },
+      {
+        "type": "select",
+        "id": "homepage_hero_image_4_text_placement",
+        "label": "Text placement",
+        "options": [
+          {
+            "value": "align-start justify-start",
+            "label": "Top left"
+          },
+          {
+            "value": "align-start justify-center",
+            "label": "Top center"
+          },
+          {
+            "value": "align-start justify-end",
+            "label": "Top right"
+          },
+          {
+            "value": "align-center justify-start",
+            "label": "Middle left"
+          },
+          {
+            "value": "align-center justify-center",
+            "label": "Middle center"
+          },
+          {
+            "value": "align-center justify-end",
+            "label": "Middle right"
+          },
+          {
+            "value": "align-end justify-start",
+            "label": "Bottom left"
+          },
+          {
+            "value": "align-end justify-center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "align-end justify-end",
+            "label": "Bottom right"
+          }
+        ],
+        "default": "align-center justify-center"
+      },
+      {
+        "type": "color",
+        "id": "homepage_hero_image_4_text_color",
+        "label": "Text color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "homepage_hero_image_4_accent_color",
+        "label": "Accent color",
+        "default": "#27b6cb",
+        "info": "For buttons and rollovers"
+      },
+      {
+        "type": "header",
+        "content": "Slide 5"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_hero_image_5_enable",
+        "label": "Show",
+        "default": false
+      },
+      {
+        "type": "image",
+        "id": "homepage_hero_image_5.jpg",
+        "label": "Image",
+        "max-width": 1500,
+        "info": "1500 x 600px .jpg recommended"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_5_url",
+        "label": "Link URL",
+        "info": "Include https:\/\/ in the URL or use relative URLs like \/collections\/all"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_5_alt",
+        "label": "Image alt text"
+      },
+      {
+        "type": "text",
+        "id": "homepage_hero_image_5_title",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "homepage_hero_image_5_text",
+        "label": "Subheading",
+        "info": "Use basic HTML to format text"
+      },
+      {
+        "type": "select",
+        "id": "homepage_hero_image_5_text_placement",
+        "label": "Text placement",
+        "options": [
+          {
+            "value": "align-start justify-start",
+            "label": "Top left"
+          },
+          {
+            "value": "align-start justify-center",
+            "label": "Top center"
+          },
+          {
+            "value": "align-start justify-end",
+            "label": "Top right"
+          },
+          {
+            "value": "align-center justify-start",
+            "label": "Middle left"
+          },
+          {
+            "value": "align-center justify-center",
+            "label": "Middle center"
+          },
+          {
+            "value": "align-center justify-end",
+            "label": "Middle right"
+          },
+          {
+            "value": "align-end justify-start",
+            "label": "Bottom left"
+          },
+          {
+            "value": "align-end justify-center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "align-end justify-end",
+            "label": "Bottom right"
+          }
+        ],
+        "default": "align-center justify-center"
+      },
+      {
+        "type": "color",
+        "id": "homepage_hero_image_5_text_color",
+        "label": "Text color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "homepage_hero_image_5_accent_color",
+        "label": "Accent color",
+        "default": "#27b6cb",
+        "info": "For buttons and rollovers"
+      }
+    ]
+  },
+  {
+    "name": "Home page - featured products",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Documentation on [adding product collections to the home page](http:\/\/help.stylehatch.com\/article\/246-adding-product-collections-to-the-homepage)."
+      },
+      {
+        "type": "header",
+        "content": "Featured collection"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_featured_collection_enable",
+        "label": "Enable"
+      },
+      {
+        "type": "collection",
+        "id": "homepage_featured_collection",
+        "label": "Choose collection"
+      },
+      {
+        "type": "text",
+        "id": "homepage_featured_collection_title",
+        "label": "Title",
+        "default": "Featured Products"
+      },
+      {
+        "type": "select",
+        "id": "homepage_featured_collection_count",
+        "label": "Number of products",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          },
+          {
+            "value": "8",
+            "label": "8"
+          }
+        ],
+        "default": "6"
+      },
+      {
+        "type": "header",
+        "content": "Simple collection"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_simple_collection_enable",
+        "label": "Enable"
+      },
+      {
+        "type": "collection",
+        "id": "homepage_simple_collection",
+        "label": "Choose collection"
+      },
+      {
+        "type": "select",
+        "id": "homepage_simple_collection_count",
+        "label": "Number of products",
+        "options": [
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "8",
+            "label": "8"
+          },
+          {
+            "value": "12",
+            "label": "12"
+          },
+          {
+            "value": "16",
+            "label": "16"
+          }
+        ],
+        "default": "4"
+      }
+    ]
+  },
+  {
+    "name": "Home page - Collection",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Documentation on [adding product collections to the home page](http:\/\/help.stylehatch.com\/article\/246-adding-product-collections-to-the-homepage)."
+      },
+      {
+        "type": "header",
+        "content": "collection"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_collection_enable",
+        "label": "Enable"
+      },
+      {
+        "type": "collection",
+        "id": "homepage_collection",
+        "label": "Choose collection"
+      },
+      {
+        "type": "text",
+        "id": "homepage_collection_title",
+        "label": "Title",
+        "default": "Bundles"
+      },
+      {
+        "type": "select",
+        "id": "homepage_collection_count",
+        "label": "Number of products",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          },
+          {
+            "value": "8",
+            "label": "8"
+          }
+        ],
+        "default": "6"
+      }
+    ]
+  },
+  {
+    "name": "Home page - Video Slider",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "homepage_video_enable",
+        "label": "Show Video Slider"
+      },
+      {
+        "type": "header",
+        "content": "Slider1"
+      },
+      {
+        "type": "text",
+        "id": "v_slider_url_1",
+        "label": "Link"
+      },
+      {
+        "type": "text",
+        "id": "v_slider_title_1",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "v_slider_content_1",
+        "label": "Content"
+      },
+      {
+        "type": "header",
+        "content": "Slider2"
+      },
+      {
+        "type": "text",
+        "id": "v_slider_url_2",
+        "label": "Link"
+      },
+      {
+        "type": "text",
+        "id": "v_slider_title_2",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "v_slider_content_2",
+        "label": "Content"
+      }
+    ]
+  },
+  {
+    "name": "Home page - featured content",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Documentation on [adding content to the home page](http:\/\/help.stylehatch.com\/article\/247-adding-content-to-the-homepage)"
+      },
+      {
+        "type": "header",
+        "content": "Main"
+      },
+      {
+        "type": "page",
+        "id": "homepage_featured_page",
+        "label": "Choose page"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_featured_page_full_width",
+        "label": "Span full width",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_featured_page_show_title",
+        "label": "Show page title",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_featured_page_larger_text_enable",
+        "label": "Increase page content font size by 25%",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Secondary"
+      },
+      {
+        "type": "page",
+        "id": "homepage_secondary_page",
+        "label": "Choose page"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_secondary_page_full_width",
+        "label": "Span full width",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_secondary_page_show_title",
+        "label": "Show page title",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Bottom"
+      },
+      {
+        "type": "page",
+        "id": "homepage_bottom_page",
+        "label": "Choose page"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_bottom_page_full_width",
+        "label": "Span full width",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_bottom_page_show_title",
+        "label": "Show page title",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Home page - featured grid",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Add one to five grid images to link to product collections, individual products, your blog or any other URL. For best results ensure all grid images are identical in size."
+      },
+      {
+        "type": "header",
+        "content": "Featured grid"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_featured_grid_enable",
+        "label": "Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_featured_grid_title_enable",
+        "label": "Show title",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "homepage_featured_grid_count",
+        "label": "Number of boxes",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          }
+        ],
+        "default": "2"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_featured_grid_zoom_enable",
+        "label": "Use zoom hover effect",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_featured_grid_rollover_enable",
+        "label": "Use rollover images",
+        "default": false
+      },
+      {
+        "type": "radio",
+        "id": "homepage_featured_grid_label",
+        "label": "Box title position",
+        "options": [
+          {
+            "value": "over",
+            "label": "Over image"
+          },
+          {
+            "value": "below",
+            "label": "Below image"
+          }
+        ],
+        "default": "over"
+      },
+      {
+        "type": "header",
+        "content": "Box 1"
+      },
+      {
+        "type": "image",
+        "id": "homepage_featured_box_1_image.jpg",
+        "label": "Image",
+        "info": "640 x 540px .jpg recommended"
+      },
+      {
+        "type": "image",
+        "id": "homepage_featured_box_1_image-o.jpg",
+        "label": "Image rollover",
+        "info": "Optional. 640 x 540px .jpg recommended. Match box image size."
+      },
+      {
+        "type": "text",
+        "id": "homepage_featured_box_1_url",
+        "label": "Link URL",
+        "info": "Use full URL. For example http:\/\/district-theme-demo.myshopify.com\/collections\/all"
+      },
+      {
+        "type": "text",
+        "id": "homepage_featured_box_1_title",
+        "label": "Title",
+        "default": "Grid Box Title"
+      },
+      {
+        "type": "header",
+        "content": "Box 2"
+      },
+      {
+        "type": "image",
+        "id": "homepage_featured_box_2_image.jpg",
+        "label": "Image",
+        "info": "640 x 540px .jpg recommended"
+      },
+      {
+        "type": "image",
+        "id": "homepage_featured_box_2_image-o.jpg",
+        "label": "Image rollover",
+        "info": "Optional. 640 x 540px .jpg recommended. Match box image size."
+      },
+      {
+        "type": "text",
+        "id": "homepage_featured_box_2_url",
+        "label": "Link URL",
+        "info": "Use full URL. For example http:\/\/district-theme-demo.myshopify.com\/collections\/all"
+      },
+      {
+        "type": "text",
+        "id": "homepage_featured_box_2_title",
+        "label": "Title",
+        "default": "Grid Box Title"
+      },
+      {
+        "type": "header",
+        "content": "Box 3"
+      },
+      {
+        "type": "image",
+        "id": "homepage_featured_box_3_image.jpg",
+        "label": "Image",
+        "info": "640 x 540px .jpg recommended"
+      },
+      {
+        "type": "image",
+        "id": "homepage_featured_box_3_image-o.jpg",
+        "label": "Image rollover",
+        "info": "Optional. 640 x 540px .jpg recommended. Match box image size."
+      },
+      {
+        "type": "text",
+        "id": "homepage_featured_box_3_url",
+        "label": "Link URL",
+        "info": "Use full URL. For example http:\/\/district-theme-demo.myshopify.com\/collections\/all"
+      },
+      {
+        "type": "text",
+        "id": "homepage_featured_box_3_title",
+        "label": "Title"
+      },
+      {
+        "type": "header",
+        "content": "Box 4"
+      },
+      {
+        "type": "image",
+        "id": "homepage_featured_box_4_image.jpg",
+        "label": "Image",
+        "info": "640 x 540px .jpg recommended"
+      },
+      {
+        "type": "image",
+        "id": "homepage_featured_box_4_image-o.jpg",
+        "label": "Image rollover",
+        "info": "Optional. 640 x 540px .jpg recommended. Match box image size."
+      },
+      {
+        "type": "text",
+        "id": "homepage_featured_box_4_url",
+        "label": "Link URL",
+        "info": "Use full URL. For example http:\/\/district-theme-demo.myshopify.com\/collections\/all"
+      },
+      {
+        "type": "text",
+        "id": "homepage_featured_box_4_title",
+        "label": "Title"
+      },
+      {
+        "type": "header",
+        "content": "Box 5"
+      },
+      {
+        "type": "image",
+        "id": "homepage_featured_box_5_image.jpg",
+        "label": "Image",
+        "info": "640 x 540px .jpg recommended"
+      },
+      {
+        "type": "image",
+        "id": "homepage_featured_box_5_image-o.jpg",
+        "label": "Image rollover",
+        "info": "Optional. 640 x 540px .jpg recommended. Match box image size."
+      },
+      {
+        "type": "text",
+        "id": "homepage_featured_box_5_url",
+        "label": "Link URL",
+        "info": "Use full URL. For example http:\/\/district-theme-demo.myshopify.com\/collections\/all"
+      },
+      {
+        "type": "text",
+        "id": "homepage_featured_box_5_title",
+        "label": "Title"
+      }
+    ]
+  },
+  {
+    "name": "Home page - Instagram",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "homepage_instagram_enable",
+        "label": "Enable Instagram grid"
+      },
+      {
+        "type": "text",
+        "id": "homepage_instagram_access_token",
+        "label": "Instagram access token",
+        "info": "Generate your access token at [stylehatch.com\/instagram](http:\/\/stylehatch.co\/instagram\/)"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_instagram_full_width",
+        "label": "Fill Instagram grid full width",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "homepage_instagram_images",
+        "label": "Number of images to show",
+        "options": [
+          {
+            "value": "6",
+            "label": "6"
+          },
+          {
+            "value": "12",
+            "label": "12"
+          },
+          {
+            "value": "18",
+            "label": "18"
+          }
+        ],
+        "default": "12"
+      }
+    ]
+  },
+  {
+    "name": "Home page - featured blog",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Recent posts"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_recent_posts_enable",
+        "label": "Enable"
+      },
+      {
+        "type": "blog",
+        "id": "homepage_recent_posts_blog",
+        "label": "Choose blog"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_recent_posts_image_first_enable",
+        "label": "Show article image first",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_recent_posts_date_enable",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_recent_posts_read_more_enable",
+        "label": "Show read more button",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_recent_posts_exerpt_enable",
+        "label": "Show article excerpt",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_recent_posts_center_enable",
+        "label": "Center text",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Product page",
+    "settings": [
+      {
+        "type": "select",
+        "id": "product_thumbnails_placement",
+        "label": "Thumbnails placement",
+        "options": [
+          {
+            "value": "side",
+            "label": "Side"
+          },
+          {
+            "value": "below",
+            "label": "Below"
+          },
+          {
+            "value": "hide",
+            "label": "Hide"
+          }
+        ],
+        "default": "side"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_featured_zoom_enable",
+        "label": "Enable image zoom",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "product_featured_lightbox_enable",
+        "label": "Enable image lightbox",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "product_featured_scale_enabled",
+        "label": "Upscale featured product images",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "product_vendor_enable",
+        "label": "Show product vendor names",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "product_quantity_enable",
+        "label": "Show quantity selector",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "product_box_padding",
+        "label": "Show background on product details",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "product_related_enable",
+        "label": "Show related products",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "product_instagram_images",
+        "label": "Number of images to show",
+        "options": [
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          }
+        ],
+        "default": "3"
+      }
+    ]
+  },
+  {
+    "name": "Collection page",
+    "settings": [
+      {
+        "type": "select",
+        "id": "collections_products_per_page",
+        "label": "Number of products on each page",
+        "options": [
+          {
+            "value": "12",
+            "label": "12"
+          },
+          {
+            "value": "24",
+            "label": "24"
+          },
+          {
+            "value": "36",
+            "label": "36"
+          },
+          {
+            "value": "48",
+            "label": "48"
+          }
+        ],
+        "default": "12"
+      },
+      {
+        "type": "select",
+        "id": "collections_product_columns",
+        "label": "Number of columns to show on mobile",
+        "options": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          }
+        ],
+        "default": "1"
+      },
+      {
+        "type": "select",
+        "id": "collections_image_placement",
+        "label": "Collection image placement",
+        "options": [
+          {
+            "value": "default",
+            "label": "After collection title"
+          },
+          {
+            "value": "above",
+            "label": "After navigation"
+          },
+          {
+            "value": "above-full",
+            "label": "After navigation full width"
+          },
+          {
+            "value": "hidden",
+            "label": "Hidden"
+          }
+        ],
+        "default": "default"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_product_vendor_enable",
+        "label": "Show product vendor names",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Product variant images"
+      },
+      {
+        "type": "paragraph",
+        "content": "For best results the primary and second product images should be the same size dimension."
+      },
+      {
+        "type": "checkbox",
+        "id": "product_variant_image_enable",
+        "label": "Show variant product image on rollover",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Sidebar"
+      },
+      {
+        "type": "checkbox",
+        "id": "collections_sidebar_enable",
+        "label": "Show",
+        "default": true
+      },
+      {
+        "type": "link_list",
+        "id": "collections_sidebar_link_list_a",
+        "label": "Menu 1"
+      },
+      {
+        "type": "link_list",
+        "id": "collections_sidebar_link_list_b",
+        "label": "Menu 2"
+      },
+      {
+        "type": "link_list",
+        "id": "collections_sidebar_link_list_c",
+        "label": "Menu 3"
+      },
+      {
+        "type": "checkbox",
+        "id": "collections_sidebar_tags_enable",
+        "label": "Show product tag links",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "About page",
+    "settings": [
+      {
+        "type": "image",
+        "id": "about-main.png",
+        "label": "Choose Main Image",
+        "max-width": 1200,
+        "max-height": 400,
+        "info": "1200 x 400px .png preferred"
+      },
+      {
+        "type": "image",
+        "id": "about-side.png",
+        "label": "Choose Sidebar Image",
+        "max-width": 440,
+        "max-height": 570,
+        "info": "440 x 570px .png preferred"
+      }
+    ]
+  },
+  {
+    "name": "Blog page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "blog_title_enable",
+        "label": "Show blog title",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_image_first_enable",
+        "label": "Show article image first",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_author_enable",
+        "label": "Show author",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_date_enable",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_title_center_enable",
+        "label": "Center article title",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Blog list"
+      },
+      {
+        "type": "select",
+        "id": "blog_layout",
+        "label": "Layout",
+        "options": [
+          {
+            "value": "column",
+            "label": "Single column"
+          },
+          {
+            "value": "columns",
+            "label": "Two columns"
+          },
+          {
+            "value": "featured-columns",
+            "label": "Featured two columns"
+          }
+        ],
+        "default": "column"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_list_tags_enable",
+        "label": "Show tags",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_list_comment_count_enable",
+        "label": "Show comment count",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Sidebar"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_sidebar_image_enable",
+        "label": "Show image",
+        "default": false
+      },
+      {
+        "type": "image",
+        "id": "blog-sidebar.jpg",
+        "label": "Choose image",
+        "max-width": 544,
+        "info": "272 x 160px .jpg recommended"
+      },
+      {
+        "type": "text",
+        "id": "blog_sidebar_image_url",
+        "label": "Image link URL",
+        "info": "Use full URL. For example http:\/\/district-theme-demo.myshopify.com\/collections\/all"
+      },
+      {
+        "type": "link_list",
+        "id": "blog_sidebar_link_list",
+        "label": "Choose menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_categories_enable",
+        "label": "Show tag categories",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Cart page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "cart_notes_enable",
+        "label": "Enable order notes"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_vendor_enable",
+        "label": "Show product vendor names"
+      },
+      {
+        "type": "checkbox",
+        "id": "ajax_cart_enable",
+        "label": "Stay on current page when an item is added to the cart",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Empty cart suggested collection"
+      },
+      {
+        "type": "paragraph",
+        "content": "Choose a collection to show if the cart is empty. This collection will also be used for searches with no results."
+      },
+      {
+        "type": "collection",
+        "id": "extra_featured_products",
+        "label": "Choose collection"
+      }
+    ]
+  },
+  {
+    "name": "Festival",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "festival_video_enable",
+        "label": "Enable Festival Video"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Accounts"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter",
+        "info": "https:\/\/www.twitter.com\/stylehatch"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook",
+        "info": "https:\/\/www.facebook.com\/stylehatch"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram",
+        "info": "https:\/\/www.instagram.com\/stylehatch"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "Pinterest",
+        "info": "https:\/\/www.pinterest.com\/stylehatch"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "Tumblr",
+        "info": "http:\/\/stylehatch.tumblr.com"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "YouTube",
+        "info": "https:\/\/www.youtube.com\/stylehatch"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "Snapchat",
+        "info": "https:\/\/www.snapchat.com\/add\/stylehatch"
+      },
+      {
+        "type": "text",
+        "id": "social_vine_link",
+        "label": "Vine",
+        "info": "https:\/\/vine.com\/stylehatch"
+      },
+      {
+        "type": "text",
+        "id": "social_spotify_link",
+        "label": "Spotify",
+        "info": "https:\/\/play.spotify.com\/user\/stylehatch"
+      },
+      {
+        "type": "text",
+        "id": "social_googleplus_link",
+        "label": "Google Plus",
+        "info": "https:\/\/plus.google.com\/+stylehatch"
+      },
+      {
+        "type": "text",
+        "id": "social_medium_link",
+        "label": "Medium",
+        "info": "https:\/\/www.medium.com\/@stylehatch"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "LinkedIn",
+        "info": "https:\/\/www.linkedin.com\/company\/stylehatch"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_social_enable",
+        "label": "Show social media icons in footer"
+      },
+      {
+        "type": "header",
+        "content": "Sharing"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_share_facebook_enabled",
+        "label": "Share on Facebook",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "social_share_twitter_enabled",
+        "label": "Tweet on Twitter",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "social_share_pinterest_enabled",
+        "label": "Pin on Pinterest",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "social_share_googleplus_enabled",
+        "label": "+1 on Google Plus",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "social_share_fancy_enabled",
+        "label": "Add to Fancy",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "password_social_share_enable",
+        "label": "Show on password page",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Newsletter",
+    "settings": [
+      {
+        "type": "select",
+        "id": "newsletter_type",
+        "label": "Newsletter list",
+        "options": [
+          {
+            "value": "shopify",
+            "label": "Shopify customers"
+          },
+          {
+            "value": "mailchimp",
+            "label": "MailChimp list"
+          }
+        ],
+        "default": "shopify",
+        "info": "Choose between capture emails as Shopify customers or as a MailChimp list."
+      },
+      {
+        "type": "text",
+        "id": "email_offer_form_action",
+        "label": "MailChimp form action URL",
+        "info": "[Find you MailChimp form action URL](http:\/\/docs.shopify.com\/support\/configuration\/store-customization\/where-do-i-get-my-mailchimp-form-action)"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_newsletter_column_enable",
+        "label": "Show in footer",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "popup_newsletter_enable",
+        "label": "Show in popup",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "password_newsletter_enable",
+        "label": "Show on password page",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Currency",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "To offer multiple currencies on your online store, you must first [edit your store's currency formatting](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/help-script-find-money-formats)."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_multiple_currencies",
+        "label": "Enable currency conversion",
+        "default": false,
+        "info": "Even though prices are displayed in different currencies, orders will still be processed in your store's currency."
+      },
+      {
+        "type": "select",
+        "id": "currency_format",
+        "label": "Format",
+        "options": [
+          {
+            "value": "money_format",
+            "label": "Without currency ($10.00)"
+          },
+          {
+            "value": "money_with_currency_format",
+            "label": "With currency ($10.00 CAD)"
+          }
+        ],
+        "default": "money_with_currency_format"
+      },
+      {
+        "type": "text",
+        "id": "supported_currencies",
+        "label": "Supported currencies",
+        "default": "USD CAD GBP EUR JPY",
+        "info": "Use the country's ISO [currency code](http:\/\/www.xe.com\/iso4217.php). Separate your currency codes with a space."
+      },
+      {
+        "type": "text",
+        "id": "default_currency",
+        "label": "Default currency",
+        "default": "USD"
+      }
+    ]
+  }
+]

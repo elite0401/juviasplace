@@ -1,0 +1,47 @@
+<!-- /snippets/featured-collection.liquid -->
+{% assign collection_limit = settings.homepage_collection_count | plus:0 %}
+{% if settings.homepage_collection == blank or collections[settings.homepage_collection].empty? or collections[settings.homepage_collection].products_count == 0 %}
+  {% assign helperFeaturedProducts = true %}
+{% endif %}
+<div class="home-collection layout-{{ collection_limit }}">
+  <div class="section-title">
+    <h1>
+      {% if settings.homepage_collection_title != '' %}
+      {{ settings.homepage_collection_title }}
+      {% else %}
+      {{ collections[settings.homepage_collection].title }}
+      {% endif %}
+    </h1>
+    {% if collections[settings.homepage_collection].description != blank %}
+    <p>{{ collections[settings.homepage_collection].description }}</p>
+    {% endif %}
+  </div>
+  <div class="wrapper">
+    <div class="grid {% if helperFeaturedProducts %}helper-section{% endif %}">
+
+      {% if helperFeaturedProducts %}
+
+        {% comment %}
+          For onboarding new users to your theme, we add some default products and onboarding tutorials to help populate their store
+        {% endcomment %}
+        {% unless emptyState %}
+          {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
+          {% assign emptyState = true %}
+        {% endunless %}
+
+        {% include 'onboarding-featured-products' %}
+
+      {% else %}
+
+        {% for product in collections[settings.homepage_collection].products limit:collection_limit %}
+{% include 'bold-product' with product, hide_action: 'skip' %}
+          {% include 'product-grid-item' %}
+        {% endfor %}
+
+      {% endif %}
+    </div>
+  </div>
+  <div class="section-footer">
+    <a href="{{ collections[settings.homepage_collection].url }}" class="button outline"><span>{{ 'collections.general.all_of_collection' | t: collection: collections[settings.homepage_collection].title }}</span></a>
+  </div>
+</div>

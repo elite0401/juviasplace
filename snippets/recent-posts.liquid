@@ -1,0 +1,44 @@
+<!-- /snippets/recent-posts.liquid -->
+{% assign collection_limit = 3 %}
+<div class="recent-posts-collection layout-{{ collection_limit }}">
+  <div class="wrapper">
+    <header>
+      <h4>{{ 'homepage.sections.news_title' | t }}</h4>
+      <a href="{{ blogs[settings.homepage_recent_posts_blog].url }}" class="button outline">{{ 'blogs.general.view_blog' | t }}</a>
+    </header>
+    <div class="recent-posts-container">
+      {% for article in blogs[settings.homepage_recent_posts_blog].articles limit:collection_limit %}
+        <article>
+          {% if article.image and settings.homepage_recent_posts_image_first_enable %}
+            <div class="article-image">
+              <a href="{{ article.url }}"><img src="{{ article.image.src | img_url: 'grande' }}" alt="{{ article.title }}"></a>
+            </div>
+          {% endif %}
+          <header>
+            <h5><a href="{{ article.url }}">{{ article.title }}</a></h5>
+            {% if settings.homepage_recent_posts_date_enable %}
+              <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
+            {% endif %}
+          </header>
+          {% if article.image and settings.homepage_recent_posts_image_first_enable == false %}
+            <div class="article-image">
+              <a href="{{ article.url }}"><img src="{{ article.image.src | img_url: 'grande' }}" alt="{{ article.title }}"></a>
+            </div>
+          {% endif %}
+          <section class="rte">
+            {% if settings.homepage_recent_posts_exerpt_enable %}
+              {% if article.excerpt.size > 0 %}
+                {{ article.excerpt }}
+              {% else %}
+                <p>{{ article.content | strip_html | truncatewords: 40 }}</p>
+              {% endif %}
+            {% endif %}
+            {% if settings.homepage_recent_posts_read_more_enable %}
+              <p class="read-more"><a href="{{ article.url }}" class="button outline">{{ 'blogs.article.read_more' | t }}</a></p>
+            {% endif %}
+          </section>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,410 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KZCHDN5');</script>
+<!-- End Google Tag Manager -->
+  <script>window.wh_metafields = {};
+ {% if customer.tags.size > 0 %} window.wh_customer_tags = true; {% endif %} 
+ window.wh_discount_value = 1;
+</script>
+{{ 'shippingandtaxcalculator.css' | asset_url | stylesheet_tag }}
+  <meta name="google-site-verification" content="PhgGF4YpA81KOi7tEU4vLukMJ9_p3cINWhDtpkyCat8" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  {% if settings.favicon_enable %}
+  <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png" />
+  {% endif %}
+
+  <!-- Title and description ================================================== -->
+  <title>
+  {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+  {% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  <!-- Helpers ================================================== -->
+  {% include 'social-meta-tags' %}
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.primary_accent_color }}">
+
+  <!-- CSS ================================================== -->
+  {{ 'district.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'http://vjs.zencdn.net/6.2.8/video-js.css' | stylesheet_tag }}
+  {% include 'fonts' %}
+
+  <!-- Header hook for plugins ================================================== -->
+  {{ content_for_header }}
+
+  <!-- OrderLogic checkout restrictions ========================================= -->
+  {% include 'order-logic' %}
+
+  {% include 'oldIE-js' %}
+
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js' | script_tag }}
+  {{ 'modernizr.min.js' | asset_url | script_tag }}
+  {{ 'http://vjs.zencdn.net/6.2.8/video.js' | script_tag }}
+
+  {% if template contains 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {% endif %}
+
+{% include "livechat_monitoring_code" %}
+
+
+
+{{ '/services/javascripts/countries.js' | script_tag }}
+
+{% include 'sca.freegifts' %}
+
+
+
+<!-- BeginConsistentCartAddon --><script>{% if customer %}Shopify.merge_cart_text = '{{ "consistent_cart_addon.merge_cart_text" | t }}' ;Shopify.customer_logged_in = true ;Shopify.customer_email = "{{ customer.email }}" ;Shopify.log_uuids = true;{% else %}Shopify.customer_logged_in = false ;Shopify.customer_email = "" ;Shopify.log_uuids = true;{% endif %}</script><!-- EndConsistentCartAddon -->
+<!-- GSSTART Slider code start. Do not change -->
+<script type="text/javascript"> gsProductCSID = "{{ product.id }}"; </script><script type="text/javascript" src="https://gravity-software.com/js/shopify/pac_shop2055.js?v=0ba6b4775abb9cb4af58832766844f58"></script>
+<!-- Slider code end. Do not change GSEND --></head>
+
+<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
+
+  {% if settings.promo_bar_enable %}
+    {% if settings.promo_bar_homepage_limit_enable and template != 'index'  %}
+
+    {% else %}
+      <header class="promo-bar align-{{ settings.promo_bar_text_alignment }} size-{{ settings.promo_bar_size }} {% if settings.promo_bar_scroll_lock_enable %}locked{% endif %}">
+        <span class="promo-bar-text">{{ settings.promo_bar_text }}</span>
+      </header>
+    {% endif %}
+  {% endif %}
+
+  <header class="util">
+    <div class="wrapper">
+
+      <div class="search-wrapper">
+        {% include 'search-bar' %}
+      </div>
+
+      <div class="left-wrapper">
+        <ul class="text-links">
+          <li class="mobile-menu">
+            <a href="#menu" class="toggle-menu menu-link">
+              <span class="icon-text">
+                <span class="icon icon-menu" aria-hidden="true"></span>
+                <span class="text" data-close-text="{{ 'layout.drawers.close_menu' | t }}">{{ 'layout.navigation.menu' | t }}</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="search">
+              <span class="icon-text">
+                <span class="icon icon-search" aria-hidden="true"></span>
+                <span class="text">{{ 'general.search.submit' | t }}</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+        {% comment %}
+          Include currency picker
+        {% endcomment %}
+        {% if settings.show_multiple_currencies %}
+          {% include 'currency-picker' %}
+        {% endif %}
+      </div>
+
+      <div class="right-wrapper">
+        {% comment %}
+          If customer accounts are enabled, provide login and create account links
+        {% endcomment %}
+        {% if shop.customer_accounts_enabled %}
+          {% include 'accounts-nav' %}
+        {% endif %}
+        {% comment %}
+          Show number of items in the cart and total cost in the /cart link
+        {% endcomment %}
+        <a href="/cart" id="CartButton">
+          <span class="icon-fallback-text">
+            <span class="icon icon-cart" aria-hidden="true"></span>
+          </span>
+          <span id="CartCount">{{ cart.item_count }}</span>
+          {{ 'layout.cart.title' | t }}
+          <span id="CartCost" class="money">{% unless cart.item_count == 0 %}{{ cart.total_price | money }}{% endunless %}</span>
+
+        </a>
+        {% if settings.ajax_cart_enable %}
+          {% include 'cart-preview' %}
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <div id="page">
+    <header class="site-header" role="banner">
+
+      <div class="wrapper">
+        <div class="logo-nav-contain layout-{{ settings.header_layout }}">
+          {% comment %}
+            Use the uploaded logo from theme settings if enabled.
+            Site name gets precedence with H1 tag on homepage, div on other pages.
+          {% endcomment %}
+          <div class="logo-contain">
+            {% if template == 'index' %}
+              <h1 class="site-logo {% if settings.logo_use_image %}has-image{% endif %}" itemscope itemtype="http://schema.org/Organization">
+            {% else %}
+              <div class="site-logo {% if settings.logo_use_image %}has-image{% endif %}" itemscope itemtype="http://schema.org/Organization">
+            {% endif %}
+              {% if settings.logo_use_image %}
+                <a href="/" itemprop="url" class="logo-image">
+                  <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+                </a>
+              {% else %}
+                <a href="/" itemprop="url">{{ shop.name }}</a>
+              {% endif %}
+            {% if template == 'index' %}
+              </h1>
+            {% else %}
+              </div>
+            {% endif %}
+          </div>
+
+          <nav class="nav-bar" role="navigation">
+            {% include 'site-nav' %}
+          </nav>
+        </div>
+
+      </div>
+      {% if settings.popup_enable %}
+      <div id="newsletter-offer" class="offer-banner style-overlay" data-visitor="{% if customer %}false{% else %}true{% endif %}">
+        {% if settings.popup_header_image_enable %}
+          <div class="offer-image">
+            <img src="{{ 'popup-header.jpg' | asset_url }}">
+          </div>
+        {% endif %}
+        <div class="wrapper">
+          <div class="offer-close">
+            <span class="icon-text">
+              <span class="icon icon-close" aria-hidden="true"></span>
+              <span class="text">{{ 'general.ui.close' | t }}</span>
+            </span>
+          </div>
+          <div class="offer-container">
+            {% if settings.popup_page %}
+              <div class="offer-message">
+                <h4>{{ pages[settings.popup_page].title }}</h4>
+                <p>{{ pages[settings.popup_page].content }}</p>
+              </div>
+            {% endif %}
+            {% if settings.popup_newsletter_enable %}
+              <div class="offer-email">
+                {% include 'newsletter-subscribe' %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </header>
+
+    <main class="main-content" role="main">
+
+      {{ content_for_layout }}
+
+    </main>
+
+    {% comment %}
+      Assign translation keys to detect for blank values.
+      The titles and descriptions for the footer should be option without the empty HTML tags.
+    {% endcomment %}
+    {% assign footer_newsletter_title = 'layout.footer.newsletter_title' | t %}
+    {% assign footer_newsletter_description = 'layout.footer.newsletter_description_html' | t %}
+    {% assign footer_primary_title = 'layout.footer.primary_title' | t %}
+    {% assign footer_primary_description = 'layout.footer.primary_description_html' | t %}
+    {% assign footer_secondary_title = 'layout.footer.secondary_title' | t %}
+    {% assign footer_secondary_description = 'layout.footer.secondary_description_html' | t %}
+    {% assign footer_contact_title = 'layout.footer.contact_title' | t %}
+
+    <footer class="site-footer">
+      <div class="wrapper">
+        <div class="grid">
+          {% if settings.footer_newsletter_column_enable %}
+          <div class="box newsletter">
+            <div class="offer-message">
+              {% unless footer_newsletter_title == blank %}
+                <h4>{{ footer_newsletter_title }}</h4>
+              {% endunless %}
+              {% unless footer_newsletter_description == blank %}
+                <p>{{ footer_newsletter_description }}</p>
+              {% endunless %}
+            </div>
+            {% if settings.footer_newsletter_enable %}
+            <div class="offer-email">
+              {% include 'newsletter-subscribe' %}
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+
+          {% if settings.footer_primary_links_column_enable %}
+          <div class="box quick-links primary-links">
+            {% unless footer_primary_title == blank %}
+              <h4>{{ footer_primary_title }}</h4>
+            {% endunless %}
+            {% unless footer_primary_description == blank %}
+              <p>{{ footer_primary_description }}</p>
+            {% endunless %}
+            {% if linklists[settings.footer_primary_links].links.size > 0 %}
+            <ul>
+              {% for link in linklists[settings.footer_primary_links].links %}
+                <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+          {% endif %}
+
+          {% unless settings.footer_contact_info_enable == false and settings.footer_social_enable == false %}
+          <div class="box social">
+            {% unless footer_contact_title == blank %}
+              <h4>{{ footer_contact_title }}</h4>
+            {% endunless %}
+            {% if settings.footer_contact_info_enable %}
+
+              {% comment %}
+                Use different language strings depending on which fields are entered
+              {% endcomment %}
+              {% assign contact_phone = settings.footer_contact_info_phone | strip %}
+              {% assign contact_email = settings.footer_contact_info_email | strip %}
+
+              {% if contact_phone != '' and contact_email != '' %}
+              <p>{{ 'layout.footer.contact_description.full_html' | t: phone: contact_phone, email: contact_email }}</p>
+              {% elsif contact_phone != '' %}
+              <p>{{ 'layout.footer.contact_description.only_phone_html' | t: phone: contact_phone }}</p>
+              {% elsif contact_email != '' %}
+              <p>{{ 'layout.footer.contact_description.only_email_html' | t: email: contact_email }}</p>
+              {% endif %}
+
+            {% endif %}
+            {% if settings.footer_social_enable %}
+            {% include 'social-icons' %}
+            {% endif %}
+          </div>
+          {% endunless %}
+          
+          {% if settings.footer_second_area_enable %}
+          <div class="box footer-logo">
+            <img src="{{ 'footer-logo.png' | asset_url }}" alt="{{ shop.name }}" />
+          </div>
+          {% endif %}
+
+        </div>
+        {% if settings.footer_payment_icons_enable %}
+          <div class="box payment-types">
+            {% comment %}
+              Loop through available payment methods and show their icons.
+            {% endcomment %}
+            {% unless shop.enabled_payment_types == empty %}
+              <p>{{ 'layout.footer.accepted_payments' | t }}</p>
+              <ul>
+                {% for type in shop.enabled_payment_types %}
+                  <li>
+                    <img src="{{ type | payment_type_img_url }}" />
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endunless %}
+          </div>
+        {% endif %}
+        <p class="copyright desktop">&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}
+          <span>&nbsp;|&nbsp;</span> <a href="{{settings.footer_privacy_link}}">{{settings.footer_privacy}}</a>
+          <span>&nbsp;|&nbsp;</span> <a href="{{settings.footer_terms_link}}">{{settings.footer_terms}}</a><br>
+          {{ powered_by_link }}</p>
+        <p class="copyright mobile">&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}<br>
+        <a href="{{settings.footer_privacy_link}}">{{settings.footer_privacy}}</a><br>
+        <a href="{{settings.footer_terms_link}}">{{settings.footer_terms}}</a></p>
+      </div>
+    </footer>
+  </div>
+
+  <nav id="menu" class="panel" role="navigation">
+    <div class="search">
+      {% include 'search-bar' %}
+    </div>
+
+    {% include 'site-nav' %}
+
+    <div class="account">
+      {% if shop.customer_accounts_enabled %}
+        {% include 'accounts-nav' %}
+      {% endif %}
+    </div>
+  </nav>
+
+
+  <script>
+    window.StyleHatch = window.StyleHatch || {};
+    StyleHatch.currencyFormat = {{ shop.money_format | json }};
+  </script>
+  {% if settings.show_multiple_currencies %}
+    {% include 'currencies' %}
+  {% endif %}
+
+  {{ 'vendor.js' | asset_url | script_tag }}
+  {{ 'district.js' | asset_url | script_tag }}
+
+  {% comment %}
+    Template-specific js
+  {% endcomment %}
+  <script>
+    {% if newHash %}
+      $(function() {
+        StyleHatch.updateHash('{{ newHash }}');
+      });
+    {% endif %}
+    {% if resetPassword %}
+      $(function() {
+        StyleHatch.resetPasswordSuccess();
+      });
+    {% endif %}
+  </script>
+
+  <!-- District v1.6.4 -->
+
+{% include 'back-in-stock-helper' %}
+<!-- BEEKETINGSCRIPT CODE START -->{% include 'bk-tracking' %}<!-- BEEKETINGSCRIPT CODE END -->{% include 'easyvideo' %}
+  <script type="text/javascript" charset="utf-8">
+    var shappify_customer_tags = {{ customer.tags | json }}
+  </script>
+{% include 'shippingandtaxcalculator' %}
+
+      {% if customer.tags.size > 0 and template != 'cart' %}
+        <script>
+          $(function(){
+            $(document).on('click', "input[name='checkout'], button[name='checkout'], input[name='goto_pp'], button[name='goto_pp'], input[name='goto_gc'], button[name='goto_gc'], [href$='checkout']", function(e){
+              e.preventDefault();
+              window.location = "/cart";
+            });
+          });
+        </script>
+      {% endif %}
+      
+ <script src="//www.codeblackbelt.com/js/modules/shipping-rates-calculator-plus/main.min.js?shop=juvias-place.myshopify.com"></script>
+
+<!-- spurit_wsmm-added -->
+{% include 'spurit_wsmm-theme-snippet' %}
+<!-- /spurit_wsmm-added -->
+
+</body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZCHDN5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+</html>

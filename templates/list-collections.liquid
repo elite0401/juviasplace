@@ -1,0 +1,107 @@
+<!-- /templates/list-collections.liquid -->
+{% comment %}
+
+  This page represents the /collections and /products pages.
+  It is an optional, but highly recommended, template for your theme.
+
+  More info:
+    - http://docs.shopify.com/manual/configuration/store-customization/taking-control-of-collections-listing
+
+{% endcomment %}
+
+<section class="collection simple-collection">
+  <div class="wrapper">
+    <header class="content-util">
+      {% include 'breadcrumb' %}
+      {% include 'social-icons' %}
+    </header>
+
+    <header class="collection-header">
+      <div class="container">
+        <h1>{{ 'collections.general.all_collections' | t }}</h1>
+      </div>
+    </header>
+
+    {% assign collection_count = 0 %}
+    {% assign isEmpty = true %}
+
+    {% comment %}
+      Count how many collections we have to show
+    {% endcomment %}
+    {% for collection in collections %}
+      {% unless collection.handle == 'frontpage' %}
+        {% assign collection_count = collection_count | plus: 1 %}
+      {% endunless %}
+    {% endfor %}
+
+    {% if collection_count > 0 %}
+      {% assign isEmpty = false %}
+    {% endif %}
+
+    {% comment %}
+      Change the layout from the 4 product preview from each collection
+      to a grid of collection featured images
+    {% endcomment %}
+    {% assign collectionGrid = false %}
+
+    {% unless collectionGrid %}
+      {% for collection in collections %}
+        {% unless collection.handle == 'frontpage' %}
+          <div class="collection-container">
+            <header>
+              <h4>{{ collection.title }}</h4>
+              <a href="{{ collection.url }}" class="button outline">{{ 'collections.general.all_of_collection' | t: collection: collection.title }}</a>
+            </header>
+
+            <div class="product-container">
+              {% for product in collection.products limit:4 %}
+                {% include 'product-grid-item' %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endunless %}
+      {% endfor %}
+
+      {% if isEmpty %}
+
+        {% comment %}
+          Add default collections to help with onboarding
+        {% endcomment %}
+        {% unless emptyState %}
+          {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
+          {% assign emptyState = true %}
+        {% endunless %}
+
+        {% assign collection_limit = 4 %}
+        <div class="collection-container">
+          {% include 'onboarding-simple-products' %}
+        </div>
+
+      {% endif %}
+    {% endunless %}
+
+    {% if collectionGrid %}
+      <div class="featured-grid" style="padding-top:0px; padding-left:0px; padding-right:0px; border-bottom:0px;">
+        <div class="wrapper">
+          <div class="row row-3">
+            {% for collection in collections %}
+              {% unless collection.handle == 'frontpage' %}
+                <div class="box" style="margin-bottom:20px;">
+                  <a href="{{ collection.url }}">
+                    <figure>
+                      <img src="{{ collection.image.src | img_url: 'grande' }}">
+                    </figure>
+                  </a>
+                  <figcaption class="below" style="margin-top:0px;">
+                    <h3><a href="{{ collection.url }}">{{ collection.title }}</a></h3>
+                  </figcaption>
+                </div>
+              {% endunless %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+</section>

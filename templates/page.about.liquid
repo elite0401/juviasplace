@@ -1,0 +1,37 @@
+<!-- /templates/page.about.liquid -->
+{% comment %}
+
+  This page template is a requirement if you are submitting your theme to the Shopify Theme Store.
+  Be sure to select page.contact as the template from the admin page to have this template take effect.
+
+  For information on adding more fields, visit:
+    - http://docs.shopify.com/support/configuration/store-customization/adding-fields-to-the-liquid-contact-form
+
+{% endcomment %}
+<section class="page page-top">
+  <div class="wrapper">
+    <header class="content-util">
+    {% include 'breadcrumb' %}
+    {% include 'social-icons' %}
+    </header>
+    <header class="page-header">
+      <h1>{{ page.title }}</h1>
+    </header>
+  </div>
+</section>
+
+<section class="page about">
+  <div class="wrapper">
+    <div class="content-container rte">
+      <img src="{{ 'about-main.png' | asset_url }}" alt="{{ shop.name }}" />
+      <div class="box content">
+      {{ page.content }}
+      </div>
+      <div class="box sidebar">
+        <img src="{{ 'about-side.png' | asset_url }}" alt="{{ shop.name }}" />
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include 'instagram' %}

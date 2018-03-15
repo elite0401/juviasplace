@@ -1,0 +1,107 @@
+{% include 'bold-product' with product, hide_action: 'break' %}
+{% if bold_hidden_product %}{% break %}{% endif %}
+<!-- /snippets/related-products.liquid -->
+{% comment %}
+  Number of related items per row,
+  and number of rows.
+{% endcomment %}
+
+{% assign number_of_related_products_per_row = 4 %}
+{% assign number_of_rows = 1 %}
+
+{% comment %}
+  Heading.
+  Leave blank if you don't need one.
+{% endcomment %}
+
+{% assign heading = 'products.general.recommended_items' | t %}
+
+{% comment %}
+  Set either or both to true, if you want
+  to limit yourself to items with same vendor, and/or type.
+{% endcomment %}
+
+{% assign same_vendor = false %}
+{% assign same_type = false %}
+
+{% comment %}
+  Collections to ignore.
+  Never pick related items from those.
+{% endcomment %}
+
+{% assign exclusions = 'frontpage,all' | split: ',' %}
+
+{% comment %}
+  Looking for a relevant collection.
+{% endcomment %}
+
+{% if product.metafields.c_f['Related Products'] %}
+  {% assign collection = collections[product.metafields.c_f['Related Products']] %}
+{% endif %}
+
+{% assign found_a_collection = false %}
+{% if collection and collection.all_products_count > 1 %}
+  {% unless exclusions contains collection.handle %}
+    {% assign found_a_collection = true %}
+  {% endunless %}
+{% endif %}
+{% unless found_a_collection %}
+  {% for c in product.collections %}
+    {% unless exclusions contains c.handle or c.all_products_count < 2 %}
+      {% assign found_a_collection = true %}
+      {% assign collection = c %}
+      {% break %}
+    {% endunless %}
+  {% endfor %}
+{% endunless %}
+
+{% comment %}
+  If we have a relevant collection.
+{% endcomment %}
+
+{% if found_a_collection %}
+
+  {% assign counter = 0 %}
+  {% assign break_at = number_of_rows | times: number_of_related_products_per_row %}
+  {% assign current_product = product %}
+
+  {% capture related_items %}
+    {% for product in collection.products %}
+{% include 'bold-product' with product, hide_action: 'skip' %}
+      {% unless product.handle == current_product.handle %}
+         {% unless same_vendor and current_product.vendor != product.vendor %}
+           {% unless same_type and current_product.type != product.type %}
+             {% include 'product-grid-item' %}
+             {% assign counter = counter | plus: 1 %}
+             {% if counter == break_at %}
+               {% break %}
+             {% endif %}
+           {% endunless %}
+        {% endunless %}
+      {% endunless %}
+    {% endfor %}
+  {% endcapture %}
+
+  {% assign related_items = related_items | trim %}
+
+  {% unless related_items == blank %}
+
+  <!-- Simple Collection -->
+  <div class="simple-collection">
+    <div class="wrapper">
+      <header>
+        {% unless heading == blank %}
+          <h4>{{ heading }}</h4>
+          {% if counter >= 4 %}
+        <a href="{{ collection.url }}" class="button outline"><span>{{ 'collections.general.view_more' | t }}</span></a>
+          {% endif %}
+        {% endunless %}
+      </header>
+      <div class="product-container">
+        {{ related_items }}
+      </div>
+    </div>
+  </div>
+  {% endunless %}
+
+{% endif %}

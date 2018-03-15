@@ -1,0 +1,99 @@
+<div class="stcalc-container" id="stcalc-container">
+  <input type="hidden" name="stcalc-selectorname" id="stcalc-selectorname" value="" />
+  <input type="hidden" name="stcalc-beforeorafter" id="stcalc-beforeorafter" value="after" />
+  <h2 style="font-weight:bold!important;" id="stcalc-apptitle">Shipping Cost and Taxes</h2>
+
+  <div class="stcalc-top">
+    <ul >
+      <li>
+        <!--<label id="stcalc-countrylabel">Country</label>-->
+        <select name="stcalc-countries" id="stcalc-countries">
+			{{ country_option_tags }}
+        </select>
+      </li>
+
+      <li>
+        <!--<label id="stcalc-provincelabel">Province</label>-->
+        <select name="stcalc-provinces" id="stcalc-provinces"></select>
+      </li>
+
+      <li>
+        <!--<label id="stcalc-zipcodelabel">Zip/Postal Code</label>-->
+        <input name="zipcode" id="stcalc-zipcode" value="000000" placeholder="ZipCode"/>
+      </li>
+
+      <li>
+        <button type="button" disabled="disabled" id="stcalc-estimatebtn" class="btn stcalc-estimatebtn">Estimate Total</button>
+      </li>
+    </ul>
+  </div>
+  <div class="stcalc-left" id="stcalc-left">
+    <h2 style="font-weight:bold!important;" id="stcalc-shippingoptiontitle">Select Shipping Options</h2>
+    <ul id="stcalc-shippingoptionsul">   
+
+    </ul>
+  </div>
+  <div class="stcalc-right">
+    <table id="stcalc-coststable">
+      <p id="stcalc-zipcodeerror">Zipcode entered is not valid</p>
+      <tbody>
+        <tr>
+          <td>
+            <span>Subtotal : </span>
+          </td>
+          <td>
+            <span class="stcalc-money" id="stcalc-subtotal">-</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>Estimated Shipping Cost : </span>
+
+          </td>
+          <td>
+            <span class="stcalc-money" id="stcalc-shippingcost">-</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>Estimated Taxes : </span>
+
+          </td>
+          <td>
+            <span class="stcalc-money" id="stcalc-taxes">-</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <span style="font-weight: bold;">Estimated Order Total :</span>
+          </td>
+          <td>
+            <span style="font-weight: bold;" class="stcalc-money" id="stcalc-total">-</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+
+</div>
+<div id="stcalc-modal" class="stcalc-modal">
+
+  <!-- Modal content -->
+  <div class="stcalc-modalcontent" id="stcalc-modalcontent">
+    <p id="stcalc-modaltitle">Put Shipping and Tax Calculator After or Before This Element</p>
+    <span class="stcalc-close" id="stcalc-close">x</span>
+    <div id="stcalc-beforeafterdiv">
+      <input type="radio" name="stcalc-shippingoptions" id="stcalc-afterelement" value="afterelement" checked> After Selected Element<br>
+      <input type="radio" name="stcalc-shippingoptions" id="stcalc-beforeelement" value="beforeelement"> Before Selected Element<br>
+    </div>
+
+    <input type="text" name="stcalc-selector" id="stcalc-selector" value="" />
+
+    <button class="btn" id="stcalc-savebtn">Save Changes</button>
+    <p><span id='stcalc-errormsg'>Calculator cannot be displayed near the selected current element. Please select another element!</span></p>
+  </div>
+
+</div>

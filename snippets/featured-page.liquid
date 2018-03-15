@@ -1,0 +1,17 @@
+<!-- /snippets/featured-page.liquid -->
+<div class="featured-text page-{{ page_type }} {% if full_width_page %}full-width{% endif %}">
+  {% unless full_width_page %}
+  <div class="wrapper">
+  {% endunless %}
+
+    <div class="content rte">
+      {% if show_title %}
+        <h2 class="title">{{ pages[featured_page].title }}</h2>
+      {% endif %}
+      {{ pages[featured_page].content }}
+    </div>
+
+  {% unless full_width_page %}
+  </div>
+  {% endunless %}
+</div>

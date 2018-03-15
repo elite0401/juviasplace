@@ -1,0 +1,61 @@
+<!-- /snippets/featured-grid.liquid -->
+<div class="featured-grid">
+  <div class="wrapper">
+    {% assign homepage_featured_title = 'homepage.sections.featured_title' | t %}
+    {% if settings.homepage_featured_grid_title_enable %}
+      {% unless homepage_featured_title == blank %}
+        <h3>{{ homepage_featured_title }}</h3>
+      {% endunless %}
+    {% endif %}
+
+    {% assign box_count = settings.homepage_featured_grid_count | plus:0 %}
+    {% for i in (1..box_count) %}
+      {% assign count = i %}
+      {% assign box = "homepage_featured_box_" | append:i %}
+      {% assign box_img   = box | append:"_image.jpg" %}
+      {% assign box_img_o = box | append:"_image-o.jpg" %}
+      {% assign box_url   = box | append:"_url" %}
+      {% assign box_title = box | append:"_title" %}
+
+        {% comment %}
+        Begin rows
+        - box_count 2
+              ----   ----
+        - box_count 3
+              --- --- ---
+        - box_count 5
+              ----   ----
+              --- --- ---
+        {% endcomment %}
+        {% if i == 1 %}
+        <div class="row {% if box_count == 2 or box_count == 5 %}row-2{% else %}row-4{% endif %}">
+        {% endif %}
+
+        {% if box_count == 5 and i == 3 %}
+        </div>
+        <div class="row row-3">
+        {% endif %}
+          <div class="box box-{{ i }}">
+            <a href="{{ settings[box_url] }}" class="{% if settings.homepage_featured_grid_zoom_enable %}zoom {% endif %}{% if settings.homepage_featured_grid_rollover_enable %}rollover{% endif %} text-overlay"{% if settings.homepage_featured_grid_rollover_enable %} style="background-image: url('{{ box_img_o | asset_url }}');"{% endif %}>
+              <figure class="animation-label-overlay">
+                <img src="{{ box_img | asset_url }}" alt="{{ settings[box_title] }}">
+                {% if settings[box_title] != '' and settings.homepage_featured_grid_label == 'over' %}
+                  <figcaption>
+                    <h4>{{ settings[box_title] }}</h4>
+                  </figcaption>
+                {% endif %}
+              </figure>
+            </a>
+            {% if settings[box_title] != '' and settings.homepage_featured_grid_label == 'below' %}
+              <figcaption class="below">
+                <h3><a href="{{ settings[box_url] }}">{{ settings[box_title] }}</a></h3>
+              </figcaption>
+            {% endif %}
+          </div>
+
+        {% if i == box_count %}
+        </div>
+        {% endif %}
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<!-- /snippets/blog-sidebar.liquid -->
+{% comment %}
+  Recent blog posts
+{% endcomment %}
+{% if settings.blog_sidebar_image_enable %}
+  {% assign sidebar_image_url = settings.blog_sidebar_image_url | strip %}
+  {% if sidebar_image_url != '' %}
+    <a href="{{ sidebar_image_url }}">
+  {% endif %}
+  <img src="{{ 'blog-sidebar.jpg' | asset_url }}" alt="{{ blog.title }}" class="blog-sidebar-image">
+  {% if sidebar_image_url != '' %}
+    </a>
+  {% endif %}
+{% endif %}
+<div class="nav-container">
+  <nav class="recent-posts">
+    <h5>{{ 'blogs.sidebar.recent_articles' | t }}</h5>
+    <ul>
+      {% for article in blogs[blog.handle].articles limit:6 %}
+        <li>
+          <a href="{{ article.url }}">{% if settings.blog_date_enable %}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>{% endif %}
+          <span class="title">{{ article.title }}</span></a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  {% if linklists[settings.blog_sidebar_link_list].links.size > 0 %}
+    <nav class="link-list">
+      <h5>{{ linklists[settings.blog_sidebar_link_list].title }}</h5>
+      <ul>
+        {% for link in linklists[settings.blog_sidebar_link_list].links %}
+          <li {% if collection.url == link.url %}class="active"{% endif %}><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  {% endif %}
+
+  {% comment %}
+    Blog tags
+  {% endcomment %}
+  {% if settings.blog_categories_enable %}
+  <nav class="categories tags">
+    {% if blog.all_tags.size > 0 %}
+    <h5>{{ 'blogs.sidebar.categories' | t }}</h5>
+    <ul>
+      {% for tag in blog.all_tags %}
+        {% if current_tags contains tag %}
+        <li class="active close">{{ tag | capitalize | link_to_remove_tag: tag }}</li>
+        {% else %}
+        <li>{{ tag | capitalize | link_to_tag: tag }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </nav>
+  {% endif %}
+  <nav>
+    <a class="util" href="{{ shop.url | append: blog.url | append: '.atom' }}">RSS Feed</a>
+  </nav>
+</div>

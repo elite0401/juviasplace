@@ -1,0 +1,238 @@
+.stcalc-container {
+  border: 1px solid lightgray;
+  width: 100%;
+  min-height: 300px;
+  padding: 10px;
+  background-color: #fff;
+  display: none;
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+div#stcalc-container ul {
+  width: auto;
+}
+
+div#stcalc-container li {
+  list-style-type: none;
+  margin-bottom: 5px;
+  float: left;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+
+
+ul#stcalc-shippingoptionsul li {
+  float: none;
+}
+
+.stcalc-top {
+  width: 100%;
+  float: left;
+  border: 1px solid #EEEEEE;
+  border-radius: 2%;
+}
+
+.stcalc-left {
+  margin-top: 10px;
+  min-width: 25%;
+  float: left;
+  padding: 1% 1% 1% 3%;
+}
+
+.stcalc-middle {
+  width: 33.33%;
+  float: right;
+}
+
+.stcalc-right {
+  /*width: 50%;*/
+  float: right;
+}
+
+
+/*button#stcalc-estimatebtn {
+  width: 200px;
+  float: right;
+  height: 50px;
+  padding: 0px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}*/
+button#stcalc-savebtn
+{
+  width: 200px;
+  float: right;
+  height: 50px;
+  padding: 0px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+table#stcalc-coststable h6 {
+  text-align: right;
+  float: right;
+  font-weight: bold;
+}
+
+table#stcalc-coststable {
+  background-color: #fff;
+  vertical-align: middle;
+  border: none;
+ 
+}
+
+table#stcalc-coststable td {
+  vertical-align: middle;
+  border: none;
+  padding: 8px;
+}
+
+table#stcalc-coststable span {
+  text-align: right;
+  float: right;
+  /*font-weight: bold;*/
+}
+
+select#stcalc-countries {
+  width: 200px;
+  padding: 2px!important;
+  /*line-height: 10px;*/
+  display: inline-block;
+  border: 1px solid lightgray;
+}
+
+select#stcalc-provinces {
+  width: 200px;
+  padding: 2px!important;
+  /*line-height: 10px;*/
+  display: inline-block;
+  border: 1px solid lightgray;
+}
+
+input#stcalc-zipcode {
+  width: 200px;
+  padding: 2px !important;
+  border: 1px solid lightgray;
+}
+
+span.stcalc-money {
+  /*font-size: 18px;*/
+  color: #000;
+}
+
+
+.stcalc-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 45454545445;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Modal Content/Box */
+.stcalc-modalcontent {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.stcalc-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: relative;
+    top: -50px;
+}
+
+.stcalc-close:hover,
+.stcalc-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+table#stcalc-container h4 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+input[type="radio"] {
+  height: 15px !important;
+}
+
+span#stcalc-errormsg
+{
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+  display: none;
+}
+
+div#stcalc-container h4, h2 {
+    text-align: center;
+}
+
+input#stcalc-zipcode
+{
+  height: 40px;
+}
+
+select#stcalc-countries
+{
+  height: 40px;
+}
+
+select#stcalc-provinces
+{
+  height: 40px;
+}
+
+button#stcalc-estimatebtn
+{
+  height: 40px;
+      padding: 5px;
+}
+
+.stcalc-loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+p#stcalc-zipcodeerror
+{
+  display: none;
+}

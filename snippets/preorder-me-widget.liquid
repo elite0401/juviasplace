@@ -1,0 +1,3 @@
+{% if product %}
+  <script async data-shop="{{shop.metafields.preorderme.settings | escape}}" data-mf="{{product.metafields.preorderme.settings | escape}}" data-seed="{{product.variants | json | escape}}" id="preorder-me-widget" src="//cdn.easyshop.io/pome/widgets.min.js"></script>
+{% endif %}

@@ -1,0 +1,390 @@
+{% if desc-tabs %}
+  {% assign description = desc-tabs %}
+{% else %}
+  {% assign description = product.description %}
+{% endif %}
+
+{% if description %}
+  <style type='text/css'>
+    #tabs,
+    .custom-desc-tabs {
+        background: transparent !important;
+        border: none !important;
+    }
+    
+    #judgeme_product_reviews {
+        border: none !important;
+    }
+    
+    #tabs-app-accordion {
+        overflow: hidden;
+        margin-bottom: 10px;
+        padding-bottom: 2px;
+    }
+    
+    #tabs > div,
+    .custom-desc-tabs > div,
+    #tabs-app-accordion > div {
+        background: #ffffff;
+        margin-top: 0px;
+        color: #333333;
+        border: solid 1px #dddddd;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        -moz-border-radius-topleft: 0px;
+        -webkit-border-top-left-radius: 0px;
+        border-top-left-radius: 0;
+        padding: 10px;
+        display: none;
+        overflow: hidden;
+        clear: both;
+    }
+    
+    #tabs-app-accordion > div {
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+        border-top: 0;
+        border-bottom: 0;
+    }
+    
+    #tabs-app-accordion > div:last-child {
+        border-bottom: solid 1px #dddddd;
+        -moz-border-radius-bottomleft: 3px;
+        -webkit-border-bottom-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        -moz-border-radius-bottomright: 3px;
+        -webkit-border-bottom-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+    
+    #tabs > div[aria-hidden='false'],
+    .custom-desc-tabs > div[aria-hidden='false'] {
+        display: block;
+    }
+    
+    #tabs .spr-container,
+    .custom-desc-tabs > .spr-container {
+        border: none;
+    }
+    
+    #tabs > div > span,
+    .custom-desc-tabs > div > span {
+        display: block;
+    }
+    
+    #tabs > #tabs-1,
+    #tabs > #tabs-app-tabs-1,
+    .custom-desc-tabs > #tabs-1,
+    .custom-desc-tabs > #tabs-app-tabs-1 {
+        display: block;
+    }
+    
+    #tabs > ul,
+    .custom-desc-tabs > ul {
+        display: block;
+        margin: 0 0 10px 0;
+        padding: 0;
+        margin: 0 !important;
+        border: 0 !important;
+        border-bottom: solid 1px #ddd;
+        border-radius: 0;
+        height: 30px;
+        background: transparent;
+        color: #000;
+    }
+    
+    #tabs > ul > li,
+    #tabs-app-accordion > h1,
+    .custom-desc-tabs > ul > li {
+        display: block;
+        width: auto;
+        height: 30px;
+        padding: 0;
+        float: left;
+        border: 0;
+        background: transparent;
+        margin: 0 !important;
+    }
+    
+    #tabs-app-accordion > h1 {
+        width: 100%;
+        outline: 0
+    }
+    
+    #tabs > ul > li a,
+    #tabs-app-accordion > h1 a,
+    .custom-desc-tabs > ul > li a {
+        display: block;
+        text-decoration: none;
+        width: auto;
+        height: 28px;
+        padding: 0px 11px 0 11px !important;
+        line-height: 30px;
+        border-style: solid;
+        border-color: #dddddd;
+        border-width: 1px 0 0 1px;
+        background: #eeeeee;
+        color: #cccccc;
+        font-size: 13px;
+        outline: none;
+        margin: 1px 0 0 0;
+        -webkit-box-sizing: content-box !important;
+        -moz-box-sizing: content-box !important;
+        box-sizing: content-box !important;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    
+    #tabs-app-accordion > h1 a {
+        margin: 0;
+        height: 29px;
+        border-width: 1px;
+    }
+    
+    #tabs-app-accordion > h1:last-of-type a {
+        height: 28px;
+        -moz-border-radius-bottomleft: 3px;
+        -webkit-border-bottom-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        -moz-border-radius-bottomright: 3px;
+        -webkit-border-bottom-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+    
+    #tabs-app-accordion > h1.ui-state-active a {
+        -moz-border-radius-bottomleft: 0px;
+        -webkit-border-bottom-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        -moz-border-radius-bottomright: 0px;
+        -webkit-border-bottom-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    
+    @media screen and (max-device-width: 480px) and (orientation: portrait) {
+        #tabs ul li a,
+        .custom-desc-tabs ul li a {
+            font-size: 12px;
+            padding: 0px 10px !important;
+        }
+    }
+    
+    #tabs > ul > li.ui-state-active a,
+    .custom-desc-tabs > ul > li.ui-state-active a {
+        background-color: #ffffff;
+        height: 29px !important;
+        position: relative;
+        top: 1px;
+        border: 1px #dddddd solid;
+        border-bottom: 0;
+        border-right: 0;
+        margin: 0;
+        color: #333333;
+        line-height: 29px !important;
+        -webkit-box-sizing: initial !important;
+        -moz-box-sizing: initial !important;
+        box-sizing: initial !important;
+    }
+    
+    #tabs > ul > li:last-child a,
+    .custom-desc-tabs > ul > li:last-child a {
+        border-width: 1px 1px 0 1px;
+        border-right: 1px #dddddd solid !important;
+        -moz-border-radius-topright: 3px;
+        -webkit-border-top-right-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+    
+    #tabs-app-accordion > h1:first-child a {
+        -moz-border-radius-topright: 3px;
+        -webkit-border-top-right-radius: 3px;
+        border-top-right-radius: 3px;
+        -moz-border-radius-topleft: 3px;
+        -webkit-border-top-left-radius: 3px;
+        border-top-left-radius: 3px;
+    }
+    
+    #tabs > ul > li:first-child a,
+    .custom-desc-tabs > ul > li:first-child a {
+        -moz-border-radius-topleft: 3px;
+        -webkit-border-top-left-radius: 3px;
+        border-top-left-radius: 3px;
+    }
+    
+    #tabs > #final-tab,
+    .custom-desc-tabs > .final-tab {
+        display: block;
+        background: transparent;
+        border: none;
+        color: inherit;
+    }
+    
+    #tabs > div *:last-child,
+    .custom-desc-tabs > div *:last-child,
+    #tabs-app-accordion > div *:last-child {
+        margin-bottom: 0;
+    }
+  </style>
+
+
+  <script type = "text/javascript" > function reqJquery(url, callback) {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.async = true;
+      if (script.readyState) {
+          script.onreadystatechange = function() {
+              if (script.readyState == "loaded" || script.readyState == "complete") {
+                  script.onreadystatechange = null;
+                  callback();
+              };
+          };
+      } else {
+          script.onload = function() {
+              callback();
+          };
+      };
+      script.src = url;
+      document.getElementsByTagName("head")[0].appendChild(script);
+  };
+  var jQuery191;
+  reqJquery("//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", function() {
+      jQuery191 = jQuery.noConflict(true);
+      jQuery191.getScript("//s3.amazonaws.com/tabs-app/jquery-ui.min.js", function() {
+          jQuery191("#tabs").tabs();
+          jQuery191(".custom-desc-tabs").tabs();
+          if (navigator.userAgent.indexOf("Opera") != -1) {
+              setTimeout(function() {
+                  jQuery191("#tabs").tabs();
+                  jQuery191(".custom-desc-tabs").tabs();
+              }, 100);
+          };
+          if (typeof($) != "undefined") {
+              $("#tabs ul li a").unbind("click.smoothscroll");
+              setTimeout(function() {
+                  $("#tabs ul li a").unbind("click.smoothscroll");
+              }, 1000);
+          };
+
+          function tabsToAccs() {
+              presentState = "accordion";
+              jQuery191("#tabs").each(function() {
+                  var e = jQuery191('<div id="tabs-app-accordion">');
+                  var t = new Array;
+                  jQuery191(this).find(">ul>li").each(function() {
+                      t.push("<h1>" + jQuery191(this).html() + "</h1>")
+                  });
+                  var n = new Array;
+                  jQuery191(this).find(">div").not("#final-tab").each(function() {
+                      n.push(this)
+                  });
+                  for (var r = 0; r < t.length; r++) {
+                      e.append(t[r]).append(n[r])
+                  }
+                  jQuery191(this).before(e);
+                  jQuery191(this).after(jQuery191("#final-tab"));
+                  jQuery191(this).remove();
+              });
+              jQuery191("#tabs-app-accordion").accordion({
+                  heightStyle: "content",
+                  animate: 100
+              });
+              jQuery191(".ui-accordion-header").bind("click", function() {
+                  theOffset = jQuery191("#tabs-app-accordion").offset().top;
+                  jQuery191("html, body").animate({
+                      scrollTop: (theOffset - 50)
+                  }, 100).finish(100);
+              });
+          }
+
+          function accsToTabs() {
+              presentState = "tabs";
+              jQuery191("#tabs-app-accordion").each(function() {
+                  var e = jQuery191('<div id="tabs">');
+                  var t = 0;
+                  var n = jQuery191("<ul>");
+                  jQuery191(this).find(">h1").each(function() {
+                      t++;
+                      n.append('<li><a href="#tabs-app-tabs-' + t + '">' + jQuery191(this).text() + "</a></li>")
+                  });
+                  var t = 0;
+                  var r = jQuery191("");
+                  jQuery191(this).find(">div").not("#final-tab").each(function() {
+                      t++;
+                      r = r.add('<div id="tabs-app-tabs-' + t + '">' + jQuery191(this).html() + "</div>")
+                  });
+                  e.append(n).append(r).append(jQuery191("#final-tab"));
+                  jQuery191(this).before(e);
+                  jQuery191(this).remove()
+              });
+              jQuery191("#tabs").tabs()
+          }
+          var windowWidthToRotate = 900;
+          var widthToRotate = 0;
+          var presentState = "tabs";
+
+          function updateMe() {
+              if (presentState == "tabs" && (jQuery191("#tabs").size() > 0 && jQuery191("#tabs").width() <= widthToRotate) || (jQuery191(window).width() <= windowWidthToRotate)) {
+                  tabsToAccs();
+              } else if (presentState == "accordion" && jQuery191("#tabs-app-accordion").size() > 0 && jQuery191("#tabs-app-accordion").width() > widthToRotate && jQuery191(window).width() > windowWidthToRotate) {
+                  accsToTabs();
+              }
+          }
+          jQuery191(function() {
+            jQuery191("#tabs>ul>li").each(function() {
+                widthToRotate += jQuery191(this).width();
+            });
+            jQuery191(window).resize(function(e) {
+                updateMe();
+            });
+            updateMe();
+          });
+      });
+  }); </script>
+
+
+  <div class="description" itemprop="description">
+     {% assign first_section = description | split: "<h1" | first %}
+     {% assign fp = first_section %}
+     {% if fp != "" %}
+       {{fp}}
+     {% endif %}
+
+     <div id="tabs">
+       <ul>
+         {% assign desc_sections = description | split: "<h1" %}
+         {% for section_part in desc_sections %}
+           {% if section_part contains "</h1>" %}
+             {% assign remove = section_part | split: ">" | first | append: ">" %}
+             <li><a href="#tabs-{{ forloop.index }}">{{ section_part | split: "</h1>" | first | strip_html | replace: remove, "" }}</a></li>
+           {% endif %}
+         {% endfor %}
+
+         
+           <li><a href="#tabs-static-0"></a></li>
+         
+       </ul>
+
+       {% assign desc_sections = description | split: "<h1" %}
+       {% for section_part in desc_sections %}
+         {% if section_part contains "</h1>" %}
+           {% assign fp = section_part | append: " " | split: "</h1>" | last %}
+           {% assign p = section_part | append: " " | split: "</h1>" | last | strip_html | replace: "&nbsp;", "" | replace: " ", "" | strip_newlines %}
+           {% if p != "" or fp contains "<img " or fp contains "<iframe " %}
+             <div id="tabs-{{ forloop.index }}">{{ section_part | split: "</h1>" | last | replace: "<div", "<span" | replace: "</div", "</span" }}</div>
+           {% endif %}
+         {% endif %}
+       {% endfor %}
+
+       
+         <div id="tabs-static-0">
+           
+         </div>
+       
+
+    </div>
+
+    
+
+  </div>
+{% endif %}

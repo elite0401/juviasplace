@@ -1,0 +1,72 @@
+<!-- /templates/index.liquid -->
+{% comment %}
+
+  This is the homepage of your site.
+
+  More info on global variables (available on all templates):
+    - http://docs.shopify.com/themes/liquid-variables/global
+{% endcomment %}
+
+{% if settings.homepage_hero_slider_enable %}
+{% include 'hero-slider' %}
+{% endif %}
+
+{% comment %}
+  Primary page
+{% endcomment %}
+{% assign featured_page = settings.homepage_featured_page %}
+{% assign full_width_page = settings.homepage_featured_page_full_width %}
+{% assign show_title = settings.homepage_featured_page_show_title %}
+{% assign page_type = 'featured' %}
+{% if featured_page != blank %}
+{% include 'featured-page' %}
+{% endif %}
+
+{% comment %}
+  Secondary page
+{% endcomment %}
+{% assign featured_page = settings.homepage_secondary_page %}
+{% assign full_width_page = settings.homepage_secondary_page_full_width %}
+{% assign show_title = settings.homepage_secondary_page_show_title %}
+{% assign page_type = 'secondary' %}
+{% if featured_page != blank %}
+{% include 'featured-page' %}
+{% endif %}
+
+{% if settings.homepage_featured_collection_enable %}
+{% include 'featured-collection' %}
+{% endif %}
+
+{% if settings.homepage_collection_enable %}
+{% include 'homepage-collection' %}
+{% endif %}
+
+
+{% if settings.homepage_simple_collection_enable %}
+{% include 'simple-collection' %}
+{% endif %}
+
+{% include 'homepage-festival' %}
+
+{% if settings.homepage_video_enable %}
+{% include 'homepage-video-slider' %}
+{% endif %}
+
+{% if settings.homepage_instagram_enable and settings.homepage_instagram_access_token != '' %}
+{% include 'instagram' %}
+{% endif %}
+
+{% if settings.homepage_recent_posts_enable %}
+{% include 'recent-posts' %}
+{% endif %}
+
+{% comment %}
+  Bottom page
+{% endcomment %}
+{% assign featured_page = settings.homepage_bottom_page %}
+{% assign full_width_page = settings.homepage_bottom_page_full_width %}
+{% assign show_title = settings.homepage_bottom_page_show_title %}
+{% if featured_page != blank %}
+{% assign page_type = 'bottom' %}
+{% include 'featured-page' %}
+{% endif %}

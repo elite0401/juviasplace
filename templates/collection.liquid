@@ -1,0 +1,120 @@
+
+<!-- spurit_po-added -->
+{% include 'spurit_po-collection-snippet' %}
+<!-- /spurit_po-added -->
+<!-- /templates/collection.liquid -->
+{% comment %}
+
+  For more information on collection tags:
+    - http://docs.shopify.com/themes/liquid-variables/collection
+
+{% endcomment %}
+
+{% if settings.collections_image_placement != 'default' and settings.collections_image_placement != 'hidden' and collection.image %}
+  <div class="hero-content header {{ settings.collections_image_placement }}">
+    <div class="collection-image">
+      <img src="{{ collection.image | img_url: '2048x2048' }}" alt="{{ collection.title }}">
+    </div>
+  </div>
+{% endif %}
+
+{% assign products_per_page = settings.collections_products_per_page %}
+{% paginate collection.products by products_per_page %}
+
+<section class="collection">
+  <div class="wrapper">
+
+    <header class="content-util">
+    {% include 'breadcrumb' %}
+    {% include 'social-icons' %}
+    </header>
+
+    <div class="grid {% if settings.collections_sidebar_enable == false %}full-width{% endif %}">
+      <div class="collection-container">
+        <header class="collection-header">
+          <div class="container">
+            <h1>{{ collection.title }}</h1>
+            {% include 'collection-sorting' %}
+          </div>
+          {% if settings.collections_image_placement == 'default' and collection.image %}
+          <div class="collection-image">
+            <img src="{{ collection.image | img_url: '2048x2048' }}" alt="{{ collection.title }}">
+          </div>
+          {% endif %}
+          {% if collection.description != blank %}
+          <div class="description rte">
+            {{ collection.description }}
+          </div>
+          {% endif %}
+        </header>
+
+        {% if settings.collections_sidebar_enable %}
+          <div class="mobile-aside-container">
+            <a href="#" class="button simple">{{ 'layout.navigation.collection_menu' | t}}</a>
+            <aside>
+              {% include 'collection-sidebar' %}
+            </aside>
+          </div>
+        {% endif %}
+
+        {% if collection.all_products_count == 0 and collection.handle == 'all' %}
+          {% assign helperSection = true %}
+        {% endif %}
+        <div class="products products-grid {% if helperSection %}helper-section{% endif %} {% if settings.collections_sidebar_enable == false %}full-width{% endif %}">
+          {% comment %}
+            Loop through our products in the current collection.
+            See the snippet 'product-grid-item' for the layout.
+          {% endcomment %}
+          {% for product in collection.products %}
+          {% include 'bold-product' with product, hide_action: 'skip' %}
+
+            {% include 'product-grid-item' %}
+
+          {% else %}
+            {% if collection.handle == 'all' and current_tags == '' %}
+
+              {% comment %}
+                Add default products to help with onboarding for collections/all only
+              {% endcomment %}
+              {% unless emptyState %}
+                {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
+                {% assign emptyState = true %}
+              {% endunless %}
+              {% include 'onboarding-empty-collection' %}
+
+            {% else %}
+
+              {% comment %}
+                If collection exists but is empty, display message
+              {% endcomment %}
+              <p>{{ 'collections.general.no_matches' | t }}</p>
+
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        {% if paginate.pages > 1 %}
+        <footer class="collection-footer">
+          {% include 'pagination' %}
+        </footer>
+        {% endif %}
+        
+        {% if collection.handle contains 'festival' %}
+        {% include 'homepage-festival' %}
+        {% endif %}
+      </div>
+
+      {% if settings.collections_sidebar_enable %}
+        <div class="aside-container">
+          <aside>
+            {% include 'collection-sidebar' %}
+          </aside>
+        </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+</section>
+
+{% endpaginate %}

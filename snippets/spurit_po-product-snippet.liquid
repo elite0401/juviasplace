@@ -1,0 +1,32 @@
+<script>
+	var SPOParams = {
+		"id" : "568fe6c16acd7a7585301046de1b0680",
+		"apiScript" : "{{ 'api.jquery.js' | shopify_asset_url }}",
+		"product" : {{ product | json }},
+		"hideAddToCartButton" : {% if shop.metafields.spurit_po['preorder_hide_button'] == '1' %}true{% else %}false{% endif %},
+		"addToCartButtonSelector" : "{{ shop.metafields.spurit_po['addtocart_selector']  | replace: '"',"'"}}"
+	};
+</script>
+<script src="//s3.amazonaws.com/shopify-apps/pre-order/js/common.js" {% if shop.metafields.spurit_po['fast_load'] != '1' %}defer{% endif %}></script>
+{% if shop.metafields.spurit_po['preorder_hide_button'] == '1' %}
+{% if product.selected_variant %}
+{% assign poVariant = product.selected_variant %}
+{% else %}
+{% assign poVariant = product.variants[0] %}
+{% endif %}
+{% if poVariant.inventory_quantity <= 0 and poVariant.inventory_management == 'shopify' %}
+<style>{{shop.metafields.spurit_po['addtocart_selector']  | replace: '"',"'"}}{ display: none; }</style>
+<script>
+	try{
+		if(isPoAppInstalled !== true){
+			$(function(){
+				var button = $("{{shop.metafields.spurit_po['addtocart_selector']  | replace: '"',"'"}}").first();
+				if(button.length){
+					button.css('display','block');
+				}
+			});
+		}
+	}catch(e){}
+</script>
+{% endif %}
+{% endif %}

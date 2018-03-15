@@ -1,0 +1,65 @@
+<!-- /snippets/hero-slider.liquid -->
+{% comment %}
+  Built in max slides
+{% endcomment %}
+{% assign slider_count =  5 %}
+{% assign actual_slider_count = 0 %}
+
+{% comment %}
+  Loop through enabled slides to determin the actual amount
+  Only set up flickity if gt 1
+{% endcomment %}
+{% for i in (1..slider_count)  %}
+  {% assign hero = "homepage_hero_image_" | append:i %}
+  {% assign hero_enable = hero | append:"_enable" %}
+  {% if settings[hero_enable] == true %}
+    {% assign actual_slider_count = actual_slider_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+<div class="hero-content {% if actual_slider_count > 1 %}multiple{% endif %}" data-slider-delay="{{ settings.homepage_hero_slider_delay }}">
+  <div class="wrapper">
+    <div{% if actual_slider_count > 1 %}
+      class="js-flickity"
+      data-flickity-options='{ "imagesLoaded": true,
+                               "autoPlay": {{ settings.homepage_hero_slider_delay }},
+                               "wrapAround": true,
+                               "prevNextButtons": {{ settings.homepage_hero_slider_arrows_enable }} }'
+      {% endif %}>
+      {% for i in (1..slider_count)  %}
+        {% assign hero = "homepage_hero_image_" | append:i %}
+        {% assign hero_enable = hero | append:"_enable" %}
+        {% assign hero_img = hero | append:".jpg" %}
+        {% assign hero_url = hero | append:"_url" %}
+        {% assign hero_alt = hero | append:"_alt" %}
+        {% assign hero_title = hero | append:"_title" %}
+        {% assign hero_text = hero | append:"_text" %}
+        {% assign text_color = hero | append:"_text_color" %}
+        {% assign accent_color = hero | append:"_accent_color" %}
+        {% assign hero_placement = hero | append:"_text_placement" %}
+
+        {% if settings[hero_enable] %}
+          <div class="gallery-cell {{ hero }}">
+
+            <div class="cell-content {{ settings[hero_placement] }}">
+              <div class="content-box">
+                <div class="outer-wrapper">
+                  <div class="inner-wrapper">
+                    <h2><span>{{ settings[hero_title] }}</span></h2>
+                    <p><span>{{ settings[hero_text] }}</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="{{ settings[hero_url] }}">
+              <img src="{{ hero_img | asset_url }}" alt="{{ settings[hero_alt] }}">
+            </a>
+
+          </div>
+        {% endif %}
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
