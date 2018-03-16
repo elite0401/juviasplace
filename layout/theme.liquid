@@ -41,6 +41,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <!-- CSS ================================================== -->
   {{ 'district.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'iziModal.min.css' | asset_url | stylesheet_tag }}
   {{ 'http://vjs.zencdn.net/6.2.8/video-js.css' | stylesheet_tag }}
   {% include 'fonts' %}
 
@@ -131,6 +132,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {% comment %}
           Show number of items in the cart and total cost in the /cart link
         {% endcomment %}
+        <div class="select_currency"></div>
         <a href="/cart" id="CartButton">
           <span class="icon-fallback-text">
             <span class="icon icon-cart" aria-hidden="true"></span>
@@ -360,6 +362,61 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {{ 'vendor.js' | asset_url | script_tag }}
   {{ 'district.js' | asset_url | script_tag }}
 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var modal = $("#modal-custom").iziModal({
+        width: 450,
+        height: 450,
+        background: '#000',
+        onOpened: function(){
+          // $('.iziModal .iziModal-content').css('height', '100%');
+          $('.iziModal .iziModal-content').css('width', ($('.iziModal .iziModal-wrap').width() - 6) + 'px');
+          $('.iziModal .iziModal-content').css('height', ($('.iziModal .iziModal-wrap').height() - 6) + 'px');
+        },
+        onClosing: function() {
+          var selected_currency = $('.iziModal-wrap ul.list li.selected').data('value');
+          switch (selected_currency) {
+            case 'USD':
+              window.location.href = "https://www.juviasplace.com/";
+              break;
+            case 'GBP':
+              window.location.href = "https://uk-juvias-place.myshopify.com/";
+              break;
+            case 'EUR':
+              window.location.href = "https://eu-juvias-place.myshopify.com/";
+              break;
+            case 'CAD':
+              window.location.href = "https://ca-juvias-place.myshopify.com/";
+              break;
+            default:
+              break;
+          }
+        }
+      });
+      checkContainer();
+      $('.select_currency').on('click', function(event) {
+        event.preventDefault();
+        console.log('button click');
+        modal.iziModal('open');
+      });
+      $('body').on('click', '.currency-modal ul.list .option', function() {
+        console.log('selecting currency');
+        $('.select_currency').html($(this).find('span')[0].outerHTML);
+        $('.select_currency').append($(this).data('display'));
+      });
+    });
+    function checkContainer () {
+      if($('.doubly-nice-select.currency-switcher').is(':visible')){ //if the container is visible on the page
+        $("#modal-custom .currency-modal").html($('.doubly-nice-select.currency-switcher')[0].outerHTML);
+        $('.select_currency').html($('.currency-modal ul.list .option.selected').find('span')[0].outerHTML);
+        $('.select_currency').append($('.currency-modal ul.list .option.selected').data('display'));
+      } else {
+        setTimeout(checkContainer, 50); //wait 50 ms, then try again
+      }
+    }
+    
+  </script>
+
   {% comment %}
     Template-specific js
   {% endcomment %}
@@ -401,7 +458,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- spurit_wsmm-added -->
 {% include 'spurit_wsmm-theme-snippet' %}
 <!-- /spurit_wsmm-added -->
-
+  <div id="modal-custom">
+      <h1>CHOOSE YOUR LOCATION</h1>
+      <div class="select-currency">SELECT YOUR CURRENCY</div>
+      <div class="currency-modal"></div>
+      <div class="btn-submit">
+        <a href="javascript:void(0);" data-izimodal-close="" class="button solid">Select</a>
+      </div>
+    </div>
 </body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZCHDN5"
