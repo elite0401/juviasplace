@@ -130,7 +130,7 @@ layout/theme-without-spurit_wsmm.liquid:
 layout/theme.bak.2017-03-04@19-53-07utc.liquid:
   development: 2018-03-15T17:37:42-04:00   dac15d0cebbc1053334d733d8264fbd9
 layout/theme.liquid:
-  development: 2018-03-16T15:39:17-04:00   83ae3170e2d3e4659c5b5035cd429649
+  development: 2018-03-16T16:06:54-04:00   ebff5848f8650e8caba88517ffac9654
 locales/de.json:
   development: 2018-03-15T17:37:42-04:00   1670a779116576147849c231e4b6cf56
 locales/en.default.json:

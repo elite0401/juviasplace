@@ -420,6 +420,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       } else {
         // redirects to country site
         if (currentUrl.indexOf('geo=1') <= -1) {
+          {% if template == 'index' %}
           $.get("http://freegeoip.net/json/", function(response) {
             var time_zone = response.time_zone;
             console.log(time_zone);
@@ -445,6 +446,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               }
             }
           }, "jsonp");
+          {% endif %}
         }
       }
     });
