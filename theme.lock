@@ -86,6 +86,8 @@ assets/icons.woff:
 assets/ie8.js:
   development: 2018-03-15T17:22:39-04:00   27a1e08b22d225cbfc3f6cdea9f44bff
 assets/iziModal.min.css:
+  development: 2018-03-15T17:55:20-04:00   f12c8b6454e9dc2179191ae42768c69d
+assets/jquery.cookie.js:
   development: 2018-03-16T05:34:23-04:00   f12c8b6454e9dc2179191ae42768c69d
 assets/jquery.currencies.min.js:
   development: 2018-03-15T17:22:39-04:00   21a6f41c5ce4e3aafd4fd0c398703867
