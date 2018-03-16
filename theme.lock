@@ -87,6 +87,8 @@ assets/ie8.js:
   development: 2018-03-15T17:37:39-04:00   27a1e08b22d225cbfc3f6cdea9f44bff
 assets/iziModal.min.css:
   development: 2018-03-15T17:55:20-04:00   f12c8b6454e9dc2179191ae42768c69d
+assets/jquery.cookie.js:
+  development: 2018-03-16T13:19:01-04:00   d5528dde0006c78be04817327c2f9b6f
 assets/jquery.currencies.min.js:
   development: 2018-03-15T17:37:39-04:00   21a6f41c5ce4e3aafd4fd0c398703867
 assets/jquery_accordion.js:
@@ -128,7 +130,7 @@ layout/theme-without-spurit_wsmm.liquid:
 layout/theme.bak.2017-03-04@19-53-07utc.liquid:
   development: 2018-03-15T17:37:42-04:00   dac15d0cebbc1053334d733d8264fbd9
 layout/theme.liquid:
-  development: 2018-03-16T05:27:17-04:00   19cc0c72cb6fb2822182e8c3ee69dee4
+  development: 2018-03-16T15:39:17-04:00   83ae3170e2d3e4659c5b5035cd429649
 locales/de.json:
   development: 2018-03-15T17:37:42-04:00   1670a779116576147849c231e4b6cf56
 locales/en.default.json:
