@@ -12,9 +12,9 @@ assets/currency-flags-small.png:
 assets/currency-flags.png:
   development: 2018-03-15T17:15:11-04:00   59d3e93fa0a48bdc2eecb0d6bed1e7b9
 assets/district.js.liquid:
-  development: 2018-03-15T17:15:11-04:00   4663ac05a6e2e08d66ff49934f7f11af
+  development: 2018-03-16T05:51:47-04:00   466e9a7b566b4da8c17241059ac9c8bc
 assets/district.scss.liquid:
-  development: 2018-03-15T17:15:11-04:00   2590713bab32f4ebe5dddadbc49301f7
+  development: 2018-03-16T05:51:51-04:00   63dc56191c6c0cccbc5e8b518b530158
 assets/doubly.js:
   development: 2018-03-15T17:15:11-04:00
 assets/favicon.png:
@@ -85,6 +85,8 @@ assets/icons.woff:
   development: 2018-03-15T17:15:16-04:00   eb2411122fff5371e21040ccba3c1f2e
 assets/ie8.js:
   development: 2018-03-15T17:15:17-04:00   27a1e08b22d225cbfc3f6cdea9f44bff
+assets/iziModal.min.css:
+  development: 2018-03-16T05:51:52-04:00   f12c8b6454e9dc2179191ae42768c69d
 assets/jquery.currencies.min.js:
   development: 2018-03-15T17:15:17-04:00   21a6f41c5ce4e3aafd4fd0c398703867
 assets/jquery_accordion.js:
@@ -110,7 +112,7 @@ assets/selectivizr.js:
 assets/shippingandtaxcalculator.css:
   development: 2018-03-15T17:15:18-04:00   f2738f751af3d2a94d07c49d89dcab67
 assets/vendor.js.liquid:
-  development: 2018-03-15T17:15:19-04:00   0695575cf609135e74bab4aad97f1a32
+  development: 2018-03-16T05:51:54-04:00   e5350b2a6734eba3ac768a87f16b9889
 assets/vncv.js:
   development: 2018-03-15T17:15:19-04:00   d24883a9d1623ad362924fc5ed74c572
 assets/zendesk-embeddable.js:
@@ -126,7 +128,7 @@ layout/theme-without-spurit_wsmm.liquid:
 layout/theme.bak.2017-03-04@19-53-07utc.liquid:
   development: 2018-03-15T17:15:19-04:00   dac15d0cebbc1053334d733d8264fbd9
 layout/theme.liquid:
-  development: 2018-03-15T17:15:19-04:00   b390e39ef9ac26cae566ecb098bcd839
+  development: 2018-03-16T05:51:49-04:00   0e6e6dd6a65d2d164593987848ab225e
 locales/de.json:
   development: 2018-03-15T17:15:19-04:00   1670a779116576147849c231e4b6cf56
 locales/en.default.json:
