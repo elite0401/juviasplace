@@ -372,37 +372,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           // $('.iziModal .iziModal-content').css('height', '100%');
           $('.iziModal .iziModal-content').css('width', ($('.iziModal .iziModal-wrap').width() - 6) + 'px');
           $('.iziModal .iziModal-content').css('height', ($('.iziModal .iziModal-wrap').height() - 6) + 'px');
-        },
-        onClosing: function() {
-          var selected_currency = $('.iziModal-wrap ul.list li.selected').data('value');
-          switch (selected_currency) {
-            case 'USD':
-              window.location.href = "https://www.juviasplace.com/";
-              break;
-            case 'GBP':
-              window.location.href = "https://uk-juvias-place.myshopify.com/";
-              break;
-            case 'EUR':
-              window.location.href = "https://eu-juvias-place.myshopify.com/";
-              break;
-            case 'CAD':
-              window.location.href = "https://ca-juvias-place.myshopify.com/";
-              break;
-            default:
-              break;
-          }
         }
       });
       checkContainer();
       $('.select_currency').on('click', function(event) {
         event.preventDefault();
-        console.log('button click');
         modal.iziModal('open');
       });
       $('body').on('click', '.currency-modal ul.list .option', function() {
-        console.log('selecting currency');
         $('.select_currency').html($(this).find('span')[0].outerHTML);
         $('.select_currency').append($(this).data('display'));
+      });
+      $('#modal-custom .btn-submit a').on('click', function() {
+        var selected_currency = $('.iziModal-wrap ul.list li.selected').data('value');
+        switch (selected_currency) {
+          case 'USD':
+            window.location.href = "https://www.juviasplace.com/";
+            break;
+          case 'GBP':
+            window.location.href = "https://uk-juvias-place.myshopify.com/";
+            break;
+          case 'EUR':
+            window.location.href = "https://eu-juvias-place.myshopify.com/";
+            break;
+          case 'CAD':
+            window.location.href = "https://ca-juvias-place.myshopify.com/";
+            break;
+          default:
+            break;
+        }
+        modal.iziModal('close');
       });
     });
     function checkContainer () {
@@ -463,7 +462,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="select-currency">SELECT YOUR CURRENCY</div>
       <div class="currency-modal"></div>
       <div class="btn-submit">
-        <a href="javascript:void(0);" data-izimodal-close="" class="button solid">Select</a>
+        <a href="javascript:void(0);" class="button solid">Select</a>
       </div>
     </div>
 </body>
