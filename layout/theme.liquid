@@ -381,9 +381,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         event.preventDefault();
         modal.iziModal('open');
       });
-      $('body').on('click', '.currency-modal ul.list .option', function() {
+      $('body').on('click', '.currency-modal ul.list .option', function(e) {
+        e.stopPropagation();
         $('.select_currency').html($(this).find('span')[0].outerHTML);
         $('.select_currency').append($(this).data('display'));
+        $('.iziModal-content .currency-modal span.current').html($(this).find('span')[0].outerHTML);
+        $('.iziModal-content .currency-modal span.current').append($(this).data('display'));
+
+        $('.iziModal-content .currency-modal .doubly-nice-select.currecy-switcher').removeClass('open');
+
+        $('.currency-modal ul.list .option').each(function() {
+          $(this).removeClass('selected');
+        });
+        $(this).addClass('selected');
       });
       $('#modal-custom .btn-submit a').on('click', function() {
         $.cookie('geo', 1, { expires: 90, path: '/' });
