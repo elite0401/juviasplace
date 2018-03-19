@@ -463,6 +463,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         $("#modal-custom .currency-modal").html(modalContent);
         $('.select_currency').html($('.currency-modal ul.list .option.selected').find('span')[0].outerHTML);
         $('.select_currency').append($('.currency-modal ul.list .option.selected').data('display'));
+        $('.doubly-nice-select.currency-switcher ul.list .option[data-value="CAD"]').trigger('click');
       } else {
         setTimeout(checkContainer, 50); //wait 50 ms, then try again
       }
