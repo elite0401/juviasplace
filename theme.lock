@@ -14,7 +14,7 @@ assets/currency-flags.png:
 assets/district.js.liquid:
   development: 2018-03-16T05:51:47-04:00   466e9a7b566b4da8c17241059ac9c8bc
 assets/district.scss.liquid:
-  development: 2018-03-16T05:51:51-04:00   63dc56191c6c0cccbc5e8b518b530158
+  development: 2018-03-19T03:36:27-04:00   5346fa79a6c3c3103101d10c7245da61
 assets/doubly.js:
   development: 2018-03-15T17:15:11-04:00
 assets/favicon.png:
@@ -29,6 +29,8 @@ assets/ficon.woff:
   development: 2018-03-15T17:15:12-04:00   d79d77176e7f793579b7f68762bf57be
 assets/ficon.zip:
   development: 2018-03-15T17:15:12-04:00   c6314dc350583270ccaded72a3c182eb
+assets/flag-world.png:
+  development: 2018-03-19T03:36:52-04:00   2ff2244cfc9e82b7dfc5b405c51fa544
 assets/footer-logo.png:
   development: 2018-03-15T17:15:12-04:00   5acfb363eed71f78526d922e262a3559
 assets/gift-card.scss.liquid:
@@ -130,7 +132,7 @@ layout/theme-without-spurit_wsmm.liquid:
 layout/theme.bak.2017-03-04@19-53-07utc.liquid:
   development: 2018-03-15T17:15:19-04:00   dac15d0cebbc1053334d733d8264fbd9
 layout/theme.liquid:
-  development: 2018-03-16T16:20:25-04:00   226ff008759b8844b186cb7545339e70
+  development: 2018-03-19T03:36:45-04:00   37885c739ac3f9de3e050807ea025dda
 locales/de.json:
   development: 2018-03-15T17:15:19-04:00   1670a779116576147849c231e4b6cf56
 locales/en.default.json:
