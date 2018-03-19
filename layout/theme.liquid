@@ -390,7 +390,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         var selected_currency = $('.iziModal-wrap ul.list li.selected').data('value');
         switch (selected_currency) {
           case 'USD':
-            window.location.href = "https://www.juviasplace.com/?geo=1";
             break;
           case 'GBP':
             window.location.href = "https://uk-juvias-place.myshopify.com/?geo=1";
@@ -402,6 +401,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             window.location.href = "https://ca-juvias-place.myshopify.com/?geo=1";
             break;
           default:
+            window.location.href = "https://world-juvias-place.myshopify.com/?geo=1";
             break;
         }
         modal.iziModal('close');
