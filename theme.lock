@@ -16,7 +16,7 @@ assets/district.js.liquid:
 assets/district.scss.liquid:
   development: 2018-03-19T16:52:43-04:00   4dd40896f8f67c96bfdab8201c7c7405
 assets/doubly.js:
-  development: 2018-03-15T17:15:11-04:00
+  development: 2018-03-16T05:54:34-04:00   178538afc52c7c4a10b49eee75047bb1
 assets/favicon.png:
   development: 2018-03-15T17:15:11-04:00   1812e06bc84a9ac146712e54ee90af64
 assets/ficon.eot:
@@ -88,7 +88,7 @@ assets/icons.woff:
 assets/ie8.js:
   development: 2018-03-15T17:15:17-04:00   27a1e08b22d225cbfc3f6cdea9f44bff
 assets/iziModal.min.css:
-  development: 2018-03-15T17:55:20-04:00   f12c8b6454e9dc2179191ae42768c69d
+  development: 2018-03-16T05:51:52-04:00   f12c8b6454e9dc2179191ae42768c69d
 assets/jquery.cookie.js:
   development: 2018-03-16T16:20:26-04:00   a79ce0f6eed17894a3d9b854fe700461
 assets/jquery.currencies.min.js:
@@ -122,7 +122,7 @@ assets/vncv.js:
 assets/zendesk-embeddable.js:
   development: 2018-03-15T17:15:19-04:00   16fbe3cd773cd3999f05a50ce72a87bb
 config/settings_data.json:
-  development: 2018-03-15T17:15:29-04:00   14226a4ba3d2503b947672813a226c74
+  development: 2018-03-20T04:22:42-04:00   2c5b0973bd11c293eaaf872ab9bae230
 config/settings_schema.json:
   development: 2018-03-15T17:15:29-04:00   ff57b0295460df05948e3f0f4c01af75
 layout/theme-backup-social-sign-in.liquid:
@@ -345,6 +345,8 @@ templates/page.about.liquid:
   development: 2018-03-15T17:15:28-04:00   36a96ed24396f0ca5acea2e4ecc30236
 templates/page.contact.liquid:
   development: 2018-03-15T17:15:28-04:00   9eb8ee7e5655bf744f73e681644a4204
+templates/page.delivery.liquid:
+  development: 2018-03-28T16:48:00-04:00   2426555544d0cc7888b6db2748fea25b
 templates/page.faq.liquid:
   development: 2018-03-15T17:15:28-04:00   93f6606745e847d4dbcde486ef8b3a47
 templates/page.liquid:
