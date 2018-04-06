@@ -371,7 +371,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         background: '#000',
         overlayClose: false,
         onOpened: function(){
-          // $('.iziModal .iziModal-content').css('height', '100%');
           $('.iziModal .iziModal-content').css('width', ($('.iziModal .iziModal-wrap').width() - 6) + 'px');
           $('.iziModal .iziModal-content').css('height', ($('.iziModal .iziModal-wrap').height() - 6) + 'px');
         }
@@ -411,7 +410,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             window.location.href = "https://ca-juvias-place.myshopify.com/?geo=1";
             break;
           default:
-            window.location.href = "https://world-juvias-place.myshopify.com/";
+            window.location.href = "https://world-juvias-place.myshopify.com/?geo=1";
             break;
         }
         modal.iziModal('close');
@@ -421,7 +420,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       console.log($.cookie('geo'));
       if (!$.cookie('geo')) {
         if (currentUrl.indexOf('geo=1') <= -1) {
-          modal.iziModal('open');
+          //modal.iziModal('open');
         } else {
           //first visit, but has geo param.
           console.log('first visit, but has geo param');
