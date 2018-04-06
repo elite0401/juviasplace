@@ -106,7 +106,7 @@ button.sca-button.disabled span {cursor: default !important; color: #000 !import
     max-width: 100% !important;
     /*max-height: 30% !important;*/
     /*     height: 90% !important;	    /*update from 20150707*/
-    top: 85% !important;
+    top: 0% !important;
 }
 #sca_freegift_list .selector-wrapper {
     margin-top: 5px !important;

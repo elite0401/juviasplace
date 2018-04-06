@@ -12,9 +12,9 @@ assets/currency-flags-small.png:
 assets/currency-flags.png:
   development: 2018-03-15T17:37:33-04:00   59d3e93fa0a48bdc2eecb0d6bed1e7b9
 assets/district.js.liquid:
-  development: 2018-03-15T17:59:56-04:00   d56eb034669324cee38cb8e4e744a9a5
+  development: 2018-04-05T23:13:54-04:00   466e9a7b566b4da8c17241059ac9c8bc
 assets/district.scss.liquid:
-  development: 2018-03-19T16:56:14-04:00   4dd40896f8f67c96bfdab8201c7c7405
+  development: 2018-04-05T23:19:35-04:00   4dd40896f8f67c96bfdab8201c7c7405
 assets/doubly.js:
   development: 2018-03-20T13:24:04-04:00   61ab52351d9999764af0abd7cdcb55ba
 assets/favicon.png:
@@ -30,7 +30,7 @@ assets/ficon.woff:
 assets/ficon.zip:
   development: 2018-03-15T17:37:35-04:00   c6314dc350583270ccaded72a3c182eb
 assets/flag-world.png:
-  development: 2018-03-19T03:38:24-04:00   2ff2244cfc9e82b7dfc5b405c51fa544
+  development: 2018-04-05T23:16:54-04:00   2ff2244cfc9e82b7dfc5b405c51fa544
 assets/footer-logo.png:
   development: 2018-03-15T17:37:35-04:00   5acfb363eed71f78526d922e262a3559
 assets/gift-card.scss.liquid:
@@ -88,9 +88,9 @@ assets/icons.woff:
 assets/ie8.js:
   development: 2018-03-15T17:37:39-04:00   27a1e08b22d225cbfc3f6cdea9f44bff
 assets/iziModal.min.css:
-  development: 2018-03-15T17:55:20-04:00   f12c8b6454e9dc2179191ae42768c69d
+  development: 2018-04-05T23:14:37-04:00   f12c8b6454e9dc2179191ae42768c69d
 assets/jquery.cookie.js:
-  development: 2018-03-16T13:19:01-04:00   d5528dde0006c78be04817327c2f9b6f
+  development: 2018-04-05T23:15:23-04:00   a79ce0f6eed17894a3d9b854fe700461
 assets/jquery.currencies.min.js:
   development: 2018-03-15T17:37:39-04:00   21a6f41c5ce4e3aafd4fd0c398703867
 assets/jquery_accordion.js:
@@ -110,19 +110,19 @@ assets/respond-proxy.html:
 assets/respond.min.js:
   development: 2018-03-15T17:37:41-04:00   a2684e9b8fa50d6d11c56a9ada068528
 assets/sca.freegift.css:
-  development: 2018-03-15T17:37:41-04:00   2e8a021f9e445fb44cdf0bb7cf32807e
+  development: 2018-04-01T10:29:44-04:00   425b857322ddf4a1ddc71f5802a1fa4e
 assets/selectivizr.js:
   development: 2018-03-15T17:37:41-04:00   5d7640238f1173cdae0085df68162794
 assets/shippingandtaxcalculator.css:
   development: 2018-03-15T17:37:41-04:00   f2738f751af3d2a94d07c49d89dcab67
 assets/vendor.js.liquid:
-  development: 2018-03-15T17:54:52-04:00   79eb0ca7b56aa5a58eeb4897ac193ca7
+  development: 2018-04-05T23:14:49-04:00   e5350b2a6734eba3ac768a87f16b9889
 assets/vncv.js:
   development: 2018-03-15T17:37:41-04:00   d24883a9d1623ad362924fc5ed74c572
 assets/zendesk-embeddable.js:
   development: 2018-03-15T17:37:41-04:00   16fbe3cd773cd3999f05a50ce72a87bb
 config/settings_data.json:
-  development: 2018-03-20T05:02:03-04:00   9a5a6b11c6c62433ba5c12b2fe29feb2
+  development: 2018-04-03T08:15:24-04:00   41ab818792a2ecd4db88e5746dd304aa
 config/settings_schema.json:
   development: 2018-03-15T17:37:51-04:00   ff57b0295460df05948e3f0f4c01af75
 layout/theme-backup-social-sign-in.liquid:
@@ -132,7 +132,7 @@ layout/theme-without-spurit_wsmm.liquid:
 layout/theme.bak.2017-03-04@19-53-07utc.liquid:
   development: 2018-03-15T17:37:42-04:00   dac15d0cebbc1053334d733d8264fbd9
 layout/theme.liquid:
-  development: 2018-03-19T17:12:14-04:00   a823ce61cc084e9abd90b0141e306f09
+  development: 2018-04-05T23:10:38-04:00   3d6f8fa7e65a85c62789d60af2e42ccd
 locales/de.json:
   development: 2018-03-15T17:37:42-04:00   1670a779116576147849c231e4b6cf56
 locales/en.default.json:
@@ -240,9 +240,9 @@ snippets/related-products.liquid:
 snippets/respond.liquid:
   development: 2018-03-15T17:37:47-04:00   732a4c707b459d8c7b21de442fa6285e
 snippets/sca.freegifts.liquid:
-  development: 2018-03-15T17:37:47-04:00   8e645051fa6459f8c9da550c50edef14
+  development: 2018-04-01T10:29:45-04:00   d380a221f813b3800b440c99ced05c23
 snippets/sca.freegifts.status.liquid:
-  development: 2018-03-15T17:37:47-04:00   ea1abe50565424999f6b48f347a54908
+  development: 2018-04-01T10:29:45-04:00   2c5519044cbbd4e67cdc4d0db8c40b45
 snippets/scn-base-js.liquid:
   development: 2018-03-15T17:37:47-04:00   2210acef43441550c97f2cbad0b647bb
 snippets/scn-min-price.liquid:
@@ -346,7 +346,7 @@ templates/page.about.liquid:
 templates/page.contact.liquid:
   development: 2018-03-15T17:37:51-04:00   9eb8ee7e5655bf744f73e681644a4204
 templates/page.delivery.liquid:
-  development: 2018-03-28T16:41:52-04:00   2426555544d0cc7888b6db2748fea25b
+  development: 2018-04-05T23:17:30-04:00   2426555544d0cc7888b6db2748fea25b
 templates/page.faq.liquid:
   development: 2018-03-15T17:37:51-04:00   93f6606745e847d4dbcde486ef8b3a47
 templates/page.liquid:
