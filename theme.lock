@@ -6,7 +6,7 @@ assets/about-main.png:
 assets/about-side.png:
   development: 2018-03-15T17:37:33-04:00   0d43fa6b363bbc7d6459fa318e47a897
 assets/consistent_cart_addon.min.js:
-  development: 2018-03-15T17:37:33-04:00   a7a22af7989d477f35d0117d5cef53bd
+  development: 2018-04-10T07:05:07-04:00   d73f196c0208aafdc058d676ac34cf0a
 assets/currency-flags-small.png:
   development: 2018-03-15T17:37:33-04:00   b3426b0214692d64910c1f2a329b6e0d
 assets/currency-flags.png:
@@ -16,7 +16,7 @@ assets/district.js.liquid:
 assets/district.scss.liquid:
   development: 2018-04-05T23:19:35-04:00   4dd40896f8f67c96bfdab8201c7c7405
 assets/doubly.js:
-  development: 2018-03-20T13:24:04-04:00   61ab52351d9999764af0abd7cdcb55ba
+  development: 2018-04-06T10:03:19-04:00
 assets/favicon.png:
   development: 2018-03-15T17:37:34-04:00   1812e06bc84a9ac146712e54ee90af64
 assets/ficon.eot:
@@ -122,7 +122,7 @@ assets/vncv.js:
 assets/zendesk-embeddable.js:
   development: 2018-03-15T17:37:41-04:00   16fbe3cd773cd3999f05a50ce72a87bb
 config/settings_data.json:
-  development: 2018-04-03T08:15:24-04:00   41ab818792a2ecd4db88e5746dd304aa
+  development: 2018-04-07T17:20:38-04:00   26718cf0371479a9150e022d923957ce
 config/settings_schema.json:
   development: 2018-03-15T17:37:51-04:00   ff57b0295460df05948e3f0f4c01af75
 layout/theme-backup-social-sign-in.liquid:
@@ -132,7 +132,7 @@ layout/theme-without-spurit_wsmm.liquid:
 layout/theme.bak.2017-03-04@19-53-07utc.liquid:
   development: 2018-03-15T17:37:42-04:00   dac15d0cebbc1053334d733d8264fbd9
 layout/theme.liquid:
-  development: 2018-04-06T10:04:57-04:00   5933b386d55c7d8643d671eb4ff8b458
+  development: 2018-04-12T06:15:52-04:00   0bb57b4d0a4c12645c330e5204f0a2b5
 locales/de.json:
   development: 2018-03-15T17:37:42-04:00   1670a779116576147849c231e4b6cf56
 locales/en.default.json:
