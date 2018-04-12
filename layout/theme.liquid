@@ -393,15 +393,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             window.location.href = "https://www.juviasplace.com/?geo=1&force=1";
             break;
           case 'GBP':
-            window.location.href = "https://uk-juvias-place.myshopify.com/?geo=1&force=1";
+            window.location.href = "https://uk.juviasplace.com/?geo=1&force=1";
             break;
           case 'EUR':
             break;
           case 'CAD':
-            window.location.href = "https://ca-juvias-place.myshopify.com/?geo=1&force=1";
+            window.location.href = "https://ca.juviasplace.com/?geo=1&force=1";
             break;
           default:
-            window.location.href = "https://world-juvias-place.myshopify.com/?geo=1&force=1";
+            window.location.href = "https://world.juviasplace.com/?geo=1&force=1";
             break;
         }
         modal.iziModal('close');
@@ -429,20 +429,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 window.location.href = "https://www.juviasplace.com/?geo=1";
               }
             } else if (response.country_code == 'CA') {
-              if (currentUrl.indexOf('ca-juvias-place.myshopify.com') <= -1) {
-                window.location.href = "https://ca-juvias-place.myshopify.com/?geo=1";
+              if (currentUrl.indexOf('ca.juviasplace.com') <= -1) {
+                window.location.href = "https://ca.juviasplace.com/?geo=1";
               }
             } else if (response.country_code == 'GB') {
-              if (currentUrl.indexOf('uk-juvias-place.myshopify.com') <= -1) {
-                window.location.href = "https://uk-juvias-place.myshopify.com/?geo=1";
+              if (currentUrl.indexOf('uk.juviasplace.com') <= -1) {
+                window.location.href = "https://uk.juviasplace.com/?geo=1";
               }
             } else if (time_zone.indexOf('Europe') > -1) {
-              if (currentUrl.indexOf('eu-juvias-place.myshopify.com') <= -1) {
-                window.location.href = "https://eu-juvias-place.myshopify.com/?geo=1";
+              if (currentUrl.indexOf('eu.juviasplace.com') <= -1) {
+                window.location.href = "https://eu.juviasplace.com/?geo=1";
               }
             } else {
-              if (currentUrl.indexOf('world-juvias-place.myshopify.com') <= -1) {
-                window.location.href = "https://world-juvias-place.myshopify.com/?geo=1";
+              if (currentUrl.indexOf('world.juviasplace.com') <= -1) {
+                window.location.href = "https://world.juviasplace.com/?geo=1";
               }
             }
           }, "jsonp");
