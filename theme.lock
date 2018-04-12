@@ -16,7 +16,7 @@ assets/district.js.liquid:
 assets/district.scss.liquid:
   development: 2018-03-19T16:51:09-04:00   4dd40896f8f67c96bfdab8201c7c7405
 assets/doubly.js:
-  development: 2018-03-16T05:37:59-04:00   3008a9deb6d54451891544b72eb9aca6
+  development: 2018-04-12T06:21:31-04:00   07b0f25ff8d71020967855c406d62dfe
 assets/favicon.png:
   development: 2018-03-15T17:22:33-04:00   1812e06bc84a9ac146712e54ee90af64
 assets/ficon.eot:
@@ -130,7 +130,7 @@ layout/theme-without-spurit_wsmm.liquid:
 layout/theme.bak.2017-03-04@19-53-07utc.liquid:
   development: 2018-03-15T17:22:41-04:00   dac15d0cebbc1053334d733d8264fbd9
 layout/theme.liquid:
-  development: 2018-04-12T06:09:21-04:00   5cd28a636c02887a592f38bcbcda504e
+  development: 2018-04-12T11:44:56-04:00   3790f7933e8ede96e4424c61eed7d0dc
 locales/de.json:
   development: 2018-03-15T17:22:42-04:00   1670a779116576147849c231e4b6cf56
 locales/en.default.json:
