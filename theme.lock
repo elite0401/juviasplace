@@ -354,7 +354,7 @@ templates/page.liquid:
 templates/page.narrow.liquid:
   development: 2018-03-15T17:15:28-04:00   b82b93de7b87bb5fa2a8c08070a81512
 templates/password.liquid:
-  development: 2018-03-15T17:15:29-04:00   b57c905878d5432e147f251ff059244f
+  development: 2018-04-13T11:53:00-04:00   13eb48de01f9a83fd3c3b9d9011447c8
 templates/product-backup-tabs.liquid:
   development: 2018-03-15T17:15:29-04:00   4c9e23df3ce7f7f9bf89b837882f39b3
 templates/product-without-spurit_po.liquid:
