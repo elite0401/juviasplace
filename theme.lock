@@ -16,7 +16,7 @@ assets/district.js.liquid:
 assets/district.scss.liquid:
   development: 2018-03-19T16:49:31-04:00   4dd40896f8f67c96bfdab8201c7c7405
 assets/doubly.js:
-  development: 2018-04-12T10:27:16-04:00   00ee6f175447d1b9e986a4d6c0acb179
+  development: 2018-04-13T11:01:02-04:00   33e4dcbfdee68ffb23622fdf8af16f32
 assets/favicon.png:
   development: 2018-03-15T17:33:02-04:00   1812e06bc84a9ac146712e54ee90af64
 assets/ficon.eot:
@@ -354,7 +354,7 @@ templates/page.liquid:
 templates/page.narrow.liquid:
   development: 2018-03-15T17:33:20-04:00   b82b93de7b87bb5fa2a8c08070a81512
 templates/password.liquid:
-  development: 2018-03-15T17:33:20-04:00   b57c905878d5432e147f251ff059244f
+  development: 2018-04-13T11:50:44-04:00   13eb48de01f9a83fd3c3b9d9011447c8
 templates/product-backup-tabs.liquid:
   development: 2018-03-15T17:33:20-04:00   4c9e23df3ce7f7f9bf89b837882f39b3
 templates/product-without-spurit_po.liquid:
