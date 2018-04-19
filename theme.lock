@@ -14,7 +14,7 @@ assets/currency-flags.png:
 assets/district.js.liquid:
   development: 2018-03-16T05:47:17-04:00   466e9a7b566b4da8c17241059ac9c8bc
 assets/district.scss.liquid:
-  development: 2018-04-16T15:43:36-04:00   13744b3e70380c3300bfcf7f34aeba28
+  development: 2018-04-19T18:42:51-04:00   d5edd12aa982e70833b1d545c9c3d022
 assets/doubly.js:
   development: 2018-04-15T11:53:28-04:00   012293f51aa8e78512417f0e40fbc6e0
 assets/favicon.png:
@@ -132,7 +132,7 @@ layout/theme-without-spurit_wsmm.liquid:
 layout/theme.bak.2017-03-04@19-53-07utc.liquid:
   development: 2018-03-15T17:33:11-04:00   dac15d0cebbc1053334d733d8264fbd9
 layout/theme.liquid:
-  development: 2018-04-16T15:43:41-04:00   ba3ab72afe6a86969451c05ed2c0dcee
+  development: 2018-04-19T18:56:41-04:00   f6bae0613f5ffb72924c2e667bf41175
 locales/de.json:
   development: 2018-03-15T17:33:11-04:00   1670a779116576147849c231e4b6cf56
 locales/en.default.json:
