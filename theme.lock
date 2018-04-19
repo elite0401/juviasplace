@@ -14,7 +14,7 @@ assets/currency-flags.png:
 assets/district.js.liquid:
   development: 2018-04-05T23:13:54-04:00   466e9a7b566b4da8c17241059ac9c8bc
 assets/district.scss.liquid:
-  development: 2018-04-16T15:45:48-04:00   13744b3e70380c3300bfcf7f34aeba28
+  development: 2018-04-19T19:04:00-04:00   d5edd12aa982e70833b1d545c9c3d022
 assets/doubly.js:
   development: 2018-04-06T10:03:19-04:00
 assets/favicon.png:
@@ -122,7 +122,7 @@ assets/vncv.js:
 assets/zendesk-embeddable.js:
   development: 2018-03-15T17:37:41-04:00   16fbe3cd773cd3999f05a50ce72a87bb
 config/settings_data.json:
-  development: 2018-04-12T19:51:17-04:00   83f2bc556bb8f371b4fa4d2d09db01c8
+  development: 2018-04-18T08:16:34-04:00   b8a9e43556b112589ad2c56bdceaa441
 config/settings_schema.json:
   development: 2018-03-15T17:37:51-04:00   ff57b0295460df05948e3f0f4c01af75
 layout/theme-backup-social-sign-in.liquid:
@@ -132,7 +132,7 @@ layout/theme-without-spurit_wsmm.liquid:
 layout/theme.bak.2017-03-04@19-53-07utc.liquid:
   development: 2018-03-15T17:37:42-04:00   dac15d0cebbc1053334d733d8264fbd9
 layout/theme.liquid:
-  development: 2018-04-16T15:55:27-04:00   a9cb5d76b4c1c9e2fa1f76ab332b8e42
+  development: 2018-04-19T19:03:52-04:00   84b3e5535dbdeabb7873d37eb6186a34
 locales/de.json:
   development: 2018-03-15T17:37:42-04:00   1670a779116576147849c231e4b6cf56
 locales/en.default.json:
