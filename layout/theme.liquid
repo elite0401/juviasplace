@@ -424,7 +424,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       console.log($.cookie('geo'));
       if (!$.cookie('geo')) {
         if (currentUrl.indexOf('geo=1') <= -1) {
-          //modal.iziModal('open');
+          modal.iziModal('open');
         } else {
           //first visit, but has geo param.
           console.log('first visit, but has geo param');
