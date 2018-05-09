@@ -122,7 +122,7 @@ assets/vncv.js:
 assets/zendesk-embeddable.js:
   development: 2018-03-15T17:37:41-04:00   16fbe3cd773cd3999f05a50ce72a87bb
 config/settings_data.json:
-  development: 2018-04-22T11:53:31-04:00   f3849ebf8a3cbf34c5129ed37b1a078e
+  development: 2018-05-06T20:02:59-04:00   3fac2a951b30a06ad1fd637095aaa7aa
 config/settings_schema.json:
   development: 2018-03-15T17:37:51-04:00   ff57b0295460df05948e3f0f4c01af75
 layout/theme-backup-social-sign-in.liquid:
@@ -132,7 +132,7 @@ layout/theme-without-spurit_wsmm.liquid:
 layout/theme.bak.2017-03-04@19-53-07utc.liquid:
   development: 2018-03-15T17:37:42-04:00   dac15d0cebbc1053334d733d8264fbd9
 layout/theme.liquid:
-  development: 2018-04-25T23:38:15-04:00   7a083fc4bf181446d8dc67da05eb6f65
+  development: 2018-05-09T02:45:27-04:00   978ff34d019d9257046a827eec7a106c
 locales/de.json:
   development: 2018-03-15T17:37:42-04:00   1670a779116576147849c231e4b6cf56
 locales/en.default.json:
