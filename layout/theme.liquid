@@ -454,9 +454,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       var modalContent = '<div class="doubly-nice-select currecy-switcher right" tabindex="0">' +
         ' <span class="current notranslate">' +
         '   <span class="flags flags-United-States"></span>' +
-        '   &nbsp;United States</span>' +
+        '   &nbsp;US Dollars</span>' +
         ' <ul class="list">' +
-        '   <li class="option notranslate selected" data-value="USD" data-country="United-States" data-currency-symbol="$" data-display="USD"><span class="flags flags-United-States"></span> &nbsp;United States</li><li class="option notranslate " data-value="EUR" data-country="European-Union" data-currency-symbol="€" data-display="EUR"><span class="flags flags-European-Union"></span> &nbsp;Europe</li><li class="option notranslate " data-value="GBP" data-country="United-Kingdom" data-currency-symbol="£" data-display="GBP"><span class="flags flags-United-Kingdom"></span> &nbsp;United Kingdom</li><li class="option notranslate focus" data-value="CAD" data-country="Canada" data-currency-symbol="$" data-display="CAD"><span class="flags flags-Canada"></span> &nbsp;Canada</li><li class="option notranslate" data-value="Africa" data-country="International" data-currency-symbol="$" data-display="Africa"><span class="flags flags-World"></span> &nbsp;Africa</li><li class="option notranslate" data-value="Asia" data-country="International" data-currency-symbol="$" data-display="Asia"><span class="flags flags-World"></span> &nbsp;Asia</li><li class="option notranslate" data-value="Australia" data-country="International" data-currency-symbol="$" data-display="Australia"><span class="flags flags-World"></span> &nbsp;Australia</li><li class="option notranslate" data-value="Middle East" data-country="International" data-currency-symbol="$" data-display="Middle East"><span class="flags flags-World"></span> &nbsp;Middle East</li><li class="option notranslate" data-value="South America" data-country="International" data-currency-symbol="$" data-display="South America"><span class="flags flags-World"></span> &nbsp;South America</li>' +
+        '   <li class="option notranslate selected" data-value="USD" data-country="United-States" data-currency-symbol="$" data-display="US Dollars"><span class="flags flags-United-States"></span> &nbsp;US Dollars</li><li class="option notranslate " data-value="GBP" data-country="United-Kingdom" data-currency-symbol="£" data-display="British Pounds"><span class="flags flags-United-Kingdom"></span> &nbsp;British Pounds</li>' +
         '</ul></div>';
       if($('.doubly-nice-select.currency-switcher').is(':visible')){ //if the container is visible on the page
         //$("#modal-custom .currency-modal").html($('.doubly-nice-select.currency-switcher')[0].outerHTML);
@@ -512,8 +512,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {% include 'spurit_wsmm-theme-snippet' %}
 <!-- /spurit_wsmm-added -->
   <div id="modal-custom">
-      <h1>CHOOSE YOUR LOCATION</h1>
-      <div class="select-currency">SELECT YOUR COUNTRY</div>
+      <h1>SELECT YOUR CURRENCY</h1>
+      <div class="select-currency"></div>
       <div class="currency-modal"></div>
       <div class="btn-submit">
         <a href="javascript:void(0);" class="button solid">Select</a>
