@@ -14,7 +14,7 @@ assets/currency-flags.png:
 assets/district.js.liquid:
   development: 2018-03-16T05:51:47-04:00   466e9a7b566b4da8c17241059ac9c8bc
 assets/district.scss.liquid:
-  development: 2018-04-19T19:02:08-04:00   d5edd12aa982e70833b1d545c9c3d022
+  development: 2018-05-09T03:31:02-04:00   8cd707ad0e1bedc5652b0d991ed13204
 assets/doubly.js:
   development: 2018-04-12T06:25:42-04:00   10da514fa4c14f476edb1890fb1e326d
 assets/favicon.png:
@@ -136,7 +136,7 @@ layout/theme.liquid:
 locales/de.json:
   development: 2018-03-15T17:15:19-04:00   1670a779116576147849c231e4b6cf56
 locales/en.default.json:
-  development: 2018-03-15T17:15:19-04:00   01728d2577f666f3a67f0f2527620f4a
+  development: 2018-05-09T03:22:24-04:00   9dbea0c74c48fe907bebaf4e65837813
 locales/es.json:
   development: 2018-03-15T17:15:19-04:00   685b6dc760f5bfddac8a77b81a6801b1
 locales/fr.json:
@@ -304,7 +304,7 @@ templates/blog.liquid:
 templates/cart-without-spurit_po.liquid:
   development: 2018-03-15T17:15:27-04:00   53606c213233aed9817809b76bd8b7ac
 templates/cart.liquid:
-  development: 2018-03-15T17:15:27-04:00   6680d1fb2188060ff8e64b208d1cba04
+  development: 2018-05-09T03:23:49-04:00   06ecd5dc7f4fd4fc12db03fc2013c951
 templates/cart.tsbkp.liquid:
   development: 2018-03-15T17:15:27-04:00   ee61af8f50c0fdac1c0399abc2814563
 templates/collection-without-spurit_po.liquid:
@@ -360,7 +360,7 @@ templates/product-backup-tabs.liquid:
 templates/product-without-spurit_po.liquid:
   development: 2018-03-15T17:15:29-04:00   1a27f8e59aae70f23992b09bba3ce93b
 templates/product.liquid:
-  development: 2018-03-15T17:15:29-04:00   12a4c9ac6a636a19cc03307f0b7b6d1b
+  development: 2018-05-09T03:12:47-04:00   99ffac78a1bc5a65579e33f4a11863eb
 templates/search.liquid:
   development: 2018-03-15T17:15:29-04:00   99880542fb1c318d3b42a505059443ac
 templates/search.sca.product.js.liquid:

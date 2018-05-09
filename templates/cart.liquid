@@ -154,7 +154,11 @@
                   <span class="label"><span id="bk-cart-subtotal-label">{{ 'cart.general.subtotal' | t }}</span></span>
                   <span class="price money"><span id="bk-cart-subtotal-price">{{ cart.total_price | money }}</span></span>
                 </p>
-                <p class="shipping-at-checkout"><em>{{ 'cart.general.shipping_at_checkout' | t }}</em></p>
+                <p class="note">
+                  <span>{{ 'cart.general.offer_code' | t }}</span>
+                  <span>{{ 'cart.general.custom_fee' | t }}</span>
+                  <span>{{ 'cart.general.final_cost' | t }}</span>
+                </p>
                 {% if settings.show_multiple_currencies %}
                 <p class="currency-at-checkout"><em>{{ 'cart.general.currency_at_checkout_html' | t: shop_name: shop.name, shop_currency: shop.currency }}</em></p>
                 {% endif %}
