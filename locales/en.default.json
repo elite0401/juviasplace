@@ -82,7 +82,9 @@
       "close_cart": "Close Cart",
       "continue_shoping": "Continue Shopping",
       "item_in_cart_html": "You have <span class=\"item-count\">1<\/span> item in your cart",
-      "items_in_cart_html": "You have <span class=\"item-count\">{{ cart_item_count }}<\/span> items in your cart"
+      "items_in_cart_html": "You have <span class=\"item-count\">{{ cart_item_count }}<\/span> items in your cart",
+      "have_code": "Have an offer code or gift card?",
+      "code_in_checkout": "You can apply these codes during checkout."
     },
     "label": {
       "product": "Product",

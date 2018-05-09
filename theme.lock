@@ -6,7 +6,7 @@ assets/about-main.png:
 assets/about-side.png:
   development: 2018-03-15T17:37:33-04:00   0d43fa6b363bbc7d6459fa318e47a897
 assets/consistent_cart_addon.min.js:
-  development: 2018-04-15T14:36:03-04:00   967a0e48e57830debccd80cbeb2c79c0
+  development: 2018-04-25T06:00:06-04:00   829ba27d34cac2222a4070f599c5f169
 assets/currency-flags-small.png:
   development: 2018-03-15T17:37:33-04:00   b3426b0214692d64910c1f2a329b6e0d
 assets/currency-flags.png:
@@ -14,9 +14,9 @@ assets/currency-flags.png:
 assets/district.js.liquid:
   development: 2018-04-05T23:13:54-04:00   466e9a7b566b4da8c17241059ac9c8bc
 assets/district.scss.liquid:
-  development: 2018-04-19T19:04:00-04:00   d5edd12aa982e70833b1d545c9c3d022
+  development: 2018-04-26T16:22:05-04:00   5d1836ddb152ab635989e73a16db8ec1
 assets/doubly.js:
-  development: 2018-04-06T10:03:19-04:00
+  development: 2018-04-25T10:25:43-04:00
 assets/favicon.png:
   development: 2018-03-15T17:37:34-04:00   1812e06bc84a9ac146712e54ee90af64
 assets/ficon.eot:
@@ -122,7 +122,7 @@ assets/vncv.js:
 assets/zendesk-embeddable.js:
   development: 2018-03-15T17:37:41-04:00   16fbe3cd773cd3999f05a50ce72a87bb
 config/settings_data.json:
-  development: 2018-04-18T08:16:34-04:00   b8a9e43556b112589ad2c56bdceaa441
+  development: 2018-04-22T11:53:31-04:00   f3849ebf8a3cbf34c5129ed37b1a078e
 config/settings_schema.json:
   development: 2018-03-15T17:37:51-04:00   ff57b0295460df05948e3f0f4c01af75
 layout/theme-backup-social-sign-in.liquid:
@@ -132,11 +132,11 @@ layout/theme-without-spurit_wsmm.liquid:
 layout/theme.bak.2017-03-04@19-53-07utc.liquid:
   development: 2018-03-15T17:37:42-04:00   dac15d0cebbc1053334d733d8264fbd9
 layout/theme.liquid:
-  development: 2018-04-22T20:40:56-04:00   bf12ea36bdbc6a1a7c2d381cc880b93f
+  development: 2018-04-25T23:38:15-04:00   7a083fc4bf181446d8dc67da05eb6f65
 locales/de.json:
   development: 2018-03-15T17:37:42-04:00   1670a779116576147849c231e4b6cf56
 locales/en.default.json:
-  development: 2018-03-15T17:37:42-04:00   01728d2577f666f3a67f0f2527620f4a
+  development: 2018-04-26T16:31:56-04:00   eac9994a44a52f2e0a0b2e28be6e40b4
 locales/es.json:
   development: 2018-03-15T17:37:42-04:00   685b6dc760f5bfddac8a77b81a6801b1
 locales/fr.json:
@@ -304,7 +304,7 @@ templates/blog.liquid:
 templates/cart-without-spurit_po.liquid:
   development: 2018-03-15T17:37:49-04:00   53606c213233aed9817809b76bd8b7ac
 templates/cart.liquid:
-  development: 2018-03-15T17:37:49-04:00   6680d1fb2188060ff8e64b208d1cba04
+  development: 2018-04-26T16:20:19-04:00   a75dc8c33d3763eb6b236f9f16a34ef9
 templates/cart.tsbkp.liquid:
   development: 2018-03-15T17:37:49-04:00   ee61af8f50c0fdac1c0399abc2814563
 templates/collection-without-spurit_po.liquid:
