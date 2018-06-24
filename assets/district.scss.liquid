@@ -4574,6 +4574,10 @@ aside.product-aside {
         font-weight: $siteHeaderNavTextWeight;
         font-family: $navFontStack;
         color: $primaryAccentColor;
+        &.note {
+          font-size: em(14px);
+          font-weight: 400;
+        }
       }
       select {
         font-size: em(10px);
@@ -4749,6 +4753,10 @@ aside.product-aside {
   padding: 0 20px $verticalContainerPadding;
   background: $productCollectionBackgroundColor;
   //border-bottom: 1px solid lighten($primaryTextColor, 50%);
+
+  .additional-checkout-button {
+    margin-top: 10px !important;
+  }
 
   &.page-top {
     padding-bottom: 20px;
@@ -5037,6 +5045,13 @@ aside.product-aside {
         padding-top: 8px;
         padding-bottom: 8px;
         margin-right: 10px;
+      }
+    }
+    p.note {
+      span {
+        display: block;
+        color: $primaryAccentColor;
+        font-size: em(14px);
       }
     }
     @include mediaQuery($max, $tablet) {
@@ -8251,6 +8266,9 @@ iframe #content {
   background: black;
   border-radius: 50% !important;
   height: 450px !important;
+  &:after {
+    background: none !important;
+  }
   .iziModal-wrap {
     height: 100% !important;
     background: linear-gradient(to right, #fbd433 1%, #eb288b 100%);
@@ -8297,6 +8315,9 @@ iframe #content {
           &:after {
             top: 10px;
           }
+          .list {
+            max-height: 360px !important;
+          }
         }
       }
       .btn-submit {
@@ -8325,6 +8346,18 @@ iframe #content {
   background-image: url('{{ "flag-world.png" | asset_url }}') !important;
   width: 30px;
   height: 20px;
+}
+
+.doubly-nice-select.currency-switcher {
+  visibility: hidden;
+}
+
+.welcome-text {
+  position: relative;
+  background: #f8f8f8;
+  padding-top: 5px;
+  text-align: center;
+  font-weight: bold;
 }
 
 @include mediaQuery($max, $mobile) {

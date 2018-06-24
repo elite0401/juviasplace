@@ -82,7 +82,10 @@
       "close_cart": "Close Cart",
       "continue_shoping": "Continue Shopping",
       "item_in_cart_html": "You have <span class=\"item-count\">1<\/span> item in your cart",
-      "items_in_cart_html": "You have <span class=\"item-count\">{{ cart_item_count }}<\/span> items in your cart"
+      "items_in_cart_html": "You have <span class=\"item-count\">{{ cart_item_count }}<\/span> items in your cart",
+      "offer_code": "Have an offer code or gift card? These can be applied during checkout",
+      "custom_fee": "Customs & shipping fees included in cost",
+      "final_cost": "Final cost will be displayed in US Dollars during checkout"
     },
     "label": {
       "product": "Product",
@@ -324,7 +327,8 @@
       "quantity": "Quantity",
       "add_to_cart": "Add to Cart",
       "added_to_cart": "Added to Cart",
-      "adding_to_cart": "Adding to Cart"
+      "adding_to_cart": "Adding to Cart",
+      "price_note": "Price includes customs & shipping fees"
     }
   },
   "gift_cards": {
