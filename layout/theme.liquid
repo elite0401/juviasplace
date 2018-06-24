@@ -420,34 +420,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
       } else {
         // redirects to country site
-        if (currentUrl.indexOf('geo=1') <= -1) {
-          {% if template == 'index' %}
-          $.get("http://freegeoip.net/json/", function(response) {
-            var time_zone = response.time_zone;
-            if (response.country_code == 'US') {
-              if (currentUrl.indexOf('www.juviasplace.com') <= -1) {
-                window.top.location.href = "https://www.juviasplace.com/?geo=1";
-              }
-            } else if (response.country_code == 'CA') {
-              if (currentUrl.indexOf('ca.juviasplace.com') <= -1) {
-                window.top.location.href = "https://ca.juviasplace.com/?geo=1";
-              }
-            } else if (response.country_code == 'GB') {
-              if (currentUrl.indexOf('uk.juviasplace.com') <= -1) {
-                window.top.location.href = "https://uk.juviasplace.com/?geo=1";
-              }
-            } else if (time_zone.indexOf('Europe') > -1) {
-              if (currentUrl.indexOf('eu.juviasplace.com') <= -1) {
-                window.top.location.href = "https://eu.juviasplace.com/?geo=1";
-              }
-            } else {
-              if (currentUrl.indexOf('world.juviasplace.com') <= -1) {
-                window.top.location.href = "https://world.juviasplace.com/?geo=1";
-              }
-            }
-          }, "jsonp");
-          {% endif %}
-        }
+        // if (currentUrl.indexOf('geo=1') <= -1) {
+        //   {% if template == 'index' %}
+        //   $.get("http://freegeoip.net/json/", function(response) {
+        //     var time_zone = response.time_zone;
+        //     if (response.country_code == 'US') {
+        //       if (currentUrl.indexOf('www.juviasplace.com') <= -1) {
+        //         window.top.location.href = "https://www.juviasplace.com/?geo=1";
+        //       }
+        //     } else if (response.country_code == 'CA') {
+        //       if (currentUrl.indexOf('ca.juviasplace.com') <= -1) {
+        //         window.top.location.href = "https://ca.juviasplace.com/?geo=1";
+        //       }
+        //     } else if (response.country_code == 'GB') {
+        //       if (currentUrl.indexOf('uk.juviasplace.com') <= -1) {
+        //         window.top.location.href = "https://uk.juviasplace.com/?geo=1";
+        //       }
+        //     } else if (time_zone.indexOf('Europe') > -1) {
+        //       if (currentUrl.indexOf('eu.juviasplace.com') <= -1) {
+        //         window.top.location.href = "https://eu.juviasplace.com/?geo=1";
+        //       }
+        //     } else {
+        //       if (currentUrl.indexOf('world.juviasplace.com') <= -1) {
+        //         window.top.location.href = "https://world.juviasplace.com/?geo=1";
+        //       }
+        //     }
+        //   }, "jsonp");
+        //   {% endif %}
+        // }
       }
     });
     function checkContainer () {
