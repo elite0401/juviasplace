@@ -379,10 +379,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
       });*/
       checkContainer();
-      $('.select_currency').on('click', function(event) {
-        event.preventDefault();
-        modal.iziModal('open');
-      });
+      // $('.select_currency').on('click', function(event) {
+      //   event.preventDefault();
+      //   modal.iziModal('open');
+      // });
       $('body').on('click', '.currency-modal ul.list .option', function() {
         $('.select_currency').html($(this).find('span')[0].outerHTML);
         $('.select_currency').append($(this).data('display'));
@@ -511,7 +511,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- spurit_wsmm-added -->
 {% include 'spurit_wsmm-theme-snippet' %}
 <!-- /spurit_wsmm-added -->
-  <div id="modal-custom">
+  <div id="modal-custom" style="display: none;">
       <h1>SELECT YOUR CURRENCY</h1>
       <div class="select-currency"></div>
       <div class="currency-modal"></div>

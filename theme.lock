@@ -132,7 +132,7 @@ layout/theme-without-spurit_wsmm.liquid:
 layout/theme.bak.2017-03-04@19-53-07utc.liquid:
   development: 2018-03-15T17:15:19-04:00   dac15d0cebbc1053334d733d8264fbd9
 layout/theme.liquid:
-  development: 2018-07-30T14:11:41-04:00   c282e1c2c8171cd5cd736df43f36e35b
+  development: 2018-07-30T17:08:34-04:00   ec654958b8465aff47ea28ffe0a667d2
 locales/de.json:
   development: 2018-07-30T14:12:45-04:00   1670a779116576147849c231e4b6cf56
 locales/en.default.json:
@@ -168,7 +168,7 @@ snippets/buyx-product.liquid:
 snippets/cart-preview.liquid:
   development: 2018-03-15T17:15:21-04:00   e5dba85358aba5b5f34ebb2fcc7d4692
 snippets/collection-sidebar.liquid:
-  development: 2018-03-15T17:15:21-04:00   63a60e27219308d5e5464e541e7713bb
+  development: 2018-07-30T17:05:52-04:00   a1e7091779b4d294e65ec4d69ebb3ecc
 snippets/collection-sorting.liquid:
   development: 2018-03-15T17:15:21-04:00   d5b3db688af601a11bd41a4bc51cfd52
 snippets/comment.liquid:

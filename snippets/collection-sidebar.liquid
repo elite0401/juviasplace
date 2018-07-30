@@ -62,7 +62,7 @@
   {% endcomment %}
   {% if settings.collections_sidebar_tags_enable %}
     {% if collection.all_tags.size > 0 %}
-    <nav class="tags">
+    <nav class="tags" style="display: none;">
       <h5>{{ 'collections.sidebar.tags' | t }}</h5>
       {% comment %}
         To provide a 'catch-all' link at the top of the list,
