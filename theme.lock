@@ -6,7 +6,7 @@ assets/about-main.png:
 assets/about-side.png:
   development: 2018-03-15T17:15:11-04:00   0d43fa6b363bbc7d6459fa318e47a897
 assets/consistent_cart_addon.min.js:
-  development: 2018-03-15T17:15:11-04:00   a7a22af7989d477f35d0117d5cef53bd
+  development: 2018-07-30T14:12:17-04:00   858fb98af142f2ddc6839d50d4924a61
 assets/currency-flags-small.png:
   development: 2018-03-15T17:15:11-04:00   b3426b0214692d64910c1f2a329b6e0d
 assets/currency-flags.png:
@@ -16,7 +16,7 @@ assets/district.js.liquid:
 assets/district.scss.liquid:
   development: 2018-03-19T03:38:21-04:00   5346fa79a6c3c3103101d10c7245da61
 assets/doubly.js:
-  development: 2018-04-12T06:25:42-04:00   10da514fa4c14f476edb1890fb1e326d
+  development: 2018-06-24T16:28:44-04:00   7215ee9c7d9dc229d2921a40e899ec5f
 assets/favicon.png:
   development: 2018-03-15T17:15:11-04:00   1812e06bc84a9ac146712e54ee90af64
 assets/ficon.eot:
@@ -58,7 +58,7 @@ assets/homepage_featured_box_5_image-o.jpg:
 assets/homepage_featured_box_5_image.jpg:
   development: 2018-03-15T17:15:14-04:00   8222b13162195efd64ea15d175749d68
 assets/homepage_hero_image_1.jpg:
-  development: 2018-03-15T17:15:14-04:00   39291ed69952d3b0b43035d3e80153cd
+  development: 2018-06-24T16:46:45-04:00   6601119dbf68a394220b10aeee792287
 assets/homepage_hero_image_2.jpg:
   development: 2018-03-15T17:15:15-04:00   114d30cd9c2fac2ce6c7f0417d796933
 assets/homepage_hero_image_3.jpg:
@@ -78,7 +78,7 @@ assets/icon-freegift.png:
 assets/icons.eot:
   development: 2018-03-15T17:15:16-04:00   0b9fb774ccd8a14e0a0ffc5c37158cd4
 assets/icons.json:
-  development: 2018-03-15T17:15:16-04:00   1bb4319d670c99e41a089112e0d91953
+  development: 2018-07-30T14:12:32-04:00   1bb4319d670c99e41a089112e0d91953
 assets/icons.svg:
   development: 2018-03-15T17:15:16-04:00   6205948790041c19888d665210039209
 assets/icons.ttf:
@@ -92,7 +92,7 @@ assets/iziModal.min.css:
 assets/jquery.cookie.js:
   development: 2018-03-16T16:20:26-04:00   a79ce0f6eed17894a3d9b854fe700461
 assets/jquery.currencies.min.js:
-  development: 2018-03-15T17:15:17-04:00   21a6f41c5ce4e3aafd4fd0c398703867
+  development: 2018-07-30T14:12:36-04:00   21a6f41c5ce4e3aafd4fd0c398703867
 assets/jquery_accordion.js:
   development: 2018-03-15T17:15:17-04:00   cc526ab48ca4bff6f012c5409d7cc50d
 assets/logo.png:
@@ -110,7 +110,7 @@ assets/respond-proxy.html:
 assets/respond.min.js:
   development: 2018-03-15T17:15:18-04:00   a2684e9b8fa50d6d11c56a9ada068528
 assets/sca.freegift.css:
-  development: 2018-03-15T17:15:18-04:00   2e8a021f9e445fb44cdf0bb7cf32807e
+  development: 2018-07-30T14:12:40-04:00   91bb7a808440778205c0e1b2feb0d44c
 assets/selectivizr.js:
   development: 2018-03-15T17:15:18-04:00   5d7640238f1173cdae0085df68162794
 assets/shippingandtaxcalculator.css:
@@ -122,9 +122,9 @@ assets/vncv.js:
 assets/zendesk-embeddable.js:
   development: 2018-03-15T17:15:19-04:00   16fbe3cd773cd3999f05a50ce72a87bb
 config/settings_data.json:
-  development: 2018-04-11T17:15:08-04:00   049370f6a61eea4910efcbf2ae6e376b
+  development: 2018-07-29T13:08:39-04:00   913c974cc42b0f9f3d4a261537fc60bb
 config/settings_schema.json:
-  development: 2018-03-15T17:15:29-04:00   ff57b0295460df05948e3f0f4c01af75
+  development: 2018-07-30T14:12:45-04:00   ff57b0295460df05948e3f0f4c01af75
 layout/theme-backup-social-sign-in.liquid:
   development: 2018-03-15T17:15:19-04:00   76852564fe2114d3055d0d222acae280
 layout/theme-without-spurit_wsmm.liquid:
@@ -132,19 +132,19 @@ layout/theme-without-spurit_wsmm.liquid:
 layout/theme.bak.2017-03-04@19-53-07utc.liquid:
   development: 2018-03-15T17:15:19-04:00   dac15d0cebbc1053334d733d8264fbd9
 layout/theme.liquid:
-  development: 2018-06-24T16:26:04-04:00   ef066abdb506c0140a9eb84393ecf32a
+  development: 2018-07-30T17:08:34-04:00   ec654958b8465aff47ea28ffe0a667d2
 locales/de.json:
-  development: 2018-03-15T17:15:19-04:00   1670a779116576147849c231e4b6cf56
+  development: 2018-07-30T14:12:45-04:00   1670a779116576147849c231e4b6cf56
 locales/en.default.json:
   development: 2018-05-09T03:22:24-04:00   9dbea0c74c48fe907bebaf4e65837813
 locales/es.json:
-  development: 2018-03-15T17:15:19-04:00   685b6dc760f5bfddac8a77b81a6801b1
+  development: 2018-07-30T14:12:46-04:00   685b6dc760f5bfddac8a77b81a6801b1
 locales/fr.json:
-  development: 2018-03-15T17:15:19-04:00   22bbf359438bd9945fe8aaac4b57a77d
+  development: 2018-07-30T14:12:47-04:00   22bbf359438bd9945fe8aaac4b57a77d
 locales/pt-BR.json:
-  development: 2018-03-15T17:15:20-04:00   c52677930d67ccbb00f07994b857000a
+  development: 2018-07-30T14:12:47-04:00   c52677930d67ccbb00f07994b857000a
 locales/pt-PT.json:
-  development: 2018-03-15T17:15:20-04:00   c9693b83f457a03b39a5e374203dd9a2
+  development: 2018-07-30T14:12:48-04:00   c9693b83f457a03b39a5e374203dd9a2
 snippets/accounts-nav.liquid:
   development: 2018-03-15T17:15:20-04:00   d3a39074fcbb999f65857a9bf0731cad
 snippets/back-in-stock-helper.liquid:
@@ -168,7 +168,7 @@ snippets/buyx-product.liquid:
 snippets/cart-preview.liquid:
   development: 2018-03-15T17:15:21-04:00   e5dba85358aba5b5f34ebb2fcc7d4692
 snippets/collection-sidebar.liquid:
-  development: 2018-03-15T17:15:21-04:00   63a60e27219308d5e5464e541e7713bb
+  development: 2018-07-30T17:05:52-04:00   a1e7091779b4d294e65ec4d69ebb3ecc
 snippets/collection-sorting.liquid:
   development: 2018-03-15T17:15:21-04:00   d5b3db688af601a11bd41a4bc51cfd52
 snippets/comment.liquid:
@@ -240,9 +240,9 @@ snippets/related-products.liquid:
 snippets/respond.liquid:
   development: 2018-03-15T17:15:24-04:00   732a4c707b459d8c7b21de442fa6285e
 snippets/sca.freegifts.liquid:
-  development: 2018-03-15T17:15:24-04:00   8e645051fa6459f8c9da550c50edef14
+  development: 2018-07-30T14:13:12-04:00   288dc37337bea347c36e40ec464789ec
 snippets/sca.freegifts.status.liquid:
-  development: 2018-03-15T17:15:24-04:00   ea1abe50565424999f6b48f347a54908
+  development: 2018-07-30T14:13:12-04:00   9f10303fbb334db5593f3127e4abfdf2
 snippets/scn-base-js.liquid:
   development: 2018-03-15T17:15:25-04:00   2210acef43441550c97f2cbad0b647bb
 snippets/scn-min-price.liquid:
@@ -360,7 +360,7 @@ templates/product-backup-tabs.liquid:
 templates/product-without-spurit_po.liquid:
   development: 2018-03-15T17:15:29-04:00   1a27f8e59aae70f23992b09bba3ce93b
 templates/product.liquid:
-  development: 2018-05-09T03:12:47-04:00   99ffac78a1bc5a65579e33f4a11863eb
+  development: 2018-07-30T14:14:53-04:00   3ed7cc81b0a26f776469105578d0e787
 templates/search.liquid:
   development: 2018-03-15T17:15:29-04:00   99880542fb1c318d3b42a505059443ac
 templates/search.sca.product.js.liquid:

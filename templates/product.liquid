@@ -120,7 +120,7 @@
 
             <div class="selection-wrapper price">
               <span class="money" id="ProductPrice" itemprop="price" content="{{ bold_price | money_without_currency | remove: ',' }}">{{ bold_price | money }}</span>
-              <span class="note">&nbsp;&nbsp;{{ 'products.product.price_note' | t }}</span>
+              <!--<span class="note">&nbsp;&nbsp;{{ 'products.product.price_note' | t }}</span>-->
               {% if bold_compare_at_price_max > bold_price %}
                 <p id="ComparePrice">
                   {{ 'products.product.compare_at' | t }} <span class="money">{{ current_variant.compare_at_price | money }}</span>
